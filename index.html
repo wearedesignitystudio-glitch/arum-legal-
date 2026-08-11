@@ -1,73 +1,53 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aurum Legal Solutions — Melbourne's most forward-thinking legal practice. Premium conveyancing, family law, commercial litigation & estates.">
-  <title>Aurum Legal Solutions | Melbourne Premium Legal Practice</title>
+  <meta name="description" content="Radiant Rootz — natural & organic beauty care for skin and hair. Handcrafted with shea butter, cocoa butter, black seed oil, and restorative plant botanicals.">
+  <title>Radiant Rootz | Natural & Organic Beauty Care</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader-inner">
-      <div class="preloader-logo">
-        <span class="preloader-ring"></span>
-        <span class="preloader-text">A</span>
-      </div>
+      <svg class="preloader-mark" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+        <circle class="preloader-orbit" cx="40" cy="40" r="34" />
+        <path class="preloader-root" d="M40 12c0 14-10 20-10 34 0 10 4.5 18 10 22 5.5-4 10-12 10-22 0-14-10-20-10-34z" />
+      </svg>
+      <p class="preloader-word">Radiant Rootz</p>
       <div class="preloader-bar"><span></span></div>
-      <p class="preloader-label">Crafting Excellence</p>
     </div>
   </div>
 
-  <!-- Custom Cursor -->
   <div class="cursor" id="cursor" aria-hidden="true">
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
   </div>
 
-  <!-- Noise Overlay -->
-  <div class="noise" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <!-- Navigation -->
   <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav-logo" data-magnetic>
-        <svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1"/>
-          <path d="M12 28V12h4l4 10 4-10h4v16h-3.5V18l-4.5 10h-1l-4.5-10v10H12z" fill="currentColor"/>
-        </svg>
-        <span class="logo-text">Aurum<span class="logo-accent">Legal</span></span>
+    <nav class="nav">
+      <a href="#home" class="logo" data-magnetic>
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Radiant<span>Rootz</span></span>
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-dropdown">
-          <a href="#practice" class="nav-link">Practice Areas <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none"/></svg></a>
-          <ul class="dropdown-menu">
-            <li><a href="#practice">Conveyancing</a></li>
-            <li><a href="#practice">Family Law</a></li>
-            <li><a href="#practice">Wills & Estates</a></li>
-            <li><a href="#practice">Commercial Law</a></li>
-            <li><a href="#practice">Litigation</a></li>
-            <li><a href="#practice">Employment Law</a></li>
-          </ul>
-        </li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#rootz">Ingredients</a></li>
+        <li><a href="#creator">The Creator</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <span class="nav-time" id="melbourneTime" aria-label="Melbourne time"></span>
-        <button class="btn btn-gold btn-sm" data-modal="consultation" data-magnetic>
-          <span>Book Consultation</span>
-          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
-        </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <div class="nav-end">
+        <a href="#collections" class="btn btn-solid btn-sm" data-magnetic>
+          <span>Shop Now</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span>
         </button>
       </div>
@@ -75,541 +55,306 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero: brand + one headline + one line + CTAs + full-bleed visual -->
     <section class="hero" id="home">
-      <div class="hero-bg">
-        <div class="hero-gradient"></div>
-        <img src="assets/images/hero-banner.jpg" alt="" class="hero-bg-img" loading="eager">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/images/hero-botanical.jpg" alt="" class="hero-img" loading="eager">
+        <div class="hero-veil"></div>
       </div>
 
-      <div class="hero-content container">
-        <div class="hero-badge reveal-up">
-          <span class="pulse-dot"></span>
-          Melbourne · Level 10, Collins Street
-        </div>
-
+      <div class="hero-content">
+        <p class="brand-lockup">Radiant Rootz</p>
         <h1 class="hero-title">
-          <span class="hero-line">
-            <span class="char-wrap" data-split>Trusted</span>
-          </span>
-          <span class="hero-line hero-line--gold">
-            <span class="char-wrap" data-split>Legal</span>
-            <span class="char-wrap" data-split>Solutions.</span>
-          </span>
-          <span class="hero-line hero-line--italic">
-            <span class="char-wrap" data-split>Tailored</span>
-            <span class="char-wrap" data-split>for You.</span>
-          </span>
+          <span class="line"><span>The Power</span></span>
+          <span class="line"><span>of Nature</span></span>
         </h1>
-
-        <p class="hero-desc reveal-up">
-          Where precision meets passion. Aurum Legal delivers boutique-level counsel with the resources of a premier Melbourne firm — because your future deserves nothing less.
+        <p class="hero-lead">
+          All-natural &amp; organic skin and hair care — rooted in botanicals, crafted for radiance.
         </p>
-
-        <div class="hero-cta reveal-up">
-          <button class="btn btn-gold btn-lg" data-modal="consultation" data-magnetic>
-            <span>Book a Consultation</span>
-            <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
-          </button>
-          <a href="#practice" class="btn btn-ghost btn-lg" data-magnetic>
-            <span>Explore Practice Areas</span>
+        <div class="hero-cta">
+          <a href="#collections" class="btn btn-solid btn-lg" data-magnetic>
+            <span>Shop Skincare</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h12M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <a href="#rootz" class="btn btn-ghost btn-lg" data-magnetic>
+            <span>What's in the Rootz</span>
           </a>
         </div>
-
-        <div class="hero-scroll" aria-hidden="true">
-          <span>Scroll</span>
-          <div class="scroll-line"><span></span></div>
-        </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="hero-image-wrap">
-          <img src="assets/images/legal-desk.jpg" alt="Premium legal workspace" class="hero-image" loading="eager">
-          <div class="hero-image-frame"></div>
-        </div>
-        <div class="hero-stat-card" data-parallax="0.15">
-          <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
-          <span class="stat-label">Client Satisfaction</span>
-        </div>
+      <a href="#intro" class="hero-scroll" aria-label="Scroll to explore">
+        <span>Explore</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- Intro atmosphere -->
+    <section class="intro" id="intro">
+      <div class="intro-copy">
+        <p class="eyebrow reveal">Natural &amp; Organic Beauty Care</p>
+        <h2 class="display reveal">
+          Treat yourself to the
+          <em>luxury of nature</em>
+        </h2>
+        <p class="intro-text reveal">
+          From restorative butters to plant oils that symbolize balance and healing — every formula is built to nourish skin and hair without compromise.
+        </p>
+      </div>
+      <div class="intro-visual reveal">
+        <img src="assets/images/beauty-ritual.jpg" alt="Natural beauty ritual with botanical skincare" loading="lazy">
       </div>
     </section>
 
-    <!-- Value Proposition Banner -->
-    <section class="vp-banner" aria-label="Why choose Aurum Legal">
-      <div class="vp-banner-inner container">
-        <div class="vp-banner-item reveal-up" data-delay="0">
-          <div class="vp-banner-icon">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M6 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="14" r="2" stroke="currentColor" stroke-width="1.2"/><circle cx="22" cy="14" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
-          </div>
-          <div class="vp-banner-text">
-            <strong>Client Focused</strong>
-            <span>Your goals drive every decision</span>
-          </div>
-        </div>
-        <div class="vp-banner-divider" aria-hidden="true"></div>
-        <div class="vp-banner-item reveal-up" data-delay="1">
-          <div class="vp-banner-icon">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="18" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v4M16 24v4M8 18h4M20 18h4" stroke="currentColor" stroke-width="1.5"/><path d="M16 12l2 4 4 .5-3 3 .8 4.5L16 22l-3.8 2 1-4.5-3-3 4-.5z" stroke="currentColor" stroke-width="1.2"/></svg>
-          </div>
-          <div class="vp-banner-text">
-            <strong>Experienced</strong>
-            <span>Victoria courts & boardrooms</span>
-          </div>
-        </div>
-        <div class="vp-banner-divider" aria-hidden="true"></div>
-        <div class="vp-banner-item reveal-up" data-delay="2">
-          <div class="vp-banner-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M8 24h16M16 6v18" stroke="currentColor" stroke-width="1.5"/><path d="M10 24c0-3.314 2.686-8 6-8s6 4.686 6 8" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <div class="vp-banner-text">
-            <strong>Practical Solutions</strong>
-            <span>Clear advice, not jargon</span>
-          </div>
-        </div>
-        <div class="vp-banner-divider" aria-hidden="true"></div>
-        <div class="vp-banner-item reveal-up" data-delay="3">
-          <div class="vp-banner-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M8 20c2-6 14-6 16 0" stroke="currentColor" stroke-width="1.5"/><path d="M6 24c3-4 17-4 20 0" stroke="currentColor" stroke-width="1.5"/><ellipse cx="16" cy="14" rx="8" ry="6" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <div class="vp-banner-text">
-            <strong>Based in Australia</strong>
-            <span>Melbourne · National reach</span>
-          </div>
-        </div>
-      </div>
-      <div class="vp-banner-shine" aria-hidden="true"></div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee-section" aria-hidden="true">
-      <div class="marquee">
-        <div class="marquee-track">
-          <span>Client Focused</span><span class="marquee-dot">◆</span>
-          <span>Experienced</span><span class="marquee-dot">◆</span>
-          <span>Practical Solutions</span><span class="marquee-dot">◆</span>
-          <span>Based in Australia</span><span class="marquee-dot">◆</span>
-          <span>Collins Street Melbourne</span><span class="marquee-dot">◆</span>
-          <span>Client Focused</span><span class="marquee-dot">◆</span>
-          <span>Experienced</span><span class="marquee-dot">◆</span>
-          <span>Practical Solutions</span><span class="marquee-dot">◆</span>
-          <span>Based in Australia</span><span class="marquee-dot">◆</span>
-          <span>Collins Street Melbourne</span><span class="marquee-dot">◆</span>
-        </div>
+    <!-- Ingredient marquee -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Shea Butter</span><span class="dot">✦</span>
+        <span>Cocoa Butter</span><span class="dot">✦</span>
+        <span>Black Seed Oil</span><span class="dot">✦</span>
+        <span>Plant Botanicals</span><span class="dot">✦</span>
+        <span>Organic Oils</span><span class="dot">✦</span>
+        <span>Shea Butter</span><span class="dot">✦</span>
+        <span>Cocoa Butter</span><span class="dot">✦</span>
+        <span>Black Seed Oil</span><span class="dot">✦</span>
+        <span>Plant Botanicals</span><span class="dot">✦</span>
+        <span>Organic Oils</span><span class="dot">✦</span>
       </div>
     </div>
 
-    <!-- Value Props -->
-    <section class="values">
-      <div class="container values-grid">
-        <article class="value-card reveal-up" data-delay="0">
-          <div class="value-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 38c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Client Focused</h3>
-          <p>Every strategy begins with your goals. We listen first, advise second, and act with your best interests at heart.</p>
-        </article>
-        <article class="value-card reveal-up" data-delay="1">
-          <div class="value-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l4 8 9 1.5-6.5 6.5 1.5 9L24 25l-8 4 1.5-9L11 13.5 20 12z" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Experienced</h3>
-          <p>Decades of combined expertise across Victoria's courts, tribunals, and boardrooms.</p>
-        </article>
-        <article class="value-card reveal-up" data-delay="2">
-          <div class="value-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6v36M6 24h36" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Practical Solutions</h3>
-          <p>Clear, actionable advice — not legal jargon. We translate complexity into confidence.</p>
-        </article>
-        <article class="value-card reveal-up" data-delay="3">
-          <div class="value-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M10 30c4-12 24-12 28 0M14 36c3-8 17-8 20 0" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Based in Australia</h3>
-          <p>Deeply rooted in Melbourne with national reach. We understand Australian law inside out.</p>
-        </article>
+    <!-- Collections -->
+    <section class="collections" id="collections">
+      <div class="section-head">
+        <p class="eyebrow reveal">Collections</p>
+        <h2 class="display reveal">Beauty that feels like a deep breath</h2>
       </div>
+
+      <article class="collection-panel collection-panel--boost">
+        <div class="collection-media">
+          <img src="assets/images/product-skincare.jpg" alt="Radiant Rootz beauty boost skincare" loading="lazy">
+        </div>
+        <div class="collection-body">
+          <span class="collection-tag">Signature</span>
+          <h3>Beauty Boost</h3>
+          <p>Luxurious daily rituals powered by nature — clean formulas that restore glow from root to tip.</p>
+          <a href="#contact" class="text-link" data-magnetic>Shop all skincare <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="collection-panel collection-panel--winter">
+        <div class="collection-media">
+          <img src="assets/images/winter-care.jpg" alt="Winter skin care collection" loading="lazy">
+        </div>
+        <div class="collection-body">
+          <span class="collection-tag">Seasonal</span>
+          <h3>New Winter Skin Care</h3>
+          <p>Cinnamon, spice, and everything nice — richer botanicals for colder months and softer skin.</p>
+          <a href="#contact" class="text-link" data-magnetic>Stock up now <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="collection-panel collection-panel--hair">
+        <div class="collection-media">
+          <img src="assets/images/hair-care.jpg" alt="Natural organic hair care" loading="lazy">
+        </div>
+        <div class="collection-body">
+          <span class="collection-tag">Hair Rituals</span>
+          <h3>Skin &amp; Hair Harmony</h3>
+          <p>Plant-powered care that hydrates, strengthens, and leaves every strand feeling alive.</p>
+          <a href="#contact" class="text-link" data-magnetic>Discover hair care <span>→</span></a>
+        </div>
+      </article>
     </section>
 
-    <!-- Practice Areas - Horizontal Scroll -->
-    <section class="practice" id="practice">
-      <div class="practice-header container">
-        <span class="section-label reveal-up">Our Practice Areas</span>
-        <h2 class="section-title scramble-text" data-scramble>How We Can Help</h2>
-        <p class="section-desc reveal-up">Six pillars of legal excellence, each led by senior practitioners who live and breathe their specialty.</p>
-      </div>
-
-      <div class="practice-scroll-wrap">
-        <div class="practice-track" id="practiceTrack">
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/collins-street.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">01</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M4 14L16 4l12 10v14H4V14z" stroke="currentColor" stroke-width="1.5"/><path d="M12 28V18h8v10" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Conveyancing</h3>
-              <p>Seamless property transactions across Victoria. From first home to commercial portfolio.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/office-modern.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">02</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Family Law</h3>
-              <p>Compassionate guidance through life's most sensitive transitions with dignity and strength.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/legal-pen.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">03</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M8 4h12l4 4v20H8V4z" stroke="currentColor" stroke-width="1.5"/><path d="M20 4v4h4M12 14h8M12 20h8" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Wills & Estates</h3>
-              <p>Protect your legacy. Expert estate planning that honours your wishes and secures your family's future.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/melbourne-yarra.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">04</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M12 10V8a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Commercial Law</h3>
-              <p>Strategic counsel for businesses at every stage — from startup to ASX-listed enterprise.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/law-library.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">05</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 6v20M8 28h16" stroke="currentColor" stroke-width="1.5"/><path d="M6 14h8l-4 8-4-8zM18 14h8l-4 8-4-8z" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Litigation & Disputes</h3>
-              <p>Fearless advocacy in court and alternative dispute resolution when diplomacy fails.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-          <article class="practice-card" data-tilt>
-            <div class="practice-card-bg" style="background-image: url('assets/images/legal-desk.jpg')"></div>
-            <div class="practice-card-content">
-              <span class="practice-num">06</span>
-              <div class="practice-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4l10 4v8c0 7-4.5 12.5-10 14-5.5-1.5-10-7-10-14V8l10-4z" stroke="currentColor" stroke-width="1.5"/></svg></div>
-              <h3>Employment Law</h3>
-              <p>Workplace rights, contracts, and disputes — protecting employers and employees alike.</p>
-              <a href="#contact" class="practice-link">Learn More <span>→</span></a>
-            </div>
-          </article>
-        </div>
-        <div class="practice-progress">
-          <div class="practice-progress-bar" id="practiceProgress"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-visual">
-          <div class="about-image-stack">
-            <img src="assets/images/legal-pen.jpg" alt="Legal document signing" class="about-img about-img--main" loading="lazy">
-            <img src="assets/images/law-library.jpg" alt="Law library" class="about-img about-img--secondary" loading="lazy">
-          </div>
-          <div class="about-badge">
-            <span class="about-badge-num" data-count="15">0</span><span>+</span>
-            <span class="about-badge-text">Years of Excellence</span>
-          </div>
-        </div>
-        <div class="about-content">
-          <span class="section-label reveal-up">About Aurum Legal</span>
-          <h2 class="section-title split-reveal">
-            <span>Your Trusted</span>
-            <span class="text-gold">Legal Partner</span>
-          </h2>
-          <p class="about-text reveal-up">
-            At Aurum Legal Solutions, we believe exceptional legal service is an art form. Based in the heart of Melbourne's legal district on Collins Street, our team combines deep Australian legal expertise with a refreshingly human approach.
+    <!-- What's in the Rootz -->
+    <section class="rootz" id="rootz">
+      <div class="rootz-sticky">
+        <div class="rootz-copy">
+          <p class="eyebrow reveal">What's in the Rootz</p>
+          <h2 class="display reveal">Ingredient commitment</h2>
+          <p class="rootz-lead reveal">
+            We choose plants that symbolize balance and healing — nourishing, restorative, and honest.
           </p>
-          <p class="about-text reveal-up">
-            We don't just practice law — we craft outcomes. Whether you're navigating a property purchase, protecting your family, or scaling your business, Aurum delivers clarity in complexity.
-          </p>
-          <ul class="about-features reveal-up">
-            <li><span>✦</span> Fixed-fee options available</li>
-            <li><span>✦</span> Same-day consultation booking</li>
-            <li><span>✦</span> Multilingual support</li>
-            <li><span>✦</span> Virtual & in-person meetings</li>
+        </div>
+
+        <div class="ingredient-stage" id="ingredientStage">
+          <div class="ingredient-visual">
+            <img src="assets/images/shea-butter.jpg" alt="Shea butter" class="is-active" data-ingredient-img="0" loading="lazy">
+            <img src="assets/images/cocoa-butter.jpg" alt="Cocoa butter" data-ingredient-img="1" loading="lazy">
+            <img src="assets/images/oil-serum.jpg" alt="Black seed oil" data-ingredient-img="2" loading="lazy">
+            <img src="assets/images/botanical-leaves.jpg" alt="Plant botanicals" data-ingredient-img="3" loading="lazy">
+          </div>
+
+          <ul class="ingredient-list" role="list">
+            <li class="ingredient is-active" data-ingredient="0">
+              <span class="ingredient-num">01</span>
+              <div>
+                <h3>Shea Butter</h3>
+                <p>Deeply conditioning moisture that softens skin and seals in radiance.</p>
+              </div>
+            </li>
+            <li class="ingredient" data-ingredient="1">
+              <span class="ingredient-num">02</span>
+              <div>
+                <h3>Cocoa Butter</h3>
+                <p>Rich, protective nourishment with a naturally comforting finish.</p>
+              </div>
+            </li>
+            <li class="ingredient" data-ingredient="2">
+              <span class="ingredient-num">03</span>
+              <div>
+                <h3>Black Seed Oil</h3>
+                <p>A restorative botanical oil celebrated for balance and renewal.</p>
+              </div>
+            </li>
+            <li class="ingredient" data-ingredient="3">
+              <span class="ingredient-num">04</span>
+              <div>
+                <h3>Plant-Based Oils</h3>
+                <p>Hand-selected oils known for their nourishing and healing character.</p>
+              </div>
+            </li>
           </ul>
-          <a href="#contact" class="btn btn-gold" data-magnetic>
-            <span>Learn More About Us</span>
-            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- Services / Process -->
-    <section class="services" id="services">
-      <div class="container">
-        <div class="services-header">
-          <span class="section-label reveal-up">Our Process</span>
-          <h2 class="section-title scramble-text" data-scramble>The Aurum Method</h2>
-        </div>
-        <div class="services-steps">
-          <div class="step reveal-up" data-step="1">
-            <div class="step-num">01</div>
-            <h3>Discovery</h3>
-            <p>A complimentary 30-minute consultation to understand your situation, goals, and timeline.</p>
-          </div>
-          <div class="step-line" aria-hidden="true"></div>
-          <div class="step reveal-up" data-step="2">
-            <div class="step-num">02</div>
-            <h3>Strategy</h3>
-            <p>We craft a tailored legal roadmap with transparent pricing — no surprises, ever.</p>
-          </div>
-          <div class="step-line" aria-hidden="true"></div>
-          <div class="step reveal-up" data-step="3">
-            <div class="step-num">03</div>
-            <h3>Execution</h3>
-            <p>Expert handling with regular updates. You're never left wondering what's happening.</p>
-          </div>
-          <div class="step-line" aria-hidden="true"></div>
-          <div class="step reveal-up" data-step="4">
-            <div class="step-num">04</div>
-            <h3>Resolution</h3>
-            <p>Your matter resolved with precision. We follow up to ensure lasting peace of mind.</p>
-          </div>
-        </div>
+    <!-- Craft / ritual -->
+    <section class="ritual" id="ritual">
+      <div class="ritual-bg" aria-hidden="true">
+        <img src="assets/images/green-botanical.jpg" alt="" loading="lazy">
+      </div>
+      <div class="ritual-inner">
+        <p class="eyebrow reveal">The Radiant Ritual</p>
+        <h2 class="display display--light reveal">From root to radiance</h2>
+        <ol class="ritual-steps">
+          <li class="ritual-step reveal">
+            <span>01</span>
+            <h3>Source</h3>
+            <p>We begin with organic botanicals chosen for purity and potency.</p>
+          </li>
+          <li class="ritual-step reveal">
+            <span>02</span>
+            <h3>Blend</h3>
+            <p>Butters and oils are crafted into formulas that honor the skin barrier.</p>
+          </li>
+          <li class="ritual-step reveal">
+            <span>03</span>
+            <h3>Glow</h3>
+            <p>You feel the difference — softer skin, healthier hair, quiet luxury.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="container">
-        <span class="section-label reveal-up">Client Stories</span>
-        <h2 class="section-title split-reveal">
-          <span>Words That</span>
-          <span class="text-gold">Matter</span>
-        </h2>
-        <div class="testimonial-slider" id="testimonialSlider">
-          <div class="testimonial-track">
-            <blockquote class="testimonial active">
-              <p>"Aurum Legal transformed what could have been a stressful property settlement into a seamless experience. Their attention to detail is unmatched in Melbourne."</p>
-              <footer>
-                <strong>Sarah Mitchell</strong>
-                <span>Property Investor · South Yarra</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>"During the most difficult period of my life, the team at Aurum provided not just legal expertise but genuine compassion. I felt supported every step of the way."</p>
-              <footer>
-                <strong>James Chen</strong>
-                <span>Family Law Client · Brighton</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>"Our startup needed commercial contracts that could scale. Aurum delivered documents that impressed our investors and protected our IP. Exceptional work."</p>
-              <footer>
-                <strong>Emma Walsh</strong>
-                <span>CEO, TechFlow · CBD Melbourne</span>
-              </footer>
-            </blockquote>
-          </div>
-          <div class="testimonial-nav">
-            <button class="testimonial-btn prev" aria-label="Previous testimonial">←</button>
-            <div class="testimonial-dots" id="testimonialDots"></div>
-            <button class="testimonial-btn next" aria-label="Next testimonial">→</button>
-          </div>
+    <!-- Creator -->
+    <section class="creator" id="creator">
+      <div class="creator-visual">
+        <div class="creator-frame">
+          <img src="assets/images/creator-portrait.jpg" alt="Cha'Ron Jackson, creator of Radiant Rootz" loading="lazy">
         </div>
+      </div>
+      <div class="creator-content">
+        <p class="eyebrow reveal">The Creator</p>
+        <h2 class="display reveal">Cha'Ron Jackson</h2>
+        <p class="creator-text reveal">
+          Radiant Rootz was born from a belief that beauty should feel grounded — that nature already holds everything we need for luminous skin and hair.
+        </p>
+        <p class="creator-text reveal">
+          Every blend is a love letter to botanical wisdom: honest ingredients, intentional care, and results you can feel.
+        </p>
+        <a href="#contact" class="btn btn-outline btn-lg" data-magnetic>
+          <span>Connect with us</span>
+        </a>
       </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-      <div class="cta-bg">
-        <img src="assets/images/cta-banner.jpg" alt="Melbourne skyline at night" loading="lazy">
-        <div class="cta-overlay"></div>
+    <!-- Promise band -->
+    <section class="promise" aria-label="Our promise">
+      <div class="promise-item reveal">
+        <strong>Free Shipping</strong>
+        <span>On all orders $25 or more</span>
       </div>
-      <div class="container cta-content">
-        <h2 class="cta-title scramble-text" data-scramble>Let's Achieve the Best Outcome Together</h2>
-        <p class="cta-desc">Your first consultation is complimentary. No obligation, just clarity.</p>
-        <div class="cta-buttons">
-          <button class="btn btn-gold btn-lg" data-modal="consultation" data-magnetic>
-            <span>Book a Consultation</span>
-            <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
-          </button>
-          <a href="#contact" class="btn btn-outline-light btn-lg" data-magnetic>Contact Us</a>
-        </div>
+      <div class="promise-item reveal">
+        <strong>All Natural</strong>
+        <span>Organic botanicals, no harsh fillers</span>
+      </div>
+      <div class="promise-item reveal">
+        <strong>Rooted Care</strong>
+        <span>Formulas for skin &amp; hair harmony</span>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-info">
-          <span class="section-label reveal-up">Get In Touch</span>
-          <h2 class="section-title split-reveal">
-            <span>Start Your</span>
-            <span class="text-gold">Journey</span>
-          </h2>
-          <div class="contact-details reveal-up">
-            <div class="contact-item">
-              <span class="contact-label">Address</span>
-              <p>Level 10, 123 Collins Street<br>Melbourne VIC 3000</p>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Phone</span>
-              <p><a href="tel:+61390001234">+61 3 9000 1234</a></p>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Email</span>
-              <p><a href="mailto:hello@aurumlegal.com.au">hello@aurumlegal.com.au</a></p>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Hours</span>
-              <p>Mon – Fri: 8:30am – 6:00pm<br>Sat: By appointment</p>
-            </div>
-          </div>
-          <div class="contact-social reveal-up">
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Instagram">ig</a>
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <p class="eyebrow reveal">Contact</p>
+          <h2 class="display reveal">Let's grow something beautiful</h2>
+          <p class="contact-lead reveal">
+            For general information or questions about your order, reach out anytime.
+          </p>
+          <div class="contact-meta reveal">
+            <a href="mailto:info@radiantrootz.net">info@radiantrootz.net</a>
+            <a href="tel:+11234567890">123-456-7890</a>
           </div>
         </div>
-        <form class="contact-form reveal-up" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
-            </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
           </div>
-          <div class="form-group">
+          <div class="field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
+            <input id="email" name="email" type="email" required autocomplete="email">
           </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label for="practiceArea">Practice Area</label>
-            <select id="practiceArea" name="practiceArea" required>
-              <option value="">Select an area...</option>
-              <option value="conveyancing">Conveyancing</option>
-              <option value="family">Family Law</option>
-              <option value="wills">Wills & Estates</option>
-              <option value="commercial">Commercial Law</option>
-              <option value="litigation">Litigation & Disputes</option>
-              <option value="employment">Employment Law</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">How can we help?</label>
+          <div class="field">
+            <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-gold btn-full" data-magnetic>
-            <span>Send Enquiry</span>
-            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+          <button type="submit" class="btn btn-solid btn-lg btn-full" data-magnetic>
+            <span>Send Message</span>
           </button>
-          <p class="form-note">We respond within 24 business hours. Your information is kept strictly confidential.</p>
         </form>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="finale">
+      <div class="finale-media" aria-hidden="true">
+        <img src="assets/images/spa-stones.jpg" alt="" loading="lazy">
+        <div class="finale-veil"></div>
+      </div>
+      <div class="finale-content">
+        <h2 class="display display--light scramble" data-scramble>Nature, bottled for you</h2>
+        <p>Begin your Radiant Rootz ritual today.</p>
+        <a href="#collections" class="btn btn-solid btn-lg" data-magnetic>
+          <span>Shop the Collection</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="nav-logo">
-          <svg class="logo-mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1"/><path d="M12 28V12h4l4 10 4-10h4v16h-3.5V18l-4.5 10h-1l-4.5-10v10H12z" fill="currentColor"/></svg>
-          <span class="logo-text">Aurum<span class="logo-accent">Legal</span></span>
-        </a>
-        <p>Premium legal solutions for discerning clients across Melbourne and Australia.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Our Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="#practice">Conveyancing</a></li>
-          <li><a href="#practice">Family Law</a></li>
-          <li><a href="#practice">Wills & Estates</a></li>
-          <li><a href="#practice">Commercial Law</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li>Level 10, 123 Collins St</li>
-          <li>Melbourne VIC 3000</li>
-          <li><a href="tel:+61390001234">+61 3 9000 1234</a></li>
-        </ul>
-      </div>
+    <div class="footer-top">
+      <a href="#home" class="logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Radiant<span>Rootz</span></span>
+      </a>
+      <ul class="footer-nav">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#rootz">Ingredients</a></li>
+        <li><a href="#creator">The Creator</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#collections">Book Online</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom container">
-      <p>&copy; 2026 Aurum Legal Solutions. All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Radiant Rootz LLC. All rights reserved.</p>
+      <p>Natural &amp; Organic Beauty Care</p>
     </div>
   </footer>
 
-  <!-- Consultation Modal -->
-  <div class="modal" id="consultationModal" aria-hidden="true" role="dialog">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-content">
-      <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
-      <h3>Book Your Consultation</h3>
-      <p class="modal-subtitle">Complimentary 30-minute session · No obligation</p>
-      <form id="consultationForm" novalidate>
-        <div class="form-group">
-          <label for="consultName">Full Name</label>
-          <input type="text" id="consultName" required>
-        </div>
-        <div class="form-group">
-          <label for="consultEmail">Email</label>
-          <input type="email" id="consultEmail" required>
-        </div>
-        <div class="form-group">
-          <label for="consultPhone">Phone</label>
-          <input type="tel" id="consultPhone" required>
-        </div>
-        <div class="form-group">
-          <label for="consultDate">Preferred Date</label>
-          <input type="date" id="consultDate" required>
-        </div>
-        <div class="form-group">
-          <label for="consultMatter">Matter Type</label>
-          <select id="consultMatter" required>
-            <option value="">Select...</option>
-            <option value="conveyancing">Conveyancing</option>
-            <option value="family">Family Law</option>
-            <option value="wills">Wills & Estates</option>
-            <option value="commercial">Commercial Law</option>
-            <option value="litigation">Litigation</option>
-            <option value="employment">Employment Law</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-gold btn-full">Confirm Booking</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Success Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
