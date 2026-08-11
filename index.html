@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Radiant Rootz — natural & organic beauty care. Botanical skin and hair rituals crafted with shea butter, cocoa butter, and black seed oil.">
+  <meta name="description" content="Radiant Rootz — natural & organic beauty care. Shop bestsellers, winter sale sets, and botanical skin & hair rituals.">
   <title>Radiant Rootz | Botanical Beauty Atelier</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/brand-emblem.png">
@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader-stage">
       <div class="preloader-emblem">
@@ -37,6 +36,18 @@
   <canvas class="spore-field" id="sporeField" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Slim promo strip -->
+  <div class="promo-strip" id="promoStrip">
+    <div class="promo-strip-track" aria-hidden="true">
+      <span>Winter Glow Sale — Up to 30% Off</span><i></i>
+      <span>Free Shipping on Orders $25+</span><i></i>
+      <span>Bestseller: Whipped Shea Cream</span><i></i>
+      <span>Winter Glow Sale — Up to 30% Off</span><i></i>
+      <span>Free Shipping on Orders $25+</span><i></i>
+      <span>Bestseller: Whipped Shea Cream</span><i></i>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <nav class="nav">
       <a href="#top" class="brand" data-magnetic>
@@ -45,15 +56,16 @@
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#manifesto">Philosophy</a></li>
-        <li><a href="#atelier">Atelier</a></li>
+        <li><a href="#sale">Sale</a></li>
+        <li><a href="#bestseller">Bestseller</a></li>
+        <li><a href="#shop">Shop</a></li>
         <li><a href="#rootz">Ingredients</a></li>
         <li><a href="#creator">Creator</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="#atelier" class="btn btn-ink" data-magnetic><span>Enter Shop</span></a>
+        <a href="#shop" class="btn btn-ink" data-magnetic><span>Shop Now</span></a>
         <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span>
         </button>
@@ -81,103 +93,182 @@
             All-natural &amp; organic skin and hair care — luminous botanicals, rooted in ritual.
           </p>
           <div class="hero-actions" data-hero-fade>
-            <a href="#atelier" class="btn btn-light" data-magnetic data-cursor="Shop">
-              <span>Explore the Atelier</span>
+            <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop">
+              <span>Shop the Collection</span>
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </a>
-            <a href="#rootz" class="btn btn-ghost-light" data-magnetic data-cursor="Read">
-              <span>What's in the Rootz</span>
+            <a href="#bestseller" class="btn btn-ghost-light" data-magnetic data-cursor="View">
+              <span>Meet the Bestseller</span>
             </a>
           </div>
         </div>
-
-        <div class="hero-meta" data-hero-fade aria-hidden="true">
-          <span>Est. Botanical</span>
-          <span class="meta-line"></span>
-          <span>Natural · Organic · Radiant</span>
-        </div>
       </div>
     </section>
 
-    <!-- MANIFESTO — giant scrolling type -->
-    <section class="manifesto" id="manifesto">
-      <div class="manifesto-pin">
-        <p class="eyebrow">Philosophy</p>
-        <h2 class="manifesto-title">
-          <span class="m-line" data-speed="0.15">Treat yourself to the</span>
-          <span class="m-line m-line--accent" data-speed="-0.1">luxury of nature</span>
-          <span class="m-line" data-speed="0.2">— beauty that breathes.</span>
+    <!-- SALE BANNER -->
+    <section class="sale-banner" id="sale">
+      <div class="sale-media" aria-hidden="true">
+        <img src="assets/images/sale-banner-bg.png" alt="" loading="lazy">
+        <div class="sale-veil"></div>
+      </div>
+      <div class="sale-content">
+        <p class="sale-eyebrow">Limited Season Event</p>
+        <h2 class="sale-title">
+          <span>Winter Glow</span>
+          <em>Sale</em>
         </h2>
-        <p class="manifesto-body">
-          From restorative butters to oils that symbolize balance and healing, every Radiant Rootz formula is an invitation to slow down and glow.
-        </p>
+        <p class="sale-offer">Up to <strong>30% off</strong> bestsellers &amp; seasonal sets</p>
+        <div class="sale-meta">
+          <span>Ends Sunday</span>
+          <span class="sale-dot"></span>
+          <span>Free shipping $25+</span>
+          <span class="sale-dot"></span>
+          <span>While supplies last</span>
+        </div>
+        <div class="sale-actions">
+          <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Sale</span></a>
+          <a href="#bundle" class="btn btn-ghost-light" data-magnetic data-cursor="Bundle"><span>View Winter Set</span></a>
+        </div>
       </div>
-      <div class="manifesto-float" aria-hidden="true">
-        <img src="assets/images/brand-emblem.png" alt="" class="float-emblem">
+      <div class="sale-countdown" id="saleCountdown" aria-label="Sale countdown">
+        <div><strong data-days>02</strong><span>Days</span></div>
+        <div><strong data-hours>14</strong><span>Hrs</span></div>
+        <div><strong data-mins>36</strong><span>Min</span></div>
+        <div><strong data-secs>18</strong><span>Sec</span></div>
       </div>
     </section>
 
-    <!-- ATELIER — horizontal spectacle -->
-    <section class="atelier" id="atelier">
-      <div class="atelier-head">
-        <p class="eyebrow">The Atelier</p>
-        <h2 class="display">Collections worth lingering over</h2>
+    <!-- BESTSELLER -->
+    <section class="bestseller" id="bestseller">
+      <div class="bestseller-shell">
+        <div class="bestseller-visual">
+          <div class="bestseller-glow" aria-hidden="true"></div>
+          <img src="assets/images/product-bestseller.png" alt="Radiant Whipped Shea Cream bestseller jar" class="bestseller-img" loading="lazy">
+          <div class="bestseller-badge">
+            <span>#1</span>
+            Best Seller
+          </div>
+        </div>
+
+        <div class="bestseller-copy">
+          <p class="eyebrow">Customer Favorite</p>
+          <h2 class="display">Radiant Whipped<br><em>Shea Cream</em></h2>
+          <div class="price-row">
+            <span class="price-now">$42</span>
+            <span class="price-was">$56</span>
+            <span class="price-save">Save 25%</span>
+          </div>
+          <p class="bestseller-text">
+            Our most-loved ritual — airy whipped shea butter that melts into skin, sealing moisture with a soft botanical glow. Pure enough for every day. Luxurious enough to feel like a ceremony.
+          </p>
+          <ul class="bestseller-points">
+            <li>Deep hydration with organic shea</li>
+            <li>Silky, non-greasy finish</li>
+            <li>Skin &amp; body — morning to night</li>
+          </ul>
+          <div class="bestseller-actions">
+            <button class="btn btn-ink btn-lg" data-magnetic data-cursor="Add" data-add-cart="Whipped Shea Cream">
+              <span>Add to Bag — $42</span>
+            </button>
+            <a href="#rootz" class="text-link" data-magnetic>See ingredients <i>→</i></a>
+          </div>
+          <p class="bestseller-social">Loved by 2,400+ radiant routines</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop" id="shop">
+      <div class="shop-head">
+        <div>
+          <p class="eyebrow">The Collection</p>
+          <h2 class="display">Shop botanical beauty</h2>
+        </div>
+        <p class="shop-lead">Handcrafted formulas for skin and hair — rooted in nature, finished like luxury.</p>
       </div>
 
-      <div class="atelier-pin">
-        <div class="atelier-track" id="atelierTrack">
-          <article class="atelier-panel" data-cursor="Open">
-            <div class="panel-media">
-              <img src="assets/images/collection-signature.png" alt="Beauty Boost signature collection" loading="lazy">
-              <div class="panel-shade"></div>
+      <div class="product-grid">
+        <article class="product" data-cursor="Add">
+          <div class="product-media">
+            <span class="product-tag product-tag--hot">Bestseller</span>
+            <img src="assets/images/product-bestseller.png" alt="Whipped Shea Cream" loading="lazy">
+            <button class="product-quick" data-add-cart="Whipped Shea Cream">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3>Whipped Shea Cream</h3>
+            <p>Signature moisture ritual</p>
+            <div class="product-price">
+              <span class="price-now">$42</span>
+              <span class="price-was">$56</span>
             </div>
-            <div class="panel-copy">
-              <span class="panel-index">01</span>
-              <span class="panel-tag">Signature</span>
-              <h3>Beauty Boost</h3>
-              <p>Daily rituals powered by nature — clean, luminous formulas that restore glow from root to tip.</p>
-              <a href="#contact" class="panel-link">Shop skincare <i>→</i></a>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="atelier-panel" data-cursor="Open">
-            <div class="panel-media">
-              <img src="assets/images/winter-editorial.png" alt="Winter skin care collection" loading="lazy">
-              <div class="panel-shade"></div>
+        <article class="product" data-cursor="Add">
+          <div class="product-media">
+            <span class="product-tag">New</span>
+            <img src="assets/images/product-black-seed.png" alt="Black Seed Facial Oil" loading="lazy">
+            <button class="product-quick" data-add-cart="Black Seed Facial Oil">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3>Black Seed Facial Oil</h3>
+            <p>Balance &amp; renewal elixir</p>
+            <div class="product-price">
+              <span class="price-now">$38</span>
             </div>
-            <div class="panel-copy">
-              <span class="panel-index">02</span>
-              <span class="panel-tag">Seasonal</span>
-              <h3>Winter Skin Care</h3>
-              <p>Cinnamon, spice, and everything nice — richer botanicals for colder air and softer skin.</p>
-              <a href="#contact" class="panel-link">Stock up now <i>→</i></a>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="atelier-panel" data-cursor="Open">
-            <div class="panel-media">
-              <img src="assets/images/hair-ritual.png" alt="Hair care rituals" loading="lazy">
-              <div class="panel-shade"></div>
+        <article class="product" data-cursor="Add">
+          <div class="product-media">
+            <span class="product-tag product-tag--sale">Sale</span>
+            <img src="assets/images/product-cocoa-cream.png" alt="Cocoa Butter Body Cream" loading="lazy">
+            <button class="product-quick" data-add-cart="Cocoa Butter Body Cream">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3>Cocoa Butter Body Cream</h3>
+            <p>Rich comforting nourishment</p>
+            <div class="product-price">
+              <span class="price-now">$36</span>
+              <span class="price-was">$48</span>
             </div>
-            <div class="panel-copy">
-              <span class="panel-index">03</span>
-              <span class="panel-tag">Hair Rituals</span>
-              <h3>Skin &amp; Hair Harmony</h3>
-              <p>Plant-powered care that hydrates, strengthens, and leaves every strand feeling alive.</p>
-              <a href="#contact" class="panel-link">Discover hair care <i>→</i></a>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="atelier-panel atelier-panel--cta" data-cursor="Join">
-            <div class="panel-cta">
-              <img src="assets/images/brand-emblem.png" alt="" class="cta-emblem">
-              <h3>Free shipping<br><em>on orders $25+</em></h3>
-              <p>Natural &amp; organic beauty, delivered with care.</p>
-              <a href="#contact" class="btn btn-light" data-magnetic><span>Begin your ritual</span></a>
+        <article class="product" data-cursor="Add">
+          <div class="product-media">
+            <img src="assets/images/product-hair-oil.png" alt="Botanical Hair Oil" loading="lazy">
+            <button class="product-quick" data-add-cart="Botanical Hair Oil">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3>Botanical Hair Oil</h3>
+            <p>Root-to-tip radiance</p>
+            <div class="product-price">
+              <span class="price-now">$34</span>
             </div>
-          </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WINTER BUNDLE BANNER -->
+    <section class="bundle" id="bundle">
+      <div class="bundle-media">
+        <img src="assets/images/product-winter-set.png" alt="Winter Glow Set product lineup" loading="lazy">
+        <div class="bundle-veil"></div>
+      </div>
+      <div class="bundle-copy">
+        <p class="eyebrow light">Seasonal Bundle</p>
+        <h2 class="display light">Winter Glow <em>Set</em></h2>
+        <p>Two nourishing rituals + one restorative oil — curated for colder air and softer skin.</p>
+        <div class="price-row price-row--light">
+          <span class="price-now">$68</span>
+          <span class="price-was">$95</span>
+          <span class="price-save">Save $27</span>
         </div>
-        <div class="atelier-progress" aria-hidden="true"><i id="atelierProgress"></i></div>
+        <button class="btn btn-light btn-lg" data-magnetic data-cursor="Add" data-add-cart="Winter Glow Set">
+          <span>Add Bundle to Bag</span>
+        </button>
       </div>
     </section>
 
@@ -232,35 +323,6 @@
       </div>
     </section>
 
-    <!-- RITUAL -->
-    <section class="ritual" id="ritual">
-      <div class="ritual-bg">
-        <img src="assets/images/green-botanical.jpg" alt="" loading="lazy">
-        <div class="ritual-veil"></div>
-      </div>
-      <div class="ritual-content">
-        <p class="eyebrow light">The Radiant Ritual</p>
-        <h2 class="display light">From root <em>to radiance</em></h2>
-        <ol class="ritual-grid">
-          <li>
-            <span class="r-num">01</span>
-            <h3>Source</h3>
-            <p>Organic botanicals chosen for purity, potency, and quiet power.</p>
-          </li>
-          <li>
-            <span class="r-num">02</span>
-            <h3>Blend</h3>
-            <p>Butters and oils crafted into formulas that honor the skin barrier.</p>
-          </li>
-          <li>
-            <span class="r-num">03</span>
-            <h3>Glow</h3>
-            <p>Softer skin, healthier hair — beauty that feels lived-in and alive.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <!-- CREATOR -->
     <section class="creator" id="creator">
       <div class="creator-visual">
@@ -282,17 +344,17 @@
       </div>
     </section>
 
-    <!-- PROMISE RIBBON -->
+    <!-- PROMISE -->
     <section class="ribbon" aria-label="Brand promises">
       <div class="ribbon-track">
         <div class="ribbon-row">
           <span>Free Shipping $25+</span><i></i>
           <span>All Natural &amp; Organic</span><i></i>
-          <span>Skin &amp; Hair Care</span><i></i>
+          <span>Winter Sale Live</span><i></i>
           <span>Botanical Rituals</span><i></i>
           <span>Free Shipping $25+</span><i></i>
           <span>All Natural &amp; Organic</span><i></i>
-          <span>Skin &amp; Hair Care</span><i></i>
+          <span>Winter Sale Live</span><i></i>
           <span>Botanical Rituals</span><i></i>
         </div>
       </div>
@@ -337,8 +399,8 @@
       <div class="finale-copy">
         <img src="assets/images/brand-emblem.png" alt="" class="finale-emblem">
         <h2 class="display light scramble" data-scramble>Nature, bottled for you</h2>
-        <p>Begin your Radiant Rootz ritual today.</p>
-        <a href="#atelier" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Collection</span></a>
+        <p>Your winter glow ritual starts here.</p>
+        <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Sale</span></a>
       </div>
     </section>
   </main>
@@ -353,18 +415,18 @@
         <p>Natural &amp; organic beauty care. Crafted with botanical intention.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4>Shop</h4>
         <ul>
-          <li><a href="#atelier">Atelier</a></li>
-          <li><a href="#rootz">Ingredients</a></li>
-          <li><a href="#creator">The Creator</a></li>
+          <li><a href="#bestseller">Bestseller</a></li>
+          <li><a href="#shop">All Products</a></li>
+          <li><a href="#sale">Winter Sale</a></li>
         </ul>
       </div>
       <div>
         <h4>Connect</h4>
         <ul>
+          <li><a href="#creator">The Creator</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#atelier">Shop</a></li>
           <li><a href="mailto:info@radiantrootz.net">Email</a></li>
         </ul>
       </div>

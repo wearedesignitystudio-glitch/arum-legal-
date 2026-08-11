@@ -19,9 +19,11 @@
   --font-display: "Bodoni Moda", "Times New Roman", serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --promo: 36px;
   --header: 84px;
   --pad: clamp(1.25rem, 4vw, 3.75rem);
   --max: min(1240px, calc(100vw - 2 * var(--pad)));
+  --sale: #8b3a2a;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -194,10 +196,48 @@ ul, ol { list-style: none; }
   50% { transform: scale(1); }
 }
 
+/* ---------- Promo strip ---------- */
+.promo-strip {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  height: var(--promo);
+  overflow: hidden;
+  background: linear-gradient(90deg, #12281d, #1d3d2c 40%, #3a2a18 100%);
+  color: var(--foam);
+  display: flex;
+  align-items: center;
+}
+
+.promo-strip-track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: max-content;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: promoScroll 28s linear infinite;
+}
+
+.promo-strip-track i {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--brass-soft);
+  flex-shrink: 0;
+}
+
+@keyframes promoScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 /* ---------- Header / Brand ---------- */
 .header {
   position: fixed;
-  inset: 0 0 auto;
+  top: var(--promo);
+  left: 0; right: 0;
   z-index: 1000;
   height: var(--header);
   transition: background .45s, border-color .45s, backdrop-filter .45s;
@@ -399,7 +439,7 @@ ul, ol { list-style: none; }
   z-index: 2;
   width: var(--max);
   margin: 0 auto;
-  padding: calc(var(--header) + 3rem) 0 5.5rem;
+  padding: calc(var(--promo) + var(--header) + 3rem) 0 5.5rem;
 }
 
 .hero-title {
@@ -1203,4 +1243,496 @@ ul, ol { list-style: none; }
     transition-duration: 0.01ms !important;
   }
   .ribbon-row, .float-emblem { animation: none; }
+}
+
+/* =========================================================
+   COMMERCE SPECTACLE — Sale / Bestseller / Shop / Bundle
+   ========================================================= */
+
+.btn-lg { padding: 1.1rem 1.7rem; font-size: 0.98rem; }
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 500;
+  color: var(--moss);
+}
+
+.text-link i { transition: transform .35s var(--ease); }
+.text-link:hover i { transform: translateX(5px); }
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.1rem 0 1.25rem;
+}
+
+.price-now {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.price-was {
+  font-size: 1.15rem;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.price-save {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sale);
+  border: 1px solid rgba(139, 58, 42, 0.35);
+  padding: 0.35rem 0.55rem;
+  border-radius: 2px;
+  background: rgba(139, 58, 42, 0.06);
+}
+
+.price-row--light .price-now { color: var(--foam); }
+.price-row--light .price-was { color: rgba(242,247,244,0.55); }
+.price-row--light .price-save {
+  color: var(--brass-soft);
+  border-color: rgba(210,181,122,0.45);
+  background: rgba(176,138,74,0.12);
+}
+
+/* Sale banner */
+.sale-banner {
+  position: relative;
+  min-height: min(78vh, 720px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: var(--foam);
+}
+
+.sale-media { position: absolute; inset: 0; }
+
+.sale-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+}
+
+.sale-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(10, 22, 17, 0.82) 0%, rgba(10, 22, 17, 0.45) 48%, rgba(58, 42, 24, 0.55) 100%),
+    radial-gradient(circle at 70% 40%, rgba(176, 138, 74, 0.22), transparent 45%);
+}
+
+.sale-content {
+  position: relative;
+  z-index: 2;
+  width: var(--max);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+}
+
+.sale-eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brass-soft);
+  margin-bottom: 1rem;
+}
+
+.sale-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.4rem, 9vw, 7.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  margin-bottom: 1rem;
+}
+
+.sale-title span { display: block; }
+.sale-title em {
+  display: block;
+  font-style: italic;
+  color: var(--brass-soft);
+}
+
+.sale-offer {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: rgba(242, 247, 244, 0.86);
+  margin-bottom: 1.25rem;
+}
+
+.sale-offer strong { color: var(--brass-soft); font-weight: 600; }
+
+.sale-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 247, 244, 0.65);
+  margin-bottom: 2rem;
+}
+
+.sale-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--brass-soft);
+}
+
+.sale-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.sale-countdown {
+  position: absolute;
+  right: var(--pad);
+  bottom: 2rem;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(58px, 1fr));
+  gap: 0.55rem;
+  padding: 0.85rem;
+  background: rgba(10, 22, 17, 0.55);
+  border: 1px solid rgba(242, 247, 244, 0.18);
+  backdrop-filter: blur(12px);
+  border-radius: 2px;
+}
+
+.sale-countdown div {
+  text-align: center;
+  min-width: 58px;
+}
+
+.sale-countdown strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--brass-soft);
+  line-height: 1.1;
+}
+
+.sale-countdown span {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 247, 244, 0.6);
+}
+
+/* Bestseller */
+.bestseller {
+  padding: clamp(4.5rem, 10vw, 8rem) 0;
+}
+
+.bestseller-shell {
+  width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.bestseller-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+.bestseller-glow {
+  position: absolute;
+  inset: 8% 12%;
+  background: radial-gradient(circle, rgba(176, 138, 74, 0.35), transparent 70%);
+  filter: blur(30px);
+  z-index: 0;
+}
+
+.bestseller-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 40px 100px rgba(13, 26, 20, 0.22);
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(242, 247, 244, 0.92);
+  border: 1px solid rgba(176, 138, 74, 0.35);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+.bestseller-badge span {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.bestseller-text {
+  color: var(--muted);
+  font-size: 1.06rem;
+  max-width: 34rem;
+  margin-bottom: 1.25rem;
+}
+
+.bestseller-points {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.75rem;
+}
+
+.bestseller-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.bestseller-points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.55rem;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--brass);
+}
+
+.bestseller-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bestseller-social {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Shop grid */
+.shop {
+  padding: 0 0 clamp(4.5rem, 10vw, 7rem);
+}
+
+.shop-head {
+  width: var(--max);
+  margin: 0 auto 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.shop-lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 28rem;
+}
+
+.product-grid {
+  width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.product-media {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2px;
+  background: linear-gradient(160deg, #e7f0ea, #d5e4da);
+  border: 1px solid var(--line);
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease);
+}
+
+.product:hover .product-media img { transform: scale(1.07); }
+
+.product-tag {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.55rem;
+  background: rgba(242, 247, 244, 0.92);
+  color: var(--moss);
+  border: 1px solid rgba(35, 77, 56, 0.15);
+  border-radius: 2px;
+}
+
+.product-tag--hot {
+  background: var(--forest);
+  color: var(--foam);
+  border-color: transparent;
+}
+
+.product-tag--sale {
+  background: rgba(139, 58, 42, 0.92);
+  color: var(--foam);
+  border-color: transparent;
+}
+
+.product-quick {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  z-index: 2;
+  padding: 0.85rem 1rem;
+  background: rgba(13, 26, 20, 0.9);
+  color: var(--foam);
+  border-radius: 2px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .35s var(--ease), transform .35s var(--ease);
+}
+
+.product:hover .product-quick,
+.product:focus-within .product-quick {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.product-info p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.55rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.product-price .price-now {
+  font-size: 1.25rem;
+}
+
+.product-price .price-was {
+  font-size: 0.95rem;
+}
+
+/* Bundle banner */
+.bundle {
+  position: relative;
+  min-height: min(70vh, 620px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: var(--foam);
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+.bundle-media { position: absolute; inset: 0; }
+
+.bundle-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+}
+
+.bundle-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 22, 17, 0.88) 0%, rgba(10, 22, 17, 0.55) 45%, rgba(10, 22, 17, 0.3) 100%);
+}
+
+.bundle-copy {
+  position: relative;
+  z-index: 2;
+  width: var(--max);
+  margin: 0 auto;
+  max-width: 34rem;
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+}
+
+.bundle-copy p {
+  color: rgba(242, 247, 244, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1100px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 980px) {
+  .bestseller-shell,
+  .shop-head {
+    grid-template-columns: 1fr;
+  }
+
+  .sale-countdown {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: var(--max);
+    margin: 0 auto 2rem;
+  }
+
+  .sale-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .product-quick { opacity: 1; transform: none; }
+  .sale-actions .btn,
+  .bestseller-actions .btn { width: 100%; }
 }

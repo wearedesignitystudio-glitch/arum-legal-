@@ -35,14 +35,14 @@
     initSpores();
     initSmooth();
     initHero();
-    initManifesto();
-    initAtelier();
+    initSale();
+    initCommerceMotion();
     initRootz();
-    initRitual();
     initCreator();
     initScramble();
     initMagnetic();
     initForms();
+    initCart();
     initHeaderTheme();
   }
 
@@ -242,72 +242,112 @@
     }
   }
 
-  /* ---------- Manifesto ---------- */
-  function initManifesto() {
-    if (typeof ScrollTrigger === "undefined") return;
-
-    document.querySelectorAll(".m-line").forEach((line) => {
-      const speed = Number(line.dataset.speed || 0.1);
-      gsap.to(line, {
-        xPercent: speed * 100,
+  /* ---------- Sale banner ---------- */
+  function initSale() {
+    const img = document.querySelector(".sale-media img");
+    if (img && typeof ScrollTrigger !== "undefined" && !reduceMotion) {
+      gsap.to(img, {
+        scale: 1.18,
         ease: "none",
         scrollTrigger: {
-          trigger: ".manifesto",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
-
-    const emblem = document.querySelector(".float-emblem");
-    if (emblem && !reduceMotion) {
-      gsap.to(emblem, {
-        yPercent: -30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".manifesto",
+          trigger: ".sale-banner",
           start: "top bottom",
           end: "bottom top",
           scrub: true,
         },
       });
     }
+
+    const root = document.getElementById("saleCountdown");
+    if (!root) return;
+    const end = Date.now() + ((2 * 24 + 14) * 60 * 60 + 36 * 60 + 18) * 1000;
+    const days = root.querySelector("[data-days]");
+    const hours = root.querySelector("[data-hours]");
+    const mins = root.querySelector("[data-mins]");
+    const secs = root.querySelector("[data-secs]");
+    const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
+
+    const tick = () => {
+      let left = Math.max(0, end - Date.now());
+      const d = Math.floor(left / 86400000);
+      left -= d * 86400000;
+      const h = Math.floor(left / 3600000);
+      left -= h * 3600000;
+      const m = Math.floor(left / 60000);
+      left -= m * 60000;
+      const s = Math.floor(left / 1000);
+      if (days) days.textContent = pad(d);
+      if (hours) hours.textContent = pad(h);
+      if (mins) mins.textContent = pad(m);
+      if (secs) secs.textContent = pad(s);
+    };
+    tick();
+    setInterval(tick, 1000);
   }
 
-  /* ---------- Atelier horizontal ---------- */
-  function initAtelier() {
-    const track = document.getElementById("atelierTrack");
-    const pin = document.querySelector(".atelier-pin");
-    const progress = document.getElementById("atelierProgress");
-    if (!track || !pin || typeof ScrollTrigger === "undefined") return;
+  /* ---------- Commerce motion ---------- */
+  function initCommerceMotion() {
+    if (typeof ScrollTrigger === "undefined") return;
 
-    const getScroll = () => Math.max(0, track.scrollWidth - window.innerWidth + 48);
+    const bundleImg = document.querySelector(".bundle-media img");
+    const finaleImg = document.querySelector(".finale-media img");
+    const bestImg = document.querySelector(".bestseller-img");
 
-    if (reduceMotion || window.matchMedia("(max-width: 800px)").matches) {
-      // Fallback: native horizontal overflow
-      pin.style.overflowX = "auto";
-      return;
+    if (bundleImg && !reduceMotion) {
+      gsap.to(bundleImg, {
+        scale: 1.14,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".bundle",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     }
 
-    const tween = gsap.to(track, {
-      x: () => -getScroll(),
-      ease: "none",
-      scrollTrigger: {
-        trigger: pin,
-        start: "top top",
-        end: () => `+=${getScroll()}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          if (progress) progress.style.width = `${self.progress * 100}%`;
+    if (finaleImg && !reduceMotion) {
+      gsap.to(finaleImg, {
+        scale: 1.18,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".finale",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
         },
-      },
+      });
+    }
+
+    if (bestImg && !reduceMotion) {
+      gsap.from(bestImg, {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".bestseller", start: "top 75%", once: true },
+      });
+    }
+
+    gsap.utils.toArray(".product").forEach((el, i) => {
+      gsap.from(el, {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        delay: (i % 4) * 0.08,
+        ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 90%", once: true },
+      });
     });
 
-    window.addEventListener("resize", () => {
-      tween.scrollTrigger?.refresh();
+    gsap.utils.toArray(".bestseller-copy, .shop-head, .sale-content, .bundle-copy, .rootz-intro, .creator-copy, .contact-shell").forEach((el) => {
+      gsap.from(el, {
+        y: 36,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+      });
     });
   }
 
@@ -338,62 +378,6 @@
         });
       });
     }
-  }
-
-  /* ---------- Ritual / Finale ---------- */
-  function initRitual() {
-    if (typeof ScrollTrigger === "undefined" || reduceMotion) return;
-
-    const ritualImg = document.querySelector(".ritual-bg img");
-    const finaleImg = document.querySelector(".finale-media img");
-
-    if (ritualImg) {
-      gsap.to(ritualImg, {
-        scale: 1.22,
-        yPercent: 8,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".ritual",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
-
-    if (finaleImg) {
-      gsap.to(finaleImg, {
-        scale: 1.18,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".finale",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
-
-    gsap.utils.toArray(".ritual-grid li").forEach((li, i) => {
-      gsap.from(li, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: i * 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: li, start: "top 88%", once: true },
-      });
-    });
-
-    gsap.utils.toArray(".rootz-intro, .atelier-head, .creator-copy, .contact-shell, .manifesto-body").forEach((el) => {
-      gsap.from(el, {
-        y: 40,
-        opacity: 0,
-        duration: 1.05,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%", once: true },
-      });
-    });
   }
 
   /* ---------- Creator ---------- */
@@ -482,7 +466,6 @@
   /* ---------- Forms ---------- */
   function initForms() {
     const form = document.getElementById("contactForm");
-    const toast = document.getElementById("toast");
 
     form?.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -491,10 +474,26 @@
         return;
       }
       form.reset();
-      if (!toast) return;
-      toast.textContent = "Message received — we'll grow back to you soon.";
-      toast.classList.add("is-show");
-      setTimeout(() => toast.classList.remove("is-show"), 3200);
+      showToast("Message received — we'll grow back to you soon.");
     });
+  }
+
+  /* ---------- Cart toast ---------- */
+  function initCart() {
+    document.querySelectorAll("[data-add-cart]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const name = btn.getAttribute("data-add-cart") || "Item";
+        showToast(`${name} added to your bag`);
+      });
+    });
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById("toast");
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("is-show");
+    setTimeout(() => toast.classList.remove("is-show"), 2800);
   }
 })();
