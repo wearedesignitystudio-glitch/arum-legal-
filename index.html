@@ -3,303 +3,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Radiant Rootz — natural & organic beauty care for skin and hair. Handcrafted with shea butter, cocoa butter, black seed oil, and restorative plant botanicals.">
-  <title>Radiant Rootz | Natural & Organic Beauty Care</title>
+  <meta name="description" content="Radiant Rootz — natural & organic beauty care. Botanical skin and hair rituals crafted with shea butter, cocoa butter, and black seed oil.">
+  <title>Radiant Rootz | Botanical Beauty Atelier</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/brand-emblem.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500;1,6..96,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader-inner">
-      <svg class="preloader-mark" viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <circle class="preloader-orbit" cx="40" cy="40" r="34" />
-        <path class="preloader-root" d="M40 12c0 14-10 20-10 34 0 10 4.5 18 10 22 5.5-4 10-12 10-22 0-14-10-20-10-34z" />
-      </svg>
-      <p class="preloader-word">Radiant Rootz</p>
-      <div class="preloader-bar"><span></span></div>
+    <div class="preloader-stage">
+      <div class="preloader-emblem">
+        <img src="assets/images/brand-emblem.png" alt="" width="120" height="120">
+      </div>
+      <div class="preloader-type">
+        <span class="preloader-line">Radiant</span>
+        <span class="preloader-line italic">Rootz</span>
+      </div>
+      <div class="preloader-progress"><i id="preloaderBar"></i></div>
+      <p class="preloader-caption">Botanical Beauty Atelier</p>
     </div>
   </div>
 
   <div class="cursor" id="cursor" aria-hidden="true">
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
+    <div class="cursor-label">View</div>
   </div>
 
+  <canvas class="spore-field" id="sporeField" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="header" id="header">
     <nav class="nav">
-      <a href="#home" class="logo" data-magnetic>
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span class="logo-text">Radiant<span>Rootz</span></span>
+      <a href="#top" class="brand" data-magnetic>
+        <img class="brand-mark" src="assets/images/brand-emblem.png" alt="" width="36" height="36">
+        <span class="brand-word">Radiant <em>Rootz</em></span>
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#collections">Collections</a></li>
+        <li><a href="#manifesto">Philosophy</a></li>
+        <li><a href="#atelier">Atelier</a></li>
         <li><a href="#rootz">Ingredients</a></li>
-        <li><a href="#creator">The Creator</a></li>
+        <li><a href="#creator">Creator</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <div class="nav-end">
-        <a href="#collections" class="btn btn-solid btn-sm" data-magnetic>
-          <span>Shop Now</span>
-        </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <div class="nav-actions">
+        <a href="#atelier" class="btn btn-ink" data-magnetic><span>Enter Shop</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span>
         </button>
       </div>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero: brand + one headline + one line + CTAs + full-bleed visual -->
+  <main id="top">
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/images/hero-botanical.jpg" alt="" class="hero-img" loading="eager">
-        <div class="hero-veil"></div>
-      </div>
-
-      <div class="hero-content">
-        <p class="brand-lockup">Radiant Rootz</p>
-        <h1 class="hero-title">
-          <span class="line"><span>The Power</span></span>
-          <span class="line"><span>of Nature</span></span>
-        </h1>
-        <p class="hero-lead">
-          All-natural &amp; organic skin and hair care — rooted in botanicals, crafted for radiance.
-        </p>
-        <div class="hero-cta">
-          <a href="#collections" class="btn btn-solid btn-lg" data-magnetic>
-            <span>Shop Skincare</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h12M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
-          <a href="#rootz" class="btn btn-ghost btn-lg" data-magnetic>
-            <span>What's in the Rootz</span>
-          </a>
+      <div class="hero-stage">
+        <div class="hero-media">
+          <img src="assets/images/hero-cinematic.png" alt="" class="hero-img" loading="eager">
+          <div class="hero-wash"></div>
+          <div class="hero-vignette"></div>
         </div>
-      </div>
 
-      <a href="#intro" class="hero-scroll" aria-label="Scroll to explore">
-        <span>Explore</span>
-        <i></i>
-      </a>
-    </section>
-
-    <!-- Intro atmosphere -->
-    <section class="intro" id="intro">
-      <div class="intro-copy">
-        <p class="eyebrow reveal">Natural &amp; Organic Beauty Care</p>
-        <h2 class="display reveal">
-          Treat yourself to the
-          <em>luxury of nature</em>
-        </h2>
-        <p class="intro-text reveal">
-          From restorative butters to plant oils that symbolize balance and healing — every formula is built to nourish skin and hair without compromise.
-        </p>
-      </div>
-      <div class="intro-visual reveal">
-        <img src="assets/images/beauty-ritual.jpg" alt="Natural beauty ritual with botanical skincare" loading="lazy">
-      </div>
-    </section>
-
-    <!-- Ingredient marquee -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Shea Butter</span><span class="dot">✦</span>
-        <span>Cocoa Butter</span><span class="dot">✦</span>
-        <span>Black Seed Oil</span><span class="dot">✦</span>
-        <span>Plant Botanicals</span><span class="dot">✦</span>
-        <span>Organic Oils</span><span class="dot">✦</span>
-        <span>Shea Butter</span><span class="dot">✦</span>
-        <span>Cocoa Butter</span><span class="dot">✦</span>
-        <span>Black Seed Oil</span><span class="dot">✦</span>
-        <span>Plant Botanicals</span><span class="dot">✦</span>
-        <span>Organic Oils</span><span class="dot">✦</span>
-      </div>
-    </div>
-
-    <!-- Collections -->
-    <section class="collections" id="collections">
-      <div class="section-head">
-        <p class="eyebrow reveal">Collections</p>
-        <h2 class="display reveal">Beauty that feels like a deep breath</h2>
-      </div>
-
-      <article class="collection-panel collection-panel--boost">
-        <div class="collection-media">
-          <img src="assets/images/product-skincare.jpg" alt="Radiant Rootz beauty boost skincare" loading="lazy">
-        </div>
-        <div class="collection-body">
-          <span class="collection-tag">Signature</span>
-          <h3>Beauty Boost</h3>
-          <p>Luxurious daily rituals powered by nature — clean formulas that restore glow from root to tip.</p>
-          <a href="#contact" class="text-link" data-magnetic>Shop all skincare <span>→</span></a>
-        </div>
-      </article>
-
-      <article class="collection-panel collection-panel--winter">
-        <div class="collection-media">
-          <img src="assets/images/winter-care.jpg" alt="Winter skin care collection" loading="lazy">
-        </div>
-        <div class="collection-body">
-          <span class="collection-tag">Seasonal</span>
-          <h3>New Winter Skin Care</h3>
-          <p>Cinnamon, spice, and everything nice — richer botanicals for colder months and softer skin.</p>
-          <a href="#contact" class="text-link" data-magnetic>Stock up now <span>→</span></a>
-        </div>
-      </article>
-
-      <article class="collection-panel collection-panel--hair">
-        <div class="collection-media">
-          <img src="assets/images/hair-care.jpg" alt="Natural organic hair care" loading="lazy">
-        </div>
-        <div class="collection-body">
-          <span class="collection-tag">Hair Rituals</span>
-          <h3>Skin &amp; Hair Harmony</h3>
-          <p>Plant-powered care that hydrates, strengthens, and leaves every strand feeling alive.</p>
-          <a href="#contact" class="text-link" data-magnetic>Discover hair care <span>→</span></a>
-        </div>
-      </article>
-    </section>
-
-    <!-- What's in the Rootz -->
-    <section class="rootz" id="rootz">
-      <div class="rootz-sticky">
-        <div class="rootz-copy">
-          <p class="eyebrow reveal">What's in the Rootz</p>
-          <h2 class="display reveal">Ingredient commitment</h2>
-          <p class="rootz-lead reveal">
-            We choose plants that symbolize balance and healing — nourishing, restorative, and honest.
+        <div class="hero-copy">
+          <h1 class="hero-title" aria-label="Radiant Rootz">
+            <span class="hero-line"><span>Radiant</span></span>
+            <span class="hero-line hero-line--accent"><span><em>Rootz</em></span></span>
+          </h1>
+          <p class="hero-kicker" data-hero-fade>The Power of Nature</p>
+          <p class="hero-lead" data-hero-fade>
+            All-natural &amp; organic skin and hair care — luminous botanicals, rooted in ritual.
           </p>
+          <div class="hero-actions" data-hero-fade>
+            <a href="#atelier" class="btn btn-light" data-magnetic data-cursor="Shop">
+              <span>Explore the Atelier</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="#rootz" class="btn btn-ghost-light" data-magnetic data-cursor="Read">
+              <span>What's in the Rootz</span>
+            </a>
+          </div>
         </div>
 
-        <div class="ingredient-stage" id="ingredientStage">
-          <div class="ingredient-visual">
-            <img src="assets/images/shea-butter.jpg" alt="Shea butter" class="is-active" data-ingredient-img="0" loading="lazy">
-            <img src="assets/images/cocoa-butter.jpg" alt="Cocoa butter" data-ingredient-img="1" loading="lazy">
-            <img src="assets/images/oil-serum.jpg" alt="Black seed oil" data-ingredient-img="2" loading="lazy">
-            <img src="assets/images/botanical-leaves.jpg" alt="Plant botanicals" data-ingredient-img="3" loading="lazy">
-          </div>
-
-          <ul class="ingredient-list" role="list">
-            <li class="ingredient is-active" data-ingredient="0">
-              <span class="ingredient-num">01</span>
-              <div>
-                <h3>Shea Butter</h3>
-                <p>Deeply conditioning moisture that softens skin and seals in radiance.</p>
-              </div>
-            </li>
-            <li class="ingredient" data-ingredient="1">
-              <span class="ingredient-num">02</span>
-              <div>
-                <h3>Cocoa Butter</h3>
-                <p>Rich, protective nourishment with a naturally comforting finish.</p>
-              </div>
-            </li>
-            <li class="ingredient" data-ingredient="2">
-              <span class="ingredient-num">03</span>
-              <div>
-                <h3>Black Seed Oil</h3>
-                <p>A restorative botanical oil celebrated for balance and renewal.</p>
-              </div>
-            </li>
-            <li class="ingredient" data-ingredient="3">
-              <span class="ingredient-num">04</span>
-              <div>
-                <h3>Plant-Based Oils</h3>
-                <p>Hand-selected oils known for their nourishing and healing character.</p>
-              </div>
-            </li>
-          </ul>
+        <div class="hero-meta" data-hero-fade aria-hidden="true">
+          <span>Est. Botanical</span>
+          <span class="meta-line"></span>
+          <span>Natural · Organic · Radiant</span>
         </div>
       </div>
     </section>
 
-    <!-- Craft / ritual -->
-    <section class="ritual" id="ritual">
-      <div class="ritual-bg" aria-hidden="true">
-        <img src="assets/images/green-botanical.jpg" alt="" loading="lazy">
+    <!-- MANIFESTO — giant scrolling type -->
+    <section class="manifesto" id="manifesto">
+      <div class="manifesto-pin">
+        <p class="eyebrow">Philosophy</p>
+        <h2 class="manifesto-title">
+          <span class="m-line" data-speed="0.15">Treat yourself to the</span>
+          <span class="m-line m-line--accent" data-speed="-0.1">luxury of nature</span>
+          <span class="m-line" data-speed="0.2">— beauty that breathes.</span>
+        </h2>
+        <p class="manifesto-body">
+          From restorative butters to oils that symbolize balance and healing, every Radiant Rootz formula is an invitation to slow down and glow.
+        </p>
       </div>
-      <div class="ritual-inner">
-        <p class="eyebrow reveal">The Radiant Ritual</p>
-        <h2 class="display display--light reveal">From root to radiance</h2>
-        <ol class="ritual-steps">
-          <li class="ritual-step reveal">
-            <span>01</span>
+      <div class="manifesto-float" aria-hidden="true">
+        <img src="assets/images/brand-emblem.png" alt="" class="float-emblem">
+      </div>
+    </section>
+
+    <!-- ATELIER — horizontal spectacle -->
+    <section class="atelier" id="atelier">
+      <div class="atelier-head">
+        <p class="eyebrow">The Atelier</p>
+        <h2 class="display">Collections worth lingering over</h2>
+      </div>
+
+      <div class="atelier-pin">
+        <div class="atelier-track" id="atelierTrack">
+          <article class="atelier-panel" data-cursor="Open">
+            <div class="panel-media">
+              <img src="assets/images/collection-signature.png" alt="Beauty Boost signature collection" loading="lazy">
+              <div class="panel-shade"></div>
+            </div>
+            <div class="panel-copy">
+              <span class="panel-index">01</span>
+              <span class="panel-tag">Signature</span>
+              <h3>Beauty Boost</h3>
+              <p>Daily rituals powered by nature — clean, luminous formulas that restore glow from root to tip.</p>
+              <a href="#contact" class="panel-link">Shop skincare <i>→</i></a>
+            </div>
+          </article>
+
+          <article class="atelier-panel" data-cursor="Open">
+            <div class="panel-media">
+              <img src="assets/images/winter-editorial.png" alt="Winter skin care collection" loading="lazy">
+              <div class="panel-shade"></div>
+            </div>
+            <div class="panel-copy">
+              <span class="panel-index">02</span>
+              <span class="panel-tag">Seasonal</span>
+              <h3>Winter Skin Care</h3>
+              <p>Cinnamon, spice, and everything nice — richer botanicals for colder air and softer skin.</p>
+              <a href="#contact" class="panel-link">Stock up now <i>→</i></a>
+            </div>
+          </article>
+
+          <article class="atelier-panel" data-cursor="Open">
+            <div class="panel-media">
+              <img src="assets/images/hair-ritual.png" alt="Hair care rituals" loading="lazy">
+              <div class="panel-shade"></div>
+            </div>
+            <div class="panel-copy">
+              <span class="panel-index">03</span>
+              <span class="panel-tag">Hair Rituals</span>
+              <h3>Skin &amp; Hair Harmony</h3>
+              <p>Plant-powered care that hydrates, strengthens, and leaves every strand feeling alive.</p>
+              <a href="#contact" class="panel-link">Discover hair care <i>→</i></a>
+            </div>
+          </article>
+
+          <article class="atelier-panel atelier-panel--cta" data-cursor="Join">
+            <div class="panel-cta">
+              <img src="assets/images/brand-emblem.png" alt="" class="cta-emblem">
+              <h3>Free shipping<br><em>on orders $25+</em></h3>
+              <p>Natural &amp; organic beauty, delivered with care.</p>
+              <a href="#contact" class="btn btn-light" data-magnetic><span>Begin your ritual</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="atelier-progress" aria-hidden="true"><i id="atelierProgress"></i></div>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="rootz" id="rootz">
+      <div class="rootz-intro">
+        <p class="eyebrow">What's in the Rootz</p>
+        <h2 class="display">An ingredient commitment<br><em>written in botanicals</em></h2>
+      </div>
+
+      <div class="rootz-stage" id="rootzStage">
+        <div class="rootz-visual">
+          <div class="rootz-frame">
+            <img src="assets/images/shea-editorial.png" alt="Shea butter" data-root-img="0" class="is-active" loading="lazy">
+            <img src="assets/images/cocoa-editorial.png" alt="Cocoa butter" data-root-img="1" loading="lazy">
+            <img src="assets/images/ingredient-oil.png" alt="Black seed oil" data-root-img="2" loading="lazy">
+            <img src="assets/images/botanical-leaves.jpg" alt="Plant botanicals" data-root-img="3" loading="lazy">
+          </div>
+          <div class="rootz-orb" aria-hidden="true"></div>
+        </div>
+
+        <div class="rootz-list" role="list">
+          <button class="root-item is-active" data-root="0" role="listitem">
+            <span class="root-num">01</span>
+            <span class="root-body">
+              <strong>Shea Butter</strong>
+              <span>Deep conditioning moisture that softens and seals in radiance.</span>
+            </span>
+          </button>
+          <button class="root-item" data-root="1" role="listitem">
+            <span class="root-num">02</span>
+            <span class="root-body">
+              <strong>Cocoa Butter</strong>
+              <span>Rich protective nourishment with a naturally comforting finish.</span>
+            </span>
+          </button>
+          <button class="root-item" data-root="2" role="listitem">
+            <span class="root-num">03</span>
+            <span class="root-body">
+              <strong>Black Seed Oil</strong>
+              <span>A restorative botanical celebrated for balance and renewal.</span>
+            </span>
+          </button>
+          <button class="root-item" data-root="3" role="listitem">
+            <span class="root-num">04</span>
+            <span class="root-body">
+              <strong>Plant-Based Oils</strong>
+              <span>Hand-selected oils known for nourishing, healing character.</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RITUAL -->
+    <section class="ritual" id="ritual">
+      <div class="ritual-bg">
+        <img src="assets/images/green-botanical.jpg" alt="" loading="lazy">
+        <div class="ritual-veil"></div>
+      </div>
+      <div class="ritual-content">
+        <p class="eyebrow light">The Radiant Ritual</p>
+        <h2 class="display light">From root <em>to radiance</em></h2>
+        <ol class="ritual-grid">
+          <li>
+            <span class="r-num">01</span>
             <h3>Source</h3>
-            <p>We begin with organic botanicals chosen for purity and potency.</p>
+            <p>Organic botanicals chosen for purity, potency, and quiet power.</p>
           </li>
-          <li class="ritual-step reveal">
-            <span>02</span>
+          <li>
+            <span class="r-num">02</span>
             <h3>Blend</h3>
-            <p>Butters and oils are crafted into formulas that honor the skin barrier.</p>
+            <p>Butters and oils crafted into formulas that honor the skin barrier.</p>
           </li>
-          <li class="ritual-step reveal">
-            <span>03</span>
+          <li>
+            <span class="r-num">03</span>
             <h3>Glow</h3>
-            <p>You feel the difference — softer skin, healthier hair, quiet luxury.</p>
+            <p>Softer skin, healthier hair — beauty that feels lived-in and alive.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- Creator -->
+    <!-- CREATOR -->
     <section class="creator" id="creator">
       <div class="creator-visual">
-        <div class="creator-frame">
-          <img src="assets/images/creator-portrait.jpg" alt="Cha'Ron Jackson, creator of Radiant Rootz" loading="lazy">
+        <div class="creator-mask">
+          <img src="assets/images/creator-editorial.png" alt="Cha'Ron Jackson, founder of Radiant Rootz" loading="lazy">
         </div>
+        <div class="creator-caption" aria-hidden="true">Founder</div>
       </div>
-      <div class="creator-content">
-        <p class="eyebrow reveal">The Creator</p>
-        <h2 class="display reveal">Cha'Ron Jackson</h2>
-        <p class="creator-text reveal">
+      <div class="creator-copy">
+        <p class="eyebrow">The Creator</p>
+        <h2 class="display">Cha'Ron<br><em>Jackson</em></h2>
+        <p>
           Radiant Rootz was born from a belief that beauty should feel grounded — that nature already holds everything we need for luminous skin and hair.
         </p>
-        <p class="creator-text reveal">
+        <p>
           Every blend is a love letter to botanical wisdom: honest ingredients, intentional care, and results you can feel.
         </p>
-        <a href="#contact" class="btn btn-outline btn-lg" data-magnetic>
-          <span>Connect with us</span>
-        </a>
+        <a href="#contact" class="btn btn-ink" data-magnetic data-cursor="Connect"><span>Connect with us</span></a>
       </div>
     </section>
 
-    <!-- Promise band -->
-    <section class="promise" aria-label="Our promise">
-      <div class="promise-item reveal">
-        <strong>Free Shipping</strong>
-        <span>On all orders $25 or more</span>
-      </div>
-      <div class="promise-item reveal">
-        <strong>All Natural</strong>
-        <span>Organic botanicals, no harsh fillers</span>
-      </div>
-      <div class="promise-item reveal">
-        <strong>Rooted Care</strong>
-        <span>Formulas for skin &amp; hair harmony</span>
+    <!-- PROMISE RIBBON -->
+    <section class="ribbon" aria-label="Brand promises">
+      <div class="ribbon-track">
+        <div class="ribbon-row">
+          <span>Free Shipping $25+</span><i></i>
+          <span>All Natural &amp; Organic</span><i></i>
+          <span>Skin &amp; Hair Care</span><i></i>
+          <span>Botanical Rituals</span><i></i>
+          <span>Free Shipping $25+</span><i></i>
+          <span>All Natural &amp; Organic</span><i></i>
+          <span>Skin &amp; Hair Care</span><i></i>
+          <span>Botanical Rituals</span><i></i>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
-      <div class="contact-panel">
+      <div class="contact-shell">
         <div class="contact-copy">
-          <p class="eyebrow reveal">Contact</p>
-          <h2 class="display reveal">Let's grow something beautiful</h2>
-          <p class="contact-lead reveal">
-            For general information or questions about your order, reach out anytime.
-          </p>
-          <div class="contact-meta reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="display">Let's grow something <em>beautiful</em></h2>
+          <p class="contact-lead">For general information or questions about your order, reach out anytime.</p>
+          <div class="contact-lines">
             <a href="mailto:info@radiantrootz.net">info@radiantrootz.net</a>
             <a href="tel:+11234567890">123-456-7890</a>
           </div>
         </div>
-
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required autocomplete="name">
@@ -312,46 +323,55 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-solid btn-lg btn-full" data-magnetic>
-            <span>Send Message</span>
-          </button>
+          <button type="submit" class="btn btn-ink btn-block" data-magnetic><span>Send Message</span></button>
         </form>
       </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- FINALE -->
     <section class="finale">
-      <div class="finale-media" aria-hidden="true">
-        <img src="assets/images/spa-stones.jpg" alt="" loading="lazy">
+      <div class="finale-media">
+        <img src="assets/images/finale-garden.png" alt="" loading="lazy">
         <div class="finale-veil"></div>
       </div>
-      <div class="finale-content">
-        <h2 class="display display--light scramble" data-scramble>Nature, bottled for you</h2>
+      <div class="finale-copy">
+        <img src="assets/images/brand-emblem.png" alt="" class="finale-emblem">
+        <h2 class="display light scramble" data-scramble>Nature, bottled for you</h2>
         <p>Begin your Radiant Rootz ritual today.</p>
-        <a href="#collections" class="btn btn-solid btn-lg" data-magnetic>
-          <span>Shop the Collection</span>
-        </a>
+        <a href="#atelier" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Collection</span></a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-top">
-      <a href="#home" class="logo">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span class="logo-text">Radiant<span>Rootz</span></span>
-      </a>
-      <ul class="footer-nav">
-        <li><a href="#collections">Collections</a></li>
-        <li><a href="#rootz">Ingredients</a></li>
-        <li><a href="#creator">The Creator</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#collections">Book Online</a></li>
-      </ul>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <img class="brand-mark" src="assets/images/brand-emblem.png" alt="" width="36" height="36">
+          <span class="brand-word">Radiant <em>Rootz</em></span>
+        </a>
+        <p>Natural &amp; organic beauty care. Crafted with botanical intention.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#atelier">Atelier</a></li>
+          <li><a href="#rootz">Ingredients</a></li>
+          <li><a href="#creator">The Creator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#atelier">Shop</a></li>
+          <li><a href="mailto:info@radiantrootz.net">Email</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Radiant Rootz LLC. All rights reserved.</p>
-      <p>Natural &amp; Organic Beauty Care</p>
+    <div class="footer-bar">
+      <p>&copy; 2026 Radiant Rootz LLC.</p>
+      <p>Botanical Beauty Atelier</p>
     </div>
   </footer>
 
