@@ -111,30 +111,8 @@
   }
 
   function initHeaderTheme() {
-    const header = document.getElementById("header");
-    const darkZones = [".hero", ".ritual", ".finale", ".atelier-panel"];
-    if (!header || typeof ScrollTrigger === "undefined") return;
-
-    const sync = () => {
-      const y = 40;
-      const el = document.elementFromPoint(innerWidth / 2, y);
-      const dark = el?.closest(".hero, .ritual, .finale, .atelier-panel--cta, .atelier-pin");
-      // Keep light nav over hero until scrolled
-      const overHero = scrollY < innerHeight * 0.85;
-      header.classList.toggle("is-light", overHero && !header.classList.contains("is-scrolled") ? true : !!dark && !header.classList.contains("is-scrolled"));
-      if (overHero && scrollY < 40) header.classList.add("is-light");
-      if (!overHero && header.classList.contains("is-scrolled")) header.classList.remove("is-light");
-    };
-
-    // Simpler: light text only at top of hero
-    const apply = () => {
-      if (scrollY < 80) header.classList.add("is-light");
-      else header.classList.remove("is-light");
-    };
-    apply();
-    window.addEventListener("scroll", apply, { passive: true });
-    void darkZones;
-    void sync;
+    // Dark luxury brand system — header always gold-on-black
+    document.getElementById("header")?.classList.remove("is-light");
   }
 
   /* ---------- Spores canvas ---------- */
@@ -157,7 +135,7 @@
         r: Math.random() * 1.8 + 0.4,
         vx: (Math.random() - 0.5) * 0.25,
         vy: -Math.random() * 0.35 - 0.05,
-        a: Math.random() * 0.35 + 0.08,
+        a: Math.random() * 0.4 + 0.1,
       }));
     };
 
@@ -170,7 +148,7 @@
         if (p.x < -10) p.x = w + 10;
         if (p.x > w + 10) p.x = -10;
         ctx.beginPath();
-        ctx.fillStyle = `rgba(176, 138, 74, ${p.a})`;
+        ctx.fillStyle = `rgba(212, 175, 55, ${p.a})`;
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       });
