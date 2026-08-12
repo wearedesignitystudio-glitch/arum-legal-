@@ -842,7 +842,6 @@ input:focus, textarea:focus {
   .shop-grid { grid-template-columns: 1fr; }
   .item-media button { opacity: 1; transform: none; }
   .hero-actions .btn, .sale-row .btn { width: 100%; }
-  .hero-float { left: 0.75rem; right: 0.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
