@@ -1,6 +1,7 @@
 .donate-selector {
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--line);
+  border-radius: var(--radius);
   padding: 1.45rem;
   display: grid;
   gap: 1rem;
@@ -9,9 +10,10 @@
 .freq {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
   border: 1px solid var(--line);
   background: var(--bg);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
 .amounts {
@@ -27,16 +29,15 @@
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  font-weight: 650;
-  font-size: 0.78rem;
+  font-weight: 700;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .freq button.is-active {
-  background: var(--brown);
-  color: var(--cream);
+  background: var(--accent);
+  color: #1a120c;
 }
 
 .amounts button {
@@ -44,33 +45,22 @@
   min-height: 2.85rem;
   border: 1px solid var(--line);
   background: var(--bg);
-  color: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  font-weight: 650;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  font-weight: 700;
 }
 
 .amounts button.is-active {
-  background: transparent;
-  border-color: var(--brown);
-  color: var(--brown);
-  box-shadow: inset 0 0 0 1px var(--brown);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
-.amounts button:hover {
-  border-color: var(--brown);
-}
-
-.field {
-  display: grid;
-  gap: 0.4rem;
-}
-
+.field { display: grid; gap: 0.4rem; }
 .field span {
   font-size: 0.75rem;
   font-weight: 650;
-  letter-spacing: 0.04em;
   color: var(--muted);
 }
 
@@ -79,23 +69,17 @@
   border: 1px solid var(--line);
   background: var(--bg);
   padding: 0.85rem 0.95rem;
-  color: var(--ink);
-  border-radius: 2px;
+  color: var(--cream);
+  border-radius: var(--radius-sm);
 }
 
 .field input:focus {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
-.note {
-  margin: 0;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
+.note { margin: 0; font-size: 0.78rem; color: var(--muted); }
 
 @media (max-width: 600px) {
-  .amounts {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .amounts { grid-template-columns: repeat(2, 1fr); }
 }

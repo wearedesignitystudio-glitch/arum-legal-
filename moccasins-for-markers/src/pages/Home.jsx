@@ -5,13 +5,26 @@ import Reveal from '../components/ui/Reveal';
 import Button from '../components/ui/Button';
 import ProductGrid from '../components/product/ProductGrid';
 import { PRODUCTS, asset } from '../data/products';
-import { JOURNAL } from '../data/content';
-import DonationSelector from '../components/donate/DonationSelector';
+import { FAQ_ITEMS } from '../data/content';
 import './Home.css';
+
+const CATEGORIES = [
+  { title: 'Featured', copy: 'Signature pairs chosen for their craft and meaning.', to: '/shop' },
+  { title: 'New', copy: 'Recently finished designs, made in limited numbers.', to: '/shop' },
+  { title: 'Remembrance', copy: 'Pieces that honour names through handmade form.', to: '/mission' },
+  { title: 'Donate', copy: 'Support a permanent marker directly.', to: '/donate' },
+];
+
+const STEPS = [
+  ['Browse', 'Explore handmade ornamental pairs in the collection.'],
+  ['Choose', 'Select a design that speaks to you.'],
+  ['Support', 'Your purchase funds permanent headstones.'],
+  ['Remember', 'Dignity is restored through lasting stone.'],
+];
 
 export default function Home() {
   const reduce = useReducedMotion();
-  const featured = PRODUCTS.filter((p) => p.tags.includes('featured')).slice(0, 3);
+  const featured = PRODUCTS.slice(0, 4);
 
   return (
     <>
@@ -21,69 +34,87 @@ export default function Home() {
         path="/"
       />
 
-      <section className="home-hero">
-        <div className="home-hero-media" aria-hidden="true">
-          <motion.img
-            src={asset('hero.jpg')}
-            alt=""
-            initial={reduce ? false : { scale: 1 }}
-            animate={reduce ? undefined : { scale: 1.04 }}
-            transition={{ duration: 18, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
-          />
-          <div className="home-hero-veil" />
-        </div>
-        <div className="home-hero-content">
-          <motion.p
-            className="kicker kicker-light"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.7 }}
-          >
-            Handmade honour · Permanent stone
-          </motion.p>
-          <motion.h1
-            initial={reduce ? false : { opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Every stitch
-            <br />
-            honours a name.
-          </motion.h1>
-          <motion.p
-            className="home-hero-lede"
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.75 }}
-          >
-            Handmade ornamental moccasins created with care and purpose. Every purchase helps fund permanent
-            headstones for unmarked graves of former residential school survivors.
-          </motion.p>
+      <section className="dna-hero">
+        <div className="container dna-hero-grid">
+          <div className="dna-hero-copy">
+            <motion.span
+              className="kicker kicker-pill"
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              Handmade honour · Permanent stone
+            </motion.span>
+            <motion.h1
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.7 }}
+            >
+              Every stitch
+              <br />
+              honours a <em>name.</em>
+            </motion.h1>
+            <motion.p
+              className="dna-hero-lede"
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.7 }}
+            >
+              Handmade ornamental moccasins created with care and purpose. Every purchase helps fund permanent
+              headstones for unmarked graves of former residential school survivors.
+            </motion.p>
+            <motion.div
+              className="dna-hero-ctas"
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.65 }}
+            >
+              <Button to="/shop" variant="primary">
+                Shop the Collection →
+              </Button>
+              <Button to="/mission" variant="secondary">
+                Our Story
+              </Button>
+            </motion.div>
+            <motion.div
+              className="dna-stats"
+              initial={reduce ? false : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.65 }}
+            >
+              <div>
+                <strong>$85</strong>
+                <span>CAD per pair</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>Sales support markers</span>
+              </div>
+              <div>
+                <strong>6</strong>
+                <span>Handcrafted designs</span>
+              </div>
+            </motion.div>
+          </div>
+
           <motion.div
-            className="home-hero-ctas"
-            initial={reduce ? false : { opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.58, duration: 0.7 }}
+            className="dna-hero-visual"
+            initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.15, duration: 0.8 }}
           >
-            <Button to="/shop" variant="gold">
-              Shop the Collection
-            </Button>
-            <Button to="/mission" variant="light">
-              Discover Our Story
-            </Button>
+            <img src={asset('moccasin-emerald-heart.jpg')} alt="Emerald Heart ornamental moccasins" />
+            <div className="dna-float-badge left">Handmade</div>
+            <div className="dna-float-badge right">Limited</div>
           </motion.div>
         </div>
       </section>
 
-      <section className="section brand-statement">
-        <div className="container">
-          <Reveal>
-            <p className="brand-statement-text">
-              Handmade with care.
-              <br />
-              Created to remember.
-            </p>
-          </Reveal>
+      <section className="dna-trust">
+        <div className="container dna-trust-inner">
+          <p>
+            <strong>Crafted with care. Directed to remembrance.</strong>
+            <span> Sew · Sell · Mark — every pair funds permanent headstones.</span>
+          </p>
         </div>
       </section>
 
@@ -95,129 +126,47 @@ export default function Home() {
               <h2>Featured pieces</h2>
             </div>
             <Button to="/shop" variant="secondary">
-              View all
+              View all →
             </Button>
           </Reveal>
-          <Reveal delay={0.1}>
-            <ProductGrid products={featured.length ? featured : PRODUCTS.slice(0, 3)} />
+          <Reveal delay={0.08}>
+            <ProductGrid products={featured} />
           </Reveal>
         </div>
       </section>
 
-      <section className="section craft-section">
-        <div className="container split">
-          <Reveal>
-            <div className="editorial-image">
-              <img src={asset('craft-table.jpg')} alt="Leather, beads, and craft tools on a wooden table" />
-            </div>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className="kicker">The Craft</p>
-            <h2>
-              Made by hand.
-              <br />
-              Held with meaning.
-            </h2>
-            <p className="muted">
-              Each ornamental pair is cut, stitched, and beaded by hand. The work is slow on purpose — a practice of
-              care that mirrors the remembrance it supports.
-            </p>
-            <Button to="/mission" variant="secondary">
-              Discover the craft →
-            </Button>
-          </Reveal>
+      <section className="section dna-features">
+        <div className="container dna-features-grid">
+          {[
+            ['Handcrafted', 'Cut, stitched, and beaded one pair at a time.'],
+            ['Meaningful', 'Each design carries care into remembrance.'],
+            ['Transparent', 'Sales support permanent headstones.'],
+            ['Limited', 'Small-batch ornamental pieces, never mass-made.'],
+          ].map(([title, copy], i) => (
+            <Reveal key={title} delay={i * 0.05} className="dna-feature">
+              <span>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      <section className="impact-band">
-        <div className="impact-band-media" aria-hidden="true">
-          <img src={asset('impact-marker.jpg')} alt="" />
-          <div className="impact-band-veil" />
-        </div>
-        <div className="container">
-          <Reveal>
-            <p className="kicker kicker-light">Impact</p>
-            <h2>From leather to limestone.</h2>
-            <p className="impact-band-lede">
-              Your purchase helps place permanent markers for those who were taken and never properly named.
-            </p>
-            <div className="impact-flow">
-              {['Moccasin', 'Purchase', 'Contribution', 'Memorial'].map((step, i) => (
-                <div key={step} className="impact-flow-step">
-                  <span>0{i + 1}</span>
-                  <strong>{step}</strong>
-                </div>
-              ))}
-            </div>
-            <Button to="/impact" variant="light">
-              See how it works
-            </Button>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container split reverse story-split">
-          <Reveal>
-            <div className="editorial-image story-image">
-              <img src={asset('hero-craft.jpg')} alt="Beaded ornamental moccasins resting on stone in soft light" />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="kicker">Remembrance</p>
-            <h2>
-              Some names were never given a stone.
-              <br />
-              We believe they deserve to be remembered.
-            </h2>
-            <p className="muted">
-              We sew and sell handmade ornamental tiny moccasins to buy permanent headstones for unmarked graves of
-              former residential school survivors.
-            </p>
-            <Button to="/mission" variant="secondary">
-              Read our mission
-            </Button>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section-tight donate-home">
-        <div className="container donate-home-grid">
-          <Reveal>
-            <p className="kicker">Donate</p>
-            <h2>Support a headstone directly.</h2>
-            <p className="muted">
-              Prefer to give without purchasing? Your donation still funds permanent markers with dignity and care.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <DonationSelector compact />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section-tight">
         <div className="container">
           <Reveal className="section-head">
             <div>
-              <p className="kicker">Journal</p>
-              <h2>Stories from the work</h2>
+              <p className="kicker">Explore</p>
+              <h2>Find your path</h2>
             </div>
-            <Button to="/journal" variant="secondary">
-              View journal
-            </Button>
           </Reveal>
-          <div className="journal-grid">
-            {JOURNAL.map((post, i) => (
-              <Reveal key={post.slug} delay={i * 0.08}>
-                <Link to={`/journal`} className="journal-card">
-                  <div className="journal-card-media">
-                    <img src={asset(post.image)} alt="" />
-                  </div>
-                  <p className="kicker">{post.category}</p>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <span className="journal-card-read">Read story →</span>
+          <div className="dna-cats">
+            {CATEGORIES.map((cat, i) => (
+              <Reveal key={cat.title} delay={i * 0.05}>
+                <Link to={cat.to} className="dna-cat">
+                  <h3>{cat.title}</h3>
+                  <p>{cat.copy}</p>
+                  <span>Explore →</span>
                 </Link>
               </Reveal>
             ))}
@@ -225,12 +174,81 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta">
-        <div className="container final-cta-inner">
+      <section className="section dna-impact">
+        <div className="container split">
+          <Reveal>
+            <div className="editorial-image">
+              <img src={asset('impact-marker.jpg')} alt="A permanent headstone in soft light" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="kicker">Impact</p>
+            <h2>From leather to limestone.</h2>
+            <p className="muted">
+              Your purchase helps place permanent markers for those who were taken and never properly named.
+            </p>
+            <ol className="dna-path-list">
+              {['Craft', 'Purchase', 'Contribution', 'Memorial'].map((step, i) => (
+                <li key={step}>
+                  <span>0{i + 1}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <Button to="/impact" variant="primary">
+              See how it works
+            </Button>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-tight">
+        <div className="container">
+          <Reveal className="section-head center-head">
+            <div>
+              <p className="kicker">How it works</p>
+              <h2>Beauty → Purpose → Remembrance</h2>
+            </div>
+          </Reveal>
+          <div className="dna-steps">
+            {STEPS.map(([title, copy], i) => (
+              <Reveal key={title} delay={i * 0.05} className="dna-step">
+                <span>{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section dna-faq">
+        <div className="container dna-faq-grid">
+          <Reveal>
+            <p className="kicker">Questions</p>
+            <h2>Frequently asked</h2>
+            <p className="muted">Clear answers about the craft, the cause, and how to support the work.</p>
+            <Button to="/faq" variant="secondary">
+              View all FAQ
+            </Button>
+          </Reveal>
+          <div>
+            {FAQ_ITEMS.slice(0, 4).map((item, i) => (
+              <Reveal key={item.q} delay={i * 0.04} className="dna-faq-item">
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="dna-final">
+        <div className="container dna-final-inner">
           <Reveal>
             <h2>Walk with us.</h2>
-            <p>Beauty, craft, and remembrance — one stitch at a time.</p>
-            <div className="home-hero-ctas">
+            <p>Shop a handmade pair — or donate directly to help place a permanent marker.</p>
+            <div className="dna-hero-ctas">
               <Button to="/shop" variant="primary">
                 Shop the Collection
               </Button>

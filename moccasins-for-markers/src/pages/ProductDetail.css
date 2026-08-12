@@ -9,7 +9,7 @@
 .product-gallery {
   position: sticky;
   top: calc(var(--header-h-compact) + 1rem);
-  background: #e7dfd2;
+  background: var(--surface);
   aspect-ratio: 4 / 5;
   overflow: hidden;
 }
@@ -53,7 +53,7 @@
   align-items: center;
   border: 1px solid var(--line);
   min-height: 3rem;
-  background: var(--cream);
+  background: var(--surface);
 }
 
 .qty-box button {
@@ -124,11 +124,11 @@
 }
 
 .story-band {
-  background: #efe8dc;
+  background: var(--bg-elevated);
 }
 
 .purpose-band {
-  background: var(--cream);
+  background: var(--surface);
 }
 
 .purpose-steps {

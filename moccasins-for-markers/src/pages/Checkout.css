@@ -8,7 +8,7 @@
 
 .checkout-form,
 .checkout-summary {
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--line);
   padding: 1.5rem;
 }

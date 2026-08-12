@@ -55,7 +55,7 @@
   width: 1.7rem;
   height: 1.7rem;
   border: 1px solid var(--line);
-  background: var(--cream);
+  background: var(--surface);
   cursor: pointer;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .cart-summary {
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--line);
   padding: 1.5rem;
   display: grid;

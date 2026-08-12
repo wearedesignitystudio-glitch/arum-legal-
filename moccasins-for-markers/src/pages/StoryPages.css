@@ -48,7 +48,7 @@
 }
 
 .story-band {
-  background: #efe8dc;
+  background: var(--bg-elevated);
 }
 
 .timeline-grid {
@@ -111,7 +111,7 @@
 .featured-media {
   aspect-ratio: 16 / 11;
   overflow: hidden;
-  background: #e7dfd2;
+  background: var(--surface);
 }
 
 .featured-media img {
@@ -135,7 +135,7 @@
 .journal-list-media {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #e7dfd2;
+  background: var(--surface);
 }
 
 .journal-list-media img {
@@ -184,7 +184,7 @@
 
 .contact-form,
 .contact-aside {
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--line);
   padding: 1.45rem;
 }

@@ -1,76 +1,110 @@
-.home-hero {
-  position: relative;
-  min-height: 100svh;
+.dna-hero {
+  padding: calc(var(--header-h) + 1.5rem) 0 3.5rem;
+  background:
+    radial-gradient(700px 420px at 85% 20%, rgba(201, 120, 58, 0.16), transparent 60%),
+    radial-gradient(600px 380px at 10% 80%, rgba(212, 165, 116, 0.08), transparent 55%),
+    var(--bg);
+}
+
+.dna-hero-grid {
   display: grid;
-  align-items: end;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.dna-hero-copy h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.dna-hero-lede {
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.dna-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.dna-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 460px;
+}
+
+.dna-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
   color: var(--cream);
-  isolation: isolate;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.dna-stats span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.dna-hero-visual {
+  position: relative;
+  border-radius: 18px;
   overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  aspect-ratio: 1;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
-.home-hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
-.home-hero-media img {
+.dna-hero-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.home-hero-veil {
+.dna-float-badge {
   position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(23, 22, 20, 0.62) 0%, rgba(23, 22, 20, 0.22) 38%, rgba(23, 22, 20, 0.82) 100%);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(21, 17, 14, 0.82);
+  border: 1px solid var(--line);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  backdrop-filter: blur(8px);
 }
 
-.home-hero-content {
-  width: min(var(--max), calc(100% - 2.5rem));
-  margin: 0 auto;
-  padding: calc(var(--header-h) + 1rem) 0 clamp(3.5rem, 8vw, 5.5rem);
+.dna-float-badge.left { left: 1rem; top: 1rem; }
+.dna-float-badge.right { right: 1rem; bottom: 1rem; color: var(--accent-hover); }
+
+.dna-trust {
+  border-block: 1px solid var(--line);
+  background: var(--bg-elevated);
+  padding: 1.15rem 0;
 }
 
-.kicker-light {
-  color: #f0d7a8;
-}
-
-.home-hero h1 {
-  max-width: 11ch;
-  margin-bottom: 1rem;
-  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
-}
-
-.home-hero-lede {
-  max-width: 34rem;
-  margin-bottom: 1.6rem;
-  color: rgba(251, 248, 242, 0.92);
-  font-size: clamp(1.02rem, 1.5vw, 1.12rem);
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-.home-hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.brand-statement {
+.dna-trust-inner {
   text-align: center;
-  background: var(--cream);
-  padding: clamp(3rem, 6vw, 4.5rem) 0;
 }
 
-.brand-statement-text {
-  margin: 0 auto;
-  max-width: 14ch;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+.dna-trust p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.dna-trust strong {
+  color: var(--cream);
+  margin-right: 0.35rem;
 }
 
 .section-head {
@@ -81,164 +115,191 @@
   margin-bottom: 1.75rem;
 }
 
-.section-head h2 {
-  margin: 0;
+.section-head h2 { margin: 0; }
+.center-head { justify-content: center; text-align: center; }
+
+.dna-features {
+  background: var(--bg-elevated);
 }
 
-.craft-section {
-  background: #efe8dc;
-}
-
-.impact-band {
-  position: relative;
-  isolation: isolate;
-  color: var(--cream);
-  padding: clamp(4rem, 8vw, 6.5rem) 0;
-}
-
-.impact-band-media {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
-.impact-band-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.impact-band-veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, rgba(23, 22, 20, 0.9), rgba(23, 22, 20, 0.5));
-}
-
-.impact-band-lede {
-  max-width: 34rem;
-  color: rgba(251, 248, 242, 0.88);
-  margin-bottom: 1.75rem;
-}
-
-.impact-flow {
+.dna-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-bottom: 1.75rem;
-  max-width: 780px;
 }
 
-.impact-flow-step {
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(251, 248, 242, 0.28);
+.dna-feature {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem;
 }
 
-.impact-flow-step span {
+.dna-feature span {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  color: #f0d7a8;
-  margin-bottom: 0.3rem;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
+  font-size: 1.2rem;
 }
 
-.impact-flow-step strong {
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  font-size: 0.95rem;
-}
+.dna-feature h3 { margin-bottom: 0.45rem; }
+.dna-feature p { margin: 0; color: var(--muted); font-size: 0.92rem; }
 
-.story-image {
-  aspect-ratio: 5 / 6;
-}
-
-.donate-home {
-  background: var(--cream);
-}
-
-.donate-home-grid {
+.dna-cats {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: clamp(1.5rem, 4vw, 2.75rem);
-  align-items: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
-.journal-grid {
+.dna-cat {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.35rem;
-}
-
-.journal-card {
+  gap: 0.55rem;
   text-decoration: none;
-  display: grid;
-  gap: 0.65rem;
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(201, 120, 58, 0.14), transparent 55%),
+    var(--surface);
+  border: 1px solid var(--line);
+  min-height: 180px;
+  transition: transform 0.3s var(--ease), border-color 0.3s ease;
 }
 
-.journal-card-media {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #e7dfd2;
+.dna-cat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 120, 58, 0.4);
 }
 
-.journal-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s var(--ease);
-}
-
-.journal-card:hover .journal-card-media img {
-  transform: scale(1.04);
-}
-
-.journal-card .kicker {
-  margin-bottom: 0;
-}
-
-.journal-card h3 {
-  margin: 0;
-}
-
-.journal-card p:last-child {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.journal-card-read {
+.dna-cat h3 { margin: 0; }
+.dna-cat p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.dna-cat span {
+  margin-top: auto;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brown);
+  color: var(--accent-hover);
 }
 
-.final-cta {
-  padding: 0 0 clamp(3.25rem, 6vw, 5rem);
+.dna-impact { background: var(--bg-elevated); }
+
+.dna-path-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.7rem;
 }
 
-.final-cta-inner {
-  text-align: center;
-  padding: clamp(3rem, 6vw, 4.5rem) 1.5rem;
-  background: var(--cream);
-  border-top: 1px solid var(--line);
+.dna-path-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.final-cta-inner p {
+.dna-path-list span {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.dna-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.dna-step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+}
+
+.dna-step span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.dna-step p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+.dna-faq { background: var(--bg-elevated); }
+
+.dna-faq-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.dna-faq-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.dna-faq-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+}
+
+.dna-faq-item p {
+  margin: 0;
   color: var(--muted);
+}
+
+.dna-final {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+}
+
+.dna-final-inner {
+  text-align: center;
+  padding: clamp(2.75rem, 6vw, 4rem) 1.5rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(500px 240px at 50% 0%, rgba(201, 120, 58, 0.2), transparent 70%),
+    var(--surface);
+  border: 1px solid var(--line);
+}
+
+.dna-final-inner p {
+  color: var(--muted);
+  max-width: 32rem;
   margin: 0 auto 1.4rem;
-  max-width: 30rem;
 }
 
-.final-cta-inner .home-hero-ctas {
+.dna-final-inner .dna-hero-ctas {
   justify-content: center;
+  margin-bottom: 0;
 }
 
-@media (max-width: 900px) {
-  .impact-flow,
-  .donate-home-grid,
-  .journal-grid {
+@media (max-width: 980px) {
+  .dna-hero-grid,
+  .dna-features-grid,
+  .dna-cats,
+  .dna-steps,
+  .dna-faq-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .dna-hero-grid,
+  .dna-features-grid,
+  .dna-cats,
+  .dna-steps,
+  .dna-faq-grid,
+  .dna-stats {
     grid-template-columns: 1fr;
   }
 
@@ -247,7 +308,5 @@
     align-items: start;
   }
 
-  .brand-statement-text {
-    max-width: 16ch;
-  }
+  .dna-hero-visual { max-width: 420px; }
 }
