@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node ./scripts/publish.mjs",
+    "dev": "node ./scripts/publish.mjs prepare && vite",
+    "build": "node ./scripts/publish.mjs prepare && vite build && node ./scripts/publish.mjs publish",
     "preview": "vite preview"
   },
   "dependencies": {
