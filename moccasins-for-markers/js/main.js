@@ -125,10 +125,12 @@
           <img src="${product.image}" alt="${product.name} ornamental moccasins" loading="lazy" width="640" height="640">
         </div>
         <div class="product-meta">
-          <h3 class="product-name">${product.name}</h3>
+          <div class="product-top">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-price">${money(product.price)}</p>
+          </div>
           <p class="product-desc">${product.description}</p>
-          <p class="product-price">${money(product.price)}</p>
-          <button type="button" class="btn btn-add" data-add="${product.id}">Add to cart</button>
+          <button type="button" class="btn-add" data-add="${product.id}">Add to cart</button>
         </div>
       </article>
     `
