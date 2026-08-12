@@ -3,450 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Radiant Rootz — natural & organic beauty care. Shop bestsellers, winter sale sets, and botanical skin & hair rituals.">
-  <title>Radiant Rootz | Botanical Beauty Atelier</title>
+  <meta name="description" content="Radiant Rootz — beauty, wellness, natural care. Award-crafted botanical skin & hair rituals.">
+  <title>Radiant Rootz | Beauty · Wellness · Natural Care</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/radiant-rootz-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader-stage">
-      <div class="preloader-emblem">
-        <img src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz logo" width="140" height="140">
-      </div>
-      <div class="preloader-type">
-        <span class="preloader-line">Radiant</span>
-        <span class="preloader-line italic">Rootz</span>
-      </div>
-      <div class="preloader-progress"><i id="preloaderBar"></i></div>
-      <p class="preloader-caption">Beauty · Wellness · Natural Care</p>
-    </div>
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="assets/images/radiant-rootz-logo.png" alt="">
+    <span>Radiant Rootz</span>
   </div>
 
-  <div class="grain" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <!-- Slim promo strip -->
-  <div class="promo-strip" id="promoStrip">
-    <div class="promo-strip-track" aria-hidden="true">
-      <span>Winter Glow Sale — Up to 30% Off</span><i></i>
-      <span>Free Shipping on Orders $25+</span><i></i>
-      <span>Bestseller: Whipped Shea Cream</span><i></i>
-      <span>Winter Glow Sale — Up to 30% Off</span><i></i>
-      <span>Free Shipping on Orders $25+</span><i></i>
-      <span>Bestseller: Whipped Shea Cream</span><i></i>
-    </div>
-  </div>
-
-  <header class="header" id="header">
-    <nav class="nav">
-      <a href="#top" class="brand" data-magnetic>
-        <img class="brand-mark" src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz" width="44" height="44">
-        <span class="brand-word">Radiant<em>Rootz</em></span>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#sale">Sale</a></li>
-        <li><a href="#bestseller">Bestseller</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#rootz">Ingredients</a></li>
-        <li><a href="#creator">Creator</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="#shop" class="btn btn-ink" data-magnetic><span>Shop Now</span></a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-          <span></span><span></span>
-        </button>
-      </div>
+  <header class="site-header" id="header">
+    <a class="logo" href="#top">
+      <img src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz">
+      <span>Radiant <i>Rootz</i></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#sale">Sale</a>
+      <a href="#bestseller">Bestseller</a>
+      <a href="#shop">Shop</a>
+      <a href="#rootz">Ingredients</a>
+      <a href="#creator">Creator</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <a class="header-cta" href="#shop">Shop Now</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
   </header>
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-stage">
-        <div class="hero-media">
-          <img src="assets/images/hero-cinematic.png" alt="" class="hero-img" loading="eager">
-          <div class="hero-wash"></div>
-          <div class="hero-vignette"></div>
-        </div>
-
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="assets/images/hero-luminous.png" alt="" loading="eager">
+      </div>
+      <div class="hero-grid">
         <div class="hero-copy">
-          <h1 class="hero-title" aria-label="Radiant Rootz">
-            <span class="hero-line"><span>Radiant</span></span>
-            <span class="hero-line hero-line--accent"><span><em>Rootz</em></span></span>
+          <p class="eyebrow">Beauty · Wellness · Natural Care</p>
+          <h1>
+            <span class="h-line"><span>Radiant</span></span>
+            <span class="h-line script"><span>Rootz</span></span>
           </h1>
-          <p class="hero-kicker" data-hero-fade>Beauty · Wellness · Natural Care</p>
-          <p class="hero-lead" data-hero-fade>
-            The power of nature, bottled in gold — organic skin &amp; hair rituals rooted in radiance.
-          </p>
-          <div class="hero-actions" data-hero-fade>
-            <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop">
-              <span>Shop the Collection</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-            <a href="#bestseller" class="btn btn-ghost-light" data-magnetic data-cursor="View">
-              <span>Meet the Bestseller</span>
-            </a>
+          <p class="lede">Botanical skin &amp; hair rituals — luminous, organic, and rooted in nature.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#shop">Explore Collection</a>
+            <a class="btn btn-line" href="#bestseller">View Bestseller</a>
           </div>
+        </div>
+        <div class="hero-product">
+          <img src="assets/images/product-bestseller.png" alt="Radiant Rootz Whipped Shea Cream" loading="eager">
+          <p class="hero-caption"><strong>#1 Bestseller</strong> — Whipped Shea Cream · $42</p>
+        </div>
+      </div>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Shea Butter</span><i></i>
+          <span>Cocoa Butter</span><i></i>
+          <span>Black Seed Oil</span><i></i>
+          <span>Plant Botanicals</span><i></i>
+          <span>Shea Butter</span><i></i>
+          <span>Cocoa Butter</span><i></i>
+          <span>Black Seed Oil</span><i></i>
+          <span>Plant Botanicals</span><i></i>
         </div>
       </div>
     </section>
 
-    <!-- SALE BANNER -->
-    <section class="sale-banner" id="sale">
-      <div class="sale-media" aria-hidden="true">
-        <img src="assets/images/sale-banner-products.png" alt="" loading="lazy">
-        <div class="sale-veil"></div>
-      </div>
-
-      <div class="sale-layout">
-        <div class="sale-content">
-          <div class="sale-brand">
-            <img src="assets/images/radiant-rootz-logo.png" alt="" width="54" height="54">
-            <p class="sale-eyebrow">Limited Season Event</p>
+    <!-- SALE -->
+    <section class="sale" id="sale">
+      <div class="sale-left">
+        <p class="eyebrow gold">Limited Season Event</p>
+        <h2>Winter Glow <em>Sale</em></h2>
+        <p class="sale-price">Bestseller <b>$42</b> <s>$56</s> · Winter Set <b>$68</b></p>
+        <p class="sale-note">Up to 30% off · Free shipping $25+ · Ends Sunday</p>
+        <div class="sale-row">
+          <a class="btn btn-gold" href="#shop">Shop the Sale</a>
+          <div class="timer" id="timer">
+            <div><b data-d>02</b><span>Days</span></div>
+            <div><b data-h>14</b><span>Hrs</span></div>
+            <div><b data-m>36</b><span>Min</span></div>
+            <div><b data-s>18</b><span>Sec</span></div>
           </div>
-
-          <h2 class="sale-title">
-            <span>Winter Glow</span>
-            <em>Sale</em>
-          </h2>
-
-          <p class="sale-offer">
-            Bestseller now <strong>$42</strong> <span class="sale-was">$56</span>
-            <span class="sale-sep">·</span>
-            Winter Set <strong>$68</strong>
-          </p>
-          <p class="sale-sub">Up to 30% off — free shipping on orders $25+</p>
-
-          <div class="sale-actions">
-            <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Sale</span></a>
-            <a href="#bundle" class="sale-secondary" data-magnetic>View Winter Set <i>→</i></a>
-          </div>
-
-          <div class="sale-countdown" id="saleCountdown" aria-label="Sale countdown">
-            <div><strong data-days>02</strong><span>Days</span></div>
-            <div><strong data-hours>14</strong><span>Hrs</span></div>
-            <div><strong data-mins>36</strong><span>Min</span></div>
-            <div><strong data-secs>18</strong><span>Sec</span></div>
-          </div>
-          <p class="sale-urgency">Ends Sunday · While supplies last</p>
         </div>
-
-        <aside class="sale-product" aria-label="Featured sale products">
-          <img src="assets/images/product-bestseller.png" alt="Radiant Rootz Whipped Shea Cream on sale" class="sale-product-main" loading="lazy">
-          <a href="#bundle" class="sale-product-card" data-magnetic data-cursor="Bundle">
-            <img src="assets/images/product-winter-set.png" alt="Winter Glow Set" loading="lazy">
-            <div>
-              <span>Winter Glow Set</span>
-              <strong>$68 <s>$95</s></strong>
-            </div>
-          </a>
-        </aside>
+      </div>
+      <div class="sale-right">
+        <img src="assets/images/sale-banner-products.png" alt="Winter Glow sale products" loading="lazy">
       </div>
     </section>
 
     <!-- BESTSELLER -->
-    <section class="bestseller" id="bestseller">
-      <div class="bestseller-shell">
-        <div class="bestseller-visual">
-          <div class="bestseller-glow" aria-hidden="true"></div>
-          <img src="assets/images/product-bestseller.png" alt="Radiant Whipped Shea Cream bestseller jar" class="bestseller-img" loading="lazy">
-          <div class="bestseller-badge">
-            <span>#1</span>
-            Best Seller
-          </div>
-        </div>
-
-        <div class="bestseller-copy">
-          <p class="eyebrow">Customer Favorite</p>
-          <h2 class="display">Radiant Whipped<br><em>Shea Cream</em></h2>
-          <div class="price-row">
-            <span class="price-now">$42</span>
-            <span class="price-was">$56</span>
-            <span class="price-save">Save 25%</span>
-          </div>
-          <p class="bestseller-text">
-            Our most-loved ritual — airy whipped shea butter that melts into skin, sealing moisture with a soft botanical glow. Pure enough for every day. Luxurious enough to feel like a ceremony.
-          </p>
-          <ul class="bestseller-points">
-            <li>Deep hydration with organic shea</li>
-            <li>Silky, non-greasy finish</li>
-            <li>Skin &amp; body — morning to night</li>
-          </ul>
-          <div class="bestseller-actions">
-            <button class="btn btn-ink btn-lg" data-magnetic data-cursor="Add" data-add-cart="Whipped Shea Cream">
-              <span>Add to Bag — $42</span>
-            </button>
-            <a href="#rootz" class="text-link" data-magnetic>See ingredients <i>→</i></a>
-          </div>
-          <p class="bestseller-social">Loved by 2,400+ radiant routines</p>
-        </div>
+    <section class="feature" id="bestseller">
+      <div class="feature-media">
+        <img src="assets/images/product-bestseller.png" alt="Whipped Shea Cream" loading="lazy">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">Customer Favorite</p>
+        <h2>Radiant Whipped<br><em>Shea Cream</em></h2>
+        <div class="price"><b>$42</b><s>$56</s><span>Save 25%</span></div>
+        <p>Our most-loved ritual — airy whipped shea that melts into skin and seals a soft botanical glow.</p>
+        <ul>
+          <li>Deep hydration with organic shea</li>
+          <li>Silky, non-greasy finish</li>
+          <li>Morning-to-night radiance</li>
+        </ul>
+        <button class="btn btn-dark" data-add="Whipped Shea Cream">Add to Bag — $42</button>
       </div>
     </section>
 
     <!-- SHOP -->
     <section class="shop" id="shop">
-      <div class="shop-head">
+      <div class="section-head">
         <div>
           <p class="eyebrow">The Collection</p>
-          <h2 class="display">Shop botanical beauty</h2>
+          <h2>Shop botanical beauty</h2>
         </div>
-        <p class="shop-lead">Handcrafted formulas for skin and hair — rooted in nature, finished like luxury.</p>
+        <p>Handcrafted formulas for skin and hair — rooted in nature, finished like luxury.</p>
       </div>
-
-      <div class="product-grid">
-        <article class="product" data-cursor="Add">
-          <div class="product-media">
-            <span class="product-tag product-tag--hot">Bestseller</span>
+      <div class="shop-grid">
+        <article class="item">
+          <div class="item-media">
+            <span class="tag hot">Bestseller</span>
             <img src="assets/images/product-bestseller.png" alt="Whipped Shea Cream" loading="lazy">
-            <button class="product-quick" data-add-cart="Whipped Shea Cream">Quick Add</button>
+            <button data-add="Whipped Shea Cream">Quick Add</button>
           </div>
-          <div class="product-info">
-            <h3>Whipped Shea Cream</h3>
-            <p>Signature moisture ritual</p>
-            <div class="product-price">
-              <span class="price-now">$42</span>
-              <span class="price-was">$56</span>
-            </div>
-          </div>
+          <h3>Whipped Shea Cream</h3>
+          <p>Signature moisture ritual</p>
+          <div class="price"><b>$42</b><s>$56</s></div>
         </article>
-
-        <article class="product" data-cursor="Add">
-          <div class="product-media">
-            <span class="product-tag">New</span>
+        <article class="item">
+          <div class="item-media">
+            <span class="tag">New</span>
             <img src="assets/images/product-black-seed.png" alt="Black Seed Facial Oil" loading="lazy">
-            <button class="product-quick" data-add-cart="Black Seed Facial Oil">Quick Add</button>
+            <button data-add="Black Seed Facial Oil">Quick Add</button>
           </div>
-          <div class="product-info">
-            <h3>Black Seed Facial Oil</h3>
-            <p>Balance &amp; renewal elixir</p>
-            <div class="product-price">
-              <span class="price-now">$38</span>
-            </div>
-          </div>
+          <h3>Black Seed Facial Oil</h3>
+          <p>Balance &amp; renewal elixir</p>
+          <div class="price"><b>$38</b></div>
         </article>
-
-        <article class="product" data-cursor="Add">
-          <div class="product-media">
-            <span class="product-tag product-tag--sale">Sale</span>
+        <article class="item">
+          <div class="item-media">
+            <span class="tag sale">Sale</span>
             <img src="assets/images/product-cocoa-cream.png" alt="Cocoa Butter Body Cream" loading="lazy">
-            <button class="product-quick" data-add-cart="Cocoa Butter Body Cream">Quick Add</button>
+            <button data-add="Cocoa Butter Body Cream">Quick Add</button>
           </div>
-          <div class="product-info">
-            <h3>Cocoa Butter Body Cream</h3>
-            <p>Rich comforting nourishment</p>
-            <div class="product-price">
-              <span class="price-now">$36</span>
-              <span class="price-was">$48</span>
-            </div>
-          </div>
+          <h3>Cocoa Butter Body Cream</h3>
+          <p>Rich comforting nourishment</p>
+          <div class="price"><b>$36</b><s>$48</s></div>
         </article>
-
-        <article class="product" data-cursor="Add">
-          <div class="product-media">
+        <article class="item">
+          <div class="item-media">
             <img src="assets/images/product-hair-oil.png" alt="Botanical Hair Oil" loading="lazy">
-            <button class="product-quick" data-add-cart="Botanical Hair Oil">Quick Add</button>
+            <button data-add="Botanical Hair Oil">Quick Add</button>
           </div>
-          <div class="product-info">
-            <h3>Botanical Hair Oil</h3>
-            <p>Root-to-tip radiance</p>
-            <div class="product-price">
-              <span class="price-now">$34</span>
-            </div>
-          </div>
+          <h3>Botanical Hair Oil</h3>
+          <p>Root-to-tip radiance</p>
+          <div class="price"><b>$34</b></div>
         </article>
       </div>
     </section>
 
-    <!-- WINTER BUNDLE BANNER -->
+    <!-- BUNDLE -->
     <section class="bundle" id="bundle">
-      <div class="bundle-media">
-        <img src="assets/images/product-winter-set.png" alt="Winter Glow Set product lineup" loading="lazy">
-        <div class="bundle-veil"></div>
-      </div>
+      <img class="bundle-bg" src="assets/images/product-winter-set.png" alt="" loading="lazy">
       <div class="bundle-copy">
-        <p class="eyebrow light">Seasonal Bundle</p>
-        <h2 class="display light">Winter Glow <em>Set</em></h2>
+        <p class="eyebrow gold">Seasonal Bundle</p>
+        <h2>Winter Glow <em>Set</em></h2>
         <p>Two nourishing rituals + one restorative oil — curated for colder air and softer skin.</p>
-        <div class="price-row price-row--light">
-          <span class="price-now">$68</span>
-          <span class="price-was">$95</span>
-          <span class="price-save">Save $27</span>
-        </div>
-        <button class="btn btn-light btn-lg" data-magnetic data-cursor="Add" data-add-cart="Winter Glow Set">
-          <span>Add Bundle to Bag</span>
-        </button>
+        <div class="price light"><b>$68</b><s>$95</s><span>Save $27</span></div>
+        <button class="btn btn-gold" data-add="Winter Glow Set">Add Bundle to Bag</button>
       </div>
     </section>
 
     <!-- INGREDIENTS -->
-    <section class="rootz" id="rootz">
-      <div class="rootz-intro">
+    <section class="ingredients" id="rootz">
+      <div class="section-head narrow">
         <p class="eyebrow">What's in the Rootz</p>
-        <h2 class="display">An ingredient commitment<br><em>written in botanicals</em></h2>
+        <h2>Ingredients written<br><em>in botanicals</em></h2>
       </div>
-
-      <div class="rootz-stage" id="rootzStage">
-        <div class="rootz-visual">
-          <div class="rootz-frame">
-            <img src="assets/images/shea-editorial.png" alt="Shea butter" data-root-img="0" class="is-active" loading="lazy">
-            <img src="assets/images/cocoa-editorial.png" alt="Cocoa butter" data-root-img="1" loading="lazy">
-            <img src="assets/images/ingredient-oil.png" alt="Black seed oil" data-root-img="2" loading="lazy">
-            <img src="assets/images/botanical-leaves.jpg" alt="Plant botanicals" data-root-img="3" loading="lazy">
-          </div>
-          <div class="rootz-orb" aria-hidden="true"></div>
+      <div class="ing-stage">
+        <div class="ing-visual">
+          <img class="is-on" data-img="0" src="assets/images/shea-editorial.png" alt="Shea butter" loading="lazy">
+          <img data-img="1" src="assets/images/cocoa-editorial.png" alt="Cocoa butter" loading="lazy">
+          <img data-img="2" src="assets/images/ingredient-oil.png" alt="Black seed oil" loading="lazy">
+          <img data-img="3" src="assets/images/botanical-leaves.jpg" alt="Plant botanicals" loading="lazy">
         </div>
-
-        <div class="rootz-list" role="list">
-          <button class="root-item is-active" data-root="0" role="listitem">
-            <span class="root-num">01</span>
-            <span class="root-body">
-              <strong>Shea Butter</strong>
-              <span>Deep conditioning moisture that softens and seals in radiance.</span>
-            </span>
-          </button>
-          <button class="root-item" data-root="1" role="listitem">
-            <span class="root-num">02</span>
-            <span class="root-body">
-              <strong>Cocoa Butter</strong>
-              <span>Rich protective nourishment with a naturally comforting finish.</span>
-            </span>
-          </button>
-          <button class="root-item" data-root="2" role="listitem">
-            <span class="root-num">03</span>
-            <span class="root-body">
-              <strong>Black Seed Oil</strong>
-              <span>A restorative botanical celebrated for balance and renewal.</span>
-            </span>
-          </button>
-          <button class="root-item" data-root="3" role="listitem">
-            <span class="root-num">04</span>
-            <span class="root-body">
-              <strong>Plant-Based Oils</strong>
-              <span>Hand-selected oils known for nourishing, healing character.</span>
-            </span>
-          </button>
+        <div class="ing-list">
+          <button class="ing is-on" data-i="0"><span>01</span><div><strong>Shea Butter</strong><p>Deep conditioning moisture that softens and seals radiance.</p></div></button>
+          <button class="ing" data-i="1"><span>02</span><div><strong>Cocoa Butter</strong><p>Rich protective nourishment with a comforting finish.</p></div></button>
+          <button class="ing" data-i="2"><span>03</span><div><strong>Black Seed Oil</strong><p>A restorative botanical for balance and renewal.</p></div></button>
+          <button class="ing" data-i="3"><span>04</span><div><strong>Plant Oils</strong><p>Hand-selected oils known for nourishing character.</p></div></button>
         </div>
       </div>
     </section>
 
     <!-- CREATOR -->
     <section class="creator" id="creator">
-      <div class="creator-visual">
-        <div class="creator-mask">
-          <img src="assets/images/creator-editorial.png" alt="Cha'Ron Jackson, founder of Radiant Rootz" loading="lazy">
-        </div>
-        <div class="creator-caption" aria-hidden="true">Founder</div>
+      <div class="creator-photo">
+        <img src="assets/images/creator-editorial.png" alt="Cha'Ron Jackson" loading="lazy">
       </div>
       <div class="creator-copy">
         <p class="eyebrow">The Creator</p>
-        <h2 class="display">Cha'Ron<br><em>Jackson</em></h2>
-        <p>
-          Radiant Rootz was born from a belief that beauty should feel grounded — that nature already holds everything we need for luminous skin and hair.
-        </p>
-        <p>
-          Every blend is a love letter to botanical wisdom: honest ingredients, intentional care, and results you can feel.
-        </p>
-        <a href="#contact" class="btn btn-ink" data-magnetic data-cursor="Connect"><span>Connect with us</span></a>
-      </div>
-    </section>
-
-    <!-- PROMISE -->
-    <section class="ribbon" aria-label="Brand promises">
-      <div class="ribbon-track">
-        <div class="ribbon-row">
-          <span>Free Shipping $25+</span><i></i>
-          <span>All Natural &amp; Organic</span><i></i>
-          <span>Winter Sale Live</span><i></i>
-          <span>Botanical Rituals</span><i></i>
-          <span>Free Shipping $25+</span><i></i>
-          <span>All Natural &amp; Organic</span><i></i>
-          <span>Winter Sale Live</span><i></i>
-          <span>Botanical Rituals</span><i></i>
-        </div>
+        <h2>Cha'Ron <em>Jackson</em></h2>
+        <p>Radiant Rootz was born from a belief that beauty should feel grounded — that nature already holds everything we need for luminous skin and hair.</p>
+        <p>Every blend is a love letter to botanical wisdom: honest ingredients, intentional care, and results you can feel.</p>
+        <a class="btn btn-line dark" href="#contact">Connect with us</a>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-      <div class="contact-shell">
-        <div class="contact-copy">
+      <div class="contact-wrap">
+        <div>
           <p class="eyebrow">Contact</p>
-          <h2 class="display">Let's grow something <em>beautiful</em></h2>
-          <p class="contact-lead">For general information or questions about your order, reach out anytime.</p>
-          <div class="contact-lines">
-            <a href="mailto:info@radiantrootz.net">info@radiantrootz.net</a>
-            <a href="tel:+11234567890">123-456-7890</a>
-          </div>
+          <h2>Let's grow something <em>beautiful</em></h2>
+          <p>For order questions or general inquiries, reach out anytime.</p>
+          <a class="mail" href="mailto:info@radiantrootz.net">info@radiantrootz.net</a>
+          <a class="mail" href="tel:+11234567890">123-456-7890</a>
         </div>
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-ink btn-block" data-magnetic><span>Send Message</span></button>
+        <form id="form">
+          <label>Name<input name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Message<textarea name="message" rows="4" required></textarea></label>
+          <button class="btn btn-dark" type="submit">Send Message</button>
         </form>
       </div>
     </section>
 
     <!-- FINALE -->
     <section class="finale">
-      <div class="finale-media">
-        <img src="assets/images/finale-garden.png" alt="" loading="lazy">
-        <div class="finale-veil"></div>
-      </div>
+      <img src="assets/images/finale-garden.png" alt="" loading="lazy">
       <div class="finale-copy">
-        <img src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz" class="finale-emblem">
-        <h2 class="display light scramble" data-scramble>Nature, bottled for you</h2>
-        <p>Your winter glow ritual starts here.</p>
-        <a href="#shop" class="btn btn-light" data-magnetic data-cursor="Shop"><span>Shop the Sale</span></a>
+        <img src="assets/images/radiant-rootz-logo.png" alt="">
+        <h2>Nature, bottled for you</h2>
+        <a class="btn btn-gold" href="#shop">Shop the Collection</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#top" class="brand">
-          <img class="brand-mark" src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz" width="44" height="44">
-          <span class="brand-word">Radiant<em>Rootz</em></span>
-        </a>
-        <p>Beauty · Wellness · Natural Care. Crafted with botanical intention.</p>
-      </div>
-      <div>
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="#bestseller">Bestseller</a></li>
-          <li><a href="#shop">All Products</a></li>
-          <li><a href="#sale">Winter Sale</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="#creator">The Creator</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="mailto:info@radiantrootz.net">Email</a></li>
-        </ul>
+    <div class="footer-top">
+      <a class="logo" href="#top">
+        <img src="assets/images/radiant-rootz-logo.png" alt="Radiant Rootz">
+        <span>Radiant <i>Rootz</i></span>
+      </a>
+      <div class="footer-links">
+        <a href="#shop">Shop</a>
+        <a href="#sale">Sale</a>
+        <a href="#creator">Creator</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-    <div class="footer-bar">
+    <div class="footer-bottom">
       <p>&copy; 2026 Radiant Rootz LLC.</p>
-      <p>Botanical Beauty Atelier</p>
+      <p>Beauty · Wellness · Natural Care</p>
     </div>
   </footer>
 
