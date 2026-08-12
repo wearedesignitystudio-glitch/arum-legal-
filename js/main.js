@@ -32,7 +32,6 @@
 
     initCursor();
     initNav();
-    initSpores();
     initSmooth();
     initHero();
     initSale();
@@ -48,40 +47,7 @@
 
   /* ---------- Cursor ---------- */
   function initCursor() {
-    const cursor = document.getElementById("cursor");
-    if (!cursor || isTouch) {
-      document.body.classList.add("no-cursor");
-      return;
-    }
-
-    const dot = cursor.querySelector(".cursor-dot");
-    const ring = cursor.querySelector(".cursor-ring");
-    const label = cursor.querySelector(".cursor-label");
-    let x = innerWidth / 2;
-    let y = innerHeight / 2;
-    let rx = x;
-    let ry = y;
-
-    window.addEventListener("mousemove", (e) => {
-      x = e.clientX;
-      y = e.clientY;
-      gsap.set(dot, { x, y });
-    });
-
-    gsap.ticker.add(() => {
-      rx += (x - rx) * 0.16;
-      ry += (y - ry) * 0.16;
-      gsap.set(ring, { x: rx, y: ry });
-      gsap.set(label, { x: rx, y: ry });
-    });
-
-    document.querySelectorAll("a, button, .root-item, [data-cursor]").forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursor.classList.add("is-hover");
-        if (label) label.textContent = el.dataset.cursor || "View";
-      });
-      el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
-    });
+    document.body.classList.add("no-cursor");
   }
 
   /* ---------- Nav ---------- */
@@ -116,54 +82,6 @@
   }
 
   /* ---------- Spores canvas ---------- */
-  function initSpores() {
-    const canvas = document.getElementById("sporeField");
-    if (!canvas || reduceMotion || isTouch) {
-      canvas?.remove();
-      return;
-    }
-
-    const ctx = canvas.getContext("2d");
-    let w, h, particles, raf;
-
-    const resize = () => {
-      w = canvas.width = innerWidth;
-      h = canvas.height = innerHeight;
-      particles = Array.from({ length: Math.min(42, Math.floor(w / 40)) }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.8 + 0.4,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: -Math.random() * 0.35 - 0.05,
-        a: Math.random() * 0.4 + 0.1,
-      }));
-    };
-
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
-        if (p.x < -10) p.x = w + 10;
-        if (p.x > w + 10) p.x = -10;
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(212, 175, 55, ${p.a})`;
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      raf = requestAnimationFrame(draw);
-    };
-
-    resize();
-    draw();
-    window.addEventListener("resize", resize);
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) cancelAnimationFrame(raf);
-      else draw();
-    });
-  }
-
   /* ---------- Smooth scroll ---------- */
   let lenis;
   function initSmooth() {
@@ -443,10 +361,10 @@
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(el, { x: x * 0.28, y: y * 0.28, duration: 0.35, ease: "power3.out" });
+        gsap.to(el, { x: x * 0.18, y: y * 0.18, duration: 0.35, ease: "power3.out" });
       });
       el.addEventListener("mouseleave", () => {
-        gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.45)" });
+        gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: "power3.out" });
       });
     });
   }
