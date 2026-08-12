@@ -211,7 +211,7 @@
     document.body.style.overflow = "hidden";
   }
 
-  function closeCart() {
+  function closeCart({ keepScrollLock = false } = {}) {
     els.cartDrawer.classList.remove("is-open");
     els.cartDrawer.setAttribute("aria-hidden", "true");
     els.cartToggle.setAttribute("aria-expanded", "false");
@@ -219,7 +219,9 @@
     setTimeout(() => {
       els.cartBackdrop.hidden = true;
     }, 300);
-    document.body.style.overflow = "";
+    if (!keepScrollLock) {
+      document.body.style.overflow = "";
+    }
   }
 
   function openCheckout() {
@@ -305,12 +307,12 @@
     });
 
     els.checkoutBtn.addEventListener("click", () => {
-      closeCart();
+      closeCart({ keepScrollLock: true });
       openCheckout();
     });
 
     els.checkoutModal.addEventListener("click", (event) => {
-      if (event.target.matches("[data-close-modal]")) {
+      if (event.target.closest("[data-close-modal]")) {
         closeCheckout();
       }
     });
