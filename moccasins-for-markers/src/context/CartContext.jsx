@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { PRODUCTS } from '../data/products';
+import { BUNDLES, PRODUCTS } from '../data/products';
 
 const CartContext = createContext(null);
-const STORAGE_KEY = 'mfm-cart-v2';
+const STORAGE_KEY = 'mfm-cart-v3';
 
 function loadCart() {
   try {
@@ -11,6 +11,27 @@ function loadCart() {
   } catch {
     return [];
   }
+}
+
+function enrichItem(item) {
+  if (item.type === 'bundle') {
+    const bundle = BUNDLES.find((b) => b.id === item.id);
+    if (!bundle) return null;
+    return {
+      ...item,
+      product: {
+        id: bundle.id,
+        name: bundle.name,
+        price: bundle.price,
+        image: bundle.image,
+        tagline: `${bundle.items.length} pairs · bundle`,
+      },
+    };
+  }
+
+  const product = PRODUCTS.find((p) => p.id === item.id);
+  if (!product) return null;
+  return { ...item, type: 'product', product };
 }
 
 export function CartProvider({ children }) {
@@ -32,34 +53,42 @@ export function CartProvider({ children }) {
     return () => clearTimeout(id);
   }, [toast]);
 
-  const enriched = useMemo(
-    () =>
-      cart
-        .map((item) => {
-          const product = PRODUCTS.find((p) => p.id === item.id);
-          if (!product) return null;
-          return { ...item, product };
-        })
-        .filter(Boolean),
-    [cart],
-  );
+  const enriched = useMemo(() => cart.map(enrichItem).filter(Boolean), [cart]);
 
   const count = enriched.reduce((sum, item) => sum + item.qty, 0);
   const subtotal = enriched.reduce((sum, item) => sum + item.product.price * item.qty, 0);
 
   const showToast = (message) => setToast(message);
 
-  const addToCart = (id, qty = 1) => {
+  const addToCart = (id, qty = 1, { open = true, toast = true } = {}) => {
     setCart((prev) => {
-      const existing = prev.find((item) => item.id === id);
+      const existing = prev.find((item) => item.id === id && item.type !== 'bundle');
       if (existing) {
-        return prev.map((item) => (item.id === id ? { ...item, qty: item.qty + qty } : item));
+        return prev.map((item) =>
+          item.id === id && item.type !== 'bundle' ? { ...item, qty: item.qty + qty } : item,
+        );
       }
-      return [...prev, { id, qty }];
+      return [...prev, { id, qty, type: 'product' }];
+    });
+    if (open) setIsCartOpen(true);
+    if (toast) {
+      const product = PRODUCTS.find((p) => p.id === id);
+      showToast(`${product?.name || 'Item'} added to cart`);
+    }
+  };
+
+  const addBundle = (bundleId, label = 'Bundle') => {
+    setCart((prev) => {
+      const existing = prev.find((item) => item.id === bundleId && item.type === 'bundle');
+      if (existing) {
+        return prev.map((item) =>
+          item.id === bundleId && item.type === 'bundle' ? { ...item, qty: item.qty + 1 } : item,
+        );
+      }
+      return [...prev, { id: bundleId, qty: 1, type: 'bundle' }];
     });
     setIsCartOpen(true);
-    const product = PRODUCTS.find((p) => p.id === id);
-    showToast(`${product?.name || 'Item'} added to cart`);
+    showToast(`${label} added to cart`);
   };
 
   const updateQty = (id, qty) => {
@@ -81,6 +110,7 @@ export function CartProvider({ children }) {
     closeCart: () => setIsCartOpen(false),
     toggleCart: () => setIsCartOpen((v) => !v),
     addToCart,
+    addBundle,
     updateQty,
     removeFromCart,
     clearCart,

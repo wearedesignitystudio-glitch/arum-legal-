@@ -4,8 +4,9 @@ import Seo from '../components/ui/Seo';
 import Reveal from '../components/ui/Reveal';
 import Button from '../components/ui/Button';
 import ProductGrid from '../components/product/ProductGrid';
-import { PRODUCTS, asset } from '../data/products';
+import { PRODUCTS, BUNDLES, asset } from '../data/products';
 import { FAQ_ITEMS } from '../data/content';
+import { PurposeBanner, BundleBanners } from '../components/ui/PromoBanners';
 import './Home.css';
 
 const CATEGORIES = [
@@ -90,7 +91,7 @@ export default function Home() {
                 <span>Sales support markers</span>
               </div>
               <div>
-                <strong>6</strong>
+                <strong>9</strong>
                 <span>Handcrafted designs</span>
               </div>
             </motion.div>
@@ -118,6 +119,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PurposeBanner />
+
       <section className="section-tight">
         <div className="container">
           <Reveal className="section-head">
@@ -134,6 +137,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <BundleBanners bundles={BUNDLES} />
 
       <section className="section dna-features">
         <div className="container dna-features-grid">

@@ -125,6 +125,92 @@ export const PRODUCTS = [
     tags: ['handmade', 'limited', 'available'],
     available: true,
   },
+  {
+    id: 'copper-flame',
+    slug: 'copper-flame',
+    name: 'Copper Flame',
+    price: 85,
+    currency: 'CAD',
+    tagline: 'Rust geometric beadwork',
+    description:
+      'Rust-red leather with white and black diamond beadwork and copper accents — a quiet flame of remembrance.',
+    longDescription:
+      'Copper Flame is crafted from rust-toned leather and finished with geometric diamond beadwork in white and black, edged with copper beads. Bold yet intimate, made for honour.',
+    materials: 'Rust leather, glass seed beads, copper accents, cotton thread.',
+    craftsmanship: 'Geometric patterns are planned and beaded by hand for balance and clarity.',
+    impact: 'Proceeds support permanent headstones for unmarked graves.',
+    shipping: 'Ships within Canada.',
+    image: 'moccasin-copper-flame.jpg',
+    hoverImage: 'moccasin-coral-path.jpg',
+    category: 'new',
+    tags: ['handmade', 'limited', 'new', 'available', 'featured'],
+    available: true,
+  },
+  {
+    id: 'violet-dawn',
+    slug: 'violet-dawn',
+    name: 'Violet Dawn',
+    price: 85,
+    currency: 'CAD',
+    tagline: 'Purple gold floral beadwork',
+    description:
+      'Ivory-cream leather with deep purple and gold floral beadwork — soft light held in colour.',
+    longDescription:
+      'Violet Dawn pairs ivory leather with purple and gold floral beadwork. A luminous ornamental pair meant to be kept close and remembered.',
+    materials: 'Ivory leather, purple and gold glass beads, cotton thread.',
+    craftsmanship: 'Floral motifs are beaded by hand over a shaped leather vamp.',
+    impact: 'Every purchase contributes to permanent markers.',
+    shipping: 'Ships within Canada.',
+    image: 'moccasin-violet-dawn.jpg',
+    hoverImage: 'moccasin-turquoise-bloom.jpg',
+    category: 'new',
+    tags: ['handmade', 'limited', 'new', 'available'],
+    available: true,
+  },
+  {
+    id: 'winter-whisper',
+    slug: 'winter-whisper',
+    name: 'Winter Whisper',
+    price: 85,
+    currency: 'CAD',
+    tagline: 'Silver snowflake beadwork',
+    description:
+      'Smoke-grey leather with silver and white snowflake beadwork and soft fringe — stillness made visible.',
+    longDescription:
+      'Winter Whisper is made from smoke-grey leather with silver-white snowflake beadwork and delicate fringe. Quiet, ceremonial, and made for remembrance.',
+    materials: 'Smoke-grey leather, silver and white beads, cotton thread.',
+    craftsmanship: 'Snowflake motifs and fringe are finished individually by hand.',
+    impact: 'Sales help place lasting stone where silence once stood.',
+    shipping: 'Ships within Canada.',
+    image: 'moccasin-winter-whisper.jpg',
+    hoverImage: 'moccasin-night-star.jpg',
+    category: 'new',
+    tags: ['handmade', 'limited', 'new', 'available', 'featured'],
+    available: true,
+  },
+];
+
+export const BUNDLES = [
+  {
+    id: 'remembrance-duo',
+    name: 'Remembrance Duo',
+    tagline: '2 pairs · Save $20',
+    description: 'Choose any two ornamental pairs. A meaningful gift that doubles the impact.',
+    productIds: ['emerald-heart', 'bear-medicine'],
+    price: 150,
+    compareAt: 170,
+    image: 'banner-bundle.jpg',
+  },
+  {
+    id: 'honour-trio',
+    name: 'Honour Trio',
+    tagline: '3 pairs · Save $35',
+    description: 'Three handmade pairs for family, friends, or a shared act of remembrance.',
+    productIds: ['copper-flame', 'violet-dawn', 'winter-whisper'],
+    price: 220,
+    compareAt: 255,
+    image: 'banner-bundle.jpg',
+  },
 ];
 
 export function getProductBySlug(slug) {
