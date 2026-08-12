@@ -158,27 +158,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section dna-impact">
-        <div className="container split">
-          <Reveal>
-            <div className="editorial-image">
-              <img src={asset('impact-marker.jpg')} alt="A permanent headstone in soft light" />
-            </div>
+      <section className="section bridge-impact">
+        <div className="container bridge-impact-inner">
+          <Reveal className="bridge-impact-media">
+            <img src={asset('hero-craft.jpg')} alt="Handmade ornamental moccasins on stone at sunset" />
+            <img src={asset('impact-marker.jpg')} alt="A permanent headstone in a quiet field" />
           </Reveal>
-          <Reveal delay={0.1}>
-            <p className="kicker">Impact</p>
-            <h2>From leather to limestone.</h2>
+          <Reveal delay={0.1} className="bridge-impact-copy">
+            <p className="kicker">The bridge</p>
+            <h2>Beauty made by hand. Remembrance set in stone.</h2>
             <p className="muted">
-              Your purchase helps place permanent markers for those who were taken and never properly named.
+              Each ornamental pair begins at the workbench and ends in lasting honour — proceeds directed to permanent
+              markers where unmarked graves still wait for a name.
             </p>
-            <ol className="dna-path-list">
-              {['Craft', 'Purchase', 'Contribution', 'Memorial'].map((step, i) => (
-                <li key={step}>
-                  <span>0{i + 1}</span>
-                  {step}
-                </li>
-              ))}
-            </ol>
+            <div className="bridge-impact-meta">
+              <div>
+                <strong>$85 CAD</strong>
+                <span>Per handmade pair</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>Sales support markers</span>
+              </div>
+            </div>
             <Button to="/impact" variant="primary">
               See how it works
             </Button>

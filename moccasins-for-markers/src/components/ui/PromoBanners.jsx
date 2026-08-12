@@ -4,32 +4,40 @@ import { asset, formatMoney } from '../../data/products';
 import { useCart } from '../../context/CartContext';
 import './PromoBanners.css';
 
+/** Quiet remembrance panel — replaces the old full-bleed purpose banner */
 export function PurposeBanner() {
   return (
-    <section className="purpose-banner">
-      <div className="purpose-banner-media" aria-hidden="true">
-        <img src={asset('impact-marker.jpg')} alt="" />
-        <div className="purpose-banner-veil" />
-      </div>
-      <div className="container purpose-banner-content">
-        <p className="kicker kicker-pill">Why it matters</p>
-        <h2>
-          Your purchase is not just helping.
-          <br />
-          It is helping those who don’t have anyone.
-        </h2>
-        <p>
-          When you buy a pair, you help place permanent headstones for unmarked graves of former residential school
-          survivors — people who may have no family left to remember them. Dignity, restored in stone.
-        </p>
-        <div className="purpose-banner-actions">
-          <Button to="/shop" variant="primary">
-            Shop with purpose
-          </Button>
-          <Button to="/donate" variant="light">
-            Donate directly
-          </Button>
+    <section className="remembrance-panel">
+      <div className="container remembrance-grid">
+        <div className="remembrance-copy">
+          <p className="kicker">A quiet truth</p>
+          <blockquote>
+            <p>
+              Some names were never carved in stone.
+              <span> Your purchase helps place a marker for those who may have no one left to remember them.</span>
+            </p>
+          </blockquote>
+          <p className="remembrance-note">
+            Handmade ornamental moccasins fund permanent headstones for unmarked graves of former residential school
+            survivors — dignity returned, one stitch and one stone at a time.
+          </p>
+          <div className="remembrance-actions">
+            <Button to="/mission" variant="primary">
+              Read our story
+            </Button>
+            <Button to="/donate" variant="secondary">
+              Give toward a marker
+            </Button>
+          </div>
         </div>
+
+        <figure className="remembrance-figure">
+          <img src={asset('craft-table.jpg')} alt="Leather, beads, and thread on a workbench" />
+          <figcaption>
+            <strong>Sew · Sell · Mark</strong>
+            <span>Craft at the table. Remembrance in stone.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

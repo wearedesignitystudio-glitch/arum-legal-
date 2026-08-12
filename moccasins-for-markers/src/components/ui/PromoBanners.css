@@ -1,59 +1,94 @@
-.purpose-banner {
-  position: relative;
-  isolation: isolate;
-  color: var(--cream);
-  padding: clamp(4rem, 8vw, 5.75rem) 0;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
+/* Remembrance panel — editorial letter + craft photo */
+.remembrance-panel {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--line);
 }
 
-.purpose-banner-media {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+.remembrance-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
 }
 
-.purpose-banner-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.remembrance-copy blockquote {
+  margin: 0 0 1.35rem;
+  padding: 0;
+  border: 0;
 }
 
-.purpose-banner-veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(18, 16, 14, 0.94) 0%,
-    rgba(18, 16, 14, 0.78) 48%,
-    rgba(18, 16, 14, 0.52) 100%
-  );
-}
-
-.purpose-banner-content {
-  max-width: 680px;
-}
-
-.purpose-banner-content h2 {
-  max-width: 18ch;
-  margin-bottom: 1rem;
+.remembrance-copy blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
   font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--cream);
 }
 
-.purpose-banner-content > p {
-  max-width: 36rem;
-  color: rgba(243, 236, 227, 0.78);
-  margin-bottom: 1.6rem;
+.remembrance-copy blockquote span {
+  display: block;
+  margin-top: 0.85rem;
+  font-family: var(--font-body);
   font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: var(--muted);
+  max-width: 34rem;
 }
 
-.purpose-banner-actions {
+.remembrance-note {
+  margin: 0 0 1.6rem;
+  color: var(--muted);
+  max-width: 34rem;
+  font-size: 0.95rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.remembrance-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.bundle-section {
+.remembrance-figure {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.remembrance-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.remembrance-figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.remembrance-figure strong {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.remembrance-figure span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Bundle offers */
   padding: clamp(3.25rem, 6vw, 4.75rem) 0;
   border-bottom: 1px solid var(--line);
 }
@@ -163,6 +198,14 @@
 }
 
 @media (max-width: 900px) {
+  .remembrance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .remembrance-figure img {
+    aspect-ratio: 16 / 10;
+  }
+
   .bundle-grid,
   .bundle-card {
     grid-template-columns: 1fr;

@@ -183,6 +183,67 @@
 
 .dna-impact { background: var(--bg); }
 
+.bridge-impact {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.bridge-impact-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 3.75rem);
+  align-items: center;
+}
+
+.bridge-impact-media {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.bridge-impact-media img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.bridge-impact-media img:first-child {
+  aspect-ratio: 4 / 5;
+}
+
+.bridge-impact-media img:last-child {
+  aspect-ratio: 3 / 4;
+  margin-bottom: 12%;
+}
+
+.bridge-impact-copy h2 {
+  max-width: 14ch;
+}
+
+.bridge-impact-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 1.75rem;
+  padding: 1.1rem 0;
+  border-block: 1px solid var(--line);
+  max-width: 22rem;
+}
+
+.bridge-impact-meta strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.bridge-impact-meta span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .dna-path-list {
   list-style: none;
   padding: 0;
@@ -298,7 +359,8 @@
   .dna-features-grid,
   .dna-cats,
   .dna-steps,
-  .dna-faq-grid {
+  .dna-faq-grid,
+  .bridge-impact-inner {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -318,7 +380,9 @@
   .dna-features-grid,
   .dna-cats,
   .dna-steps,
-  .dna-faq-grid {
+  .dna-faq-grid,
+  .bridge-impact-inner,
+  .bridge-impact-media {
     grid-template-columns: 1fr;
   }
 
@@ -336,4 +400,13 @@
   }
 
   .dna-feature:last-child { border-bottom: 0; }
+
+  .bridge-impact-media img:last-child {
+    margin-bottom: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .bridge-impact-media img:first-child {
+    aspect-ratio: 16 / 10;
+  }
 }
