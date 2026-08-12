@@ -8,7 +8,7 @@ export function PurposeBanner() {
   return (
     <section className="purpose-banner">
       <div className="purpose-banner-media" aria-hidden="true">
-        <img src={asset('banner-purpose.jpg')} alt="" />
+        <img src={asset('impact-marker.jpg')} alt="" />
         <div className="purpose-banner-veil" />
       </div>
       <div className="container purpose-banner-content">
