@@ -59,17 +59,8 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-actions">
-            <Link to="/shop" className="nav-icon" aria-label="Search shop">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M16 16l4.5 4.5" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
-            </Link>
-            <Link to="/contact" className="nav-icon" aria-label="Account / contact">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="8" r="3.25" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M5 19.5c1.8-3.2 4.1-4.5 7-4.5s5.2 1.3 7 4.5" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
+            <Link to="/shop" className="nav-cta">
+              Shop
             </Link>
             <button type="button" className="nav-icon cart-btn" onClick={openCart} aria-label={`Open cart, ${count} items`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">

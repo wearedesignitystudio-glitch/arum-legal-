@@ -78,7 +78,7 @@
   display: grid;
   gap: 0.85rem;
   position: sticky;
-  top: calc(var(--header-h-compact) + 1rem);
+  top: calc(var(--header-h) + 1rem);
 }
 
 .cart-summary h2 {

@@ -38,13 +38,13 @@ export default function Home() {
       <section className="dna-hero">
         <div className="container dna-hero-grid">
           <div className="dna-hero-copy">
-            <motion.span
-              className="kicker kicker-pill"
+            <motion.p
+              className="kicker"
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
             >
               Handmade honour · Permanent stone
-            </motion.span>
+            </motion.p>
             <motion.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,42 +70,21 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.65 }}
             >
               <Button to="/shop" variant="primary">
-                Shop the Collection →
+                Shop the Collection
               </Button>
               <Button to="/mission" variant="secondary">
                 Our Story
               </Button>
             </motion.div>
-            <motion.div
-              className="dna-stats"
-              initial={reduce ? false : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.65 }}
-            >
-              <div>
-                <strong>$85</strong>
-                <span>CAD per pair</span>
-              </div>
-              <div>
-                <strong>100%</strong>
-                <span>Sales support markers</span>
-              </div>
-              <div>
-                <strong>9</strong>
-                <span>Handcrafted designs</span>
-              </div>
-            </motion.div>
           </div>
 
           <motion.div
             className="dna-hero-visual"
-            initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+            initial={reduce ? false : { opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.15, duration: 0.8 }}
           >
             <img src={asset('moccasin-emerald-heart.jpg')} alt="Emerald Heart ornamental moccasins" />
-            <div className="dna-float-badge left">Handmade</div>
-            <div className="dna-float-badge right">Limited</div>
           </motion.div>
         </div>
       </section>
@@ -129,7 +108,7 @@ export default function Home() {
               <h2>Featured pieces</h2>
             </div>
             <Button to="/shop" variant="secondary">
-              View all →
+              View all
             </Button>
           </Reveal>
           <Reveal delay={0.08}>
@@ -171,7 +150,7 @@ export default function Home() {
                 <Link to={cat.to} className="dna-cat">
                   <h3>{cat.title}</h3>
                   <p>{cat.copy}</p>
-                  <span>Explore →</span>
+                  <span>Explore</span>
                 </Link>
               </Reveal>
             ))}

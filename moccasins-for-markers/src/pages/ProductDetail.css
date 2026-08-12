@@ -8,7 +8,7 @@
 
 .product-gallery {
   position: sticky;
-  top: calc(var(--header-h-compact) + 1rem);
+  top: calc(var(--header-h) + 1rem);
   background: var(--surface);
   aspect-ratio: 4 / 5;
   overflow: hidden;
@@ -26,10 +26,10 @@
 }
 
 .product-price {
-  font-size: 1.15rem;
-  font-weight: 650;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.35rem;
-  color: var(--brown);
+  color: var(--cream-soft);
 }
 
 .product-availability {
@@ -37,8 +37,8 @@
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--clay);
-  font-weight: 650;
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .product-buy {
@@ -75,7 +75,7 @@
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--brown);
+  color: var(--gold);
   margin-bottom: 0.25rem;
 }
 
@@ -111,7 +111,7 @@
 .acc-trigger em {
   font-style: normal;
   font-size: 1.1rem;
-  color: var(--stone);
+  color: var(--muted);
 }
 
 .acc-panel {
@@ -157,7 +157,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 650;
-  color: var(--brown);
+  color: var(--gold);
 }
 
 .section-head-simple {
