@@ -1,0 +1,98 @@
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  padding-bottom: 5rem;
+  align-items: start;
+}
+
+.checkout-form,
+.checkout-summary {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+}
+
+.checkout-form fieldset {
+  border: 0;
+  margin: 0 0 1.4rem;
+  padding: 0;
+}
+
+.checkout-form legend {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.field span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  padding: 0.8rem 0.9rem;
+  border-radius: 2px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.payment-note,
+.purpose {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.checkout-summary h2 {
+  margin: 0 0 1rem;
+  font-size: 1.7rem;
+}
+
+.summary-line {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.summary-line img {
+  width: 64px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.summary-line p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .checkout-grid,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}

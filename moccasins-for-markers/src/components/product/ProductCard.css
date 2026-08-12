@@ -1,0 +1,134 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.product-card-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #e7dfd2;
+  text-decoration: none;
+}
+
+.product-card-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease, transform 0.8s var(--ease);
+}
+
+.product-card-media img.is-dim {
+  opacity: 0;
+}
+
+.product-card-media .hover-img {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.product-card-media .hover-img.is-visible {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.product-card:hover .product-card-media img:first-child {
+  transform: scale(1.04);
+}
+
+.product-badges {
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  display: flex;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.product-badges span {
+  background: rgba(251, 248, 242, 0.92);
+  color: var(--ink);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.5rem;
+}
+
+.product-card-body {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.product-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.product-card-top h3 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.product-card-top a {
+  text-decoration: none;
+}
+
+.product-card-top .money {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.product-card-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.product-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.55rem;
+}
+
+.quick-view {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.quick-view:hover {
+  color: var(--ink);
+}
+
+.add-btn {
+  appearance: none;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+  min-height: 2.5rem;
+  padding: 0 0.95rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.add-btn:hover {
+  background: var(--brown);
+  border-color: var(--brown);
+}

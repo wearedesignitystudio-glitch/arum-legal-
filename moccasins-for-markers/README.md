@@ -1,25 +1,28 @@
 # Moccasins for Markers
 
-Professional website for selling handmade ornamental moccasins. All sales and donations support permanent headstones for unmarked graves of former residential school survivors.
+Premium multi-page e-commerce + purpose brand site.
 
-## Contents
-
-- `index.html` — landing page with mission, shop, impact, and donate sections
-- `css/styles.css` — brand styles
-- `js/main.js` — cart, checkout, and donation flows (demo)
-- `assets/images/` — logo, hero, impact, and product photography
-
-## Local preview
+## Develop
 
 ```bash
 cd moccasins-for-markers
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Open `http://localhost:8080`.
+Dev server: `http://localhost:5173/moccasins-for-markers/`
 
-## Notes
+## Build for Vercel (static subdirectory)
 
-- Product price: **$85 CAD** per pair
-- Cart persists in `localStorage`
-- Checkout and donate forms are demo flows ready for Stripe/PayPal
+```bash
+npm run build
+# copies dist → site root files used by Vercel static hosting
+node ./scripts/publish.mjs
+```
+
+## Stack
+
+- Vite + React
+- React Router
+- Framer Motion
+- Local cart (localStorage)

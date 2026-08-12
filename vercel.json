@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/moccasins-for-markers/assets/(.*)",
+      "destination": "/moccasins-for-markers/assets/$1"
+    },
+    {
+      "source": "/moccasins-for-markers/images/(.*)",
+      "destination": "/moccasins-for-markers/images/$1"
+    },
+    {
+      "source": "/moccasins-for-markers",
+      "destination": "/moccasins-for-markers/index.html"
+    },
+    {
+      "source": "/moccasins-for-markers/(.*)",
+      "destination": "/moccasins-for-markers/index.html"
+    }
+  ]
+}
