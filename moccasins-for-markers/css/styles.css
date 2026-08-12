@@ -5,9 +5,9 @@
   --ink-soft: #3d3832;
   --stone: #7a736b;
   --line: rgba(23, 20, 17, 0.12);
-  --paper: #f4f1ec;
-  --paper-2: #ebe6de;
-  --snow: #fffcf7;
+  --paper: #eceae6;
+  --paper-2: #e2dfd8;
+  --snow: #fbfaf7;
   --amber: #d96b18;
   --amber-deep: #b55510;
   --amber-glow: rgba(217, 107, 24, 0.16);
@@ -49,9 +49,9 @@ body {
   z-index: 0;
   opacity: 0.45;
   background:
-    radial-gradient(900px 500px at 0% 0%, rgba(217, 107, 24, 0.08), transparent 60%),
-    radial-gradient(700px 480px at 100% 10%, rgba(95, 109, 88, 0.08), transparent 55%),
-    linear-gradient(180deg, #f7f4ef 0%, #efe9e0 100%);
+    radial-gradient(900px 500px at 0% 0%, rgba(217, 107, 24, 0.07), transparent 60%),
+    radial-gradient(700px 480px at 100% 10%, rgba(95, 109, 88, 0.09), transparent 55%),
+    linear-gradient(180deg, #f0eeea 0%, #e7e4de 100%);
 }
 
 body > *:not(.page-texture) {
@@ -181,7 +181,7 @@ p { margin: 0 0 1rem; }
 }
 
 .site-header.is-scrolled {
-  background: rgba(244, 241, 236, 0.92);
+  background: rgba(236, 234, 230, 0.94);
   color: var(--ink);
   backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 var(--line);
@@ -629,7 +629,7 @@ p { margin: 0 0 1rem; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(244, 241, 236, 0.88), rgba(244, 241, 236, 0.94));
+  background: linear-gradient(180deg, rgba(236, 234, 230, 0.9), rgba(236, 234, 230, 0.95));
 }
 
 .donate-shell {
@@ -1066,7 +1066,7 @@ p { margin: 0 0 1rem; }
   .nav {
     position: fixed;
     inset: var(--header-h) 0 auto;
-    background: rgba(244, 241, 236, 0.97);
+    background: rgba(236, 234, 230, 0.97);
     color: var(--ink);
     backdrop-filter: blur(12px);
     flex-direction: column;
