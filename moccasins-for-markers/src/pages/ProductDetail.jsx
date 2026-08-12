@@ -26,7 +26,7 @@ export default function ProductDetail() {
   const [added, setAdded] = useState(false);
 
   const panelCopy = useMemo(() => {
-    if (!product) return '';
+    if (!product || !active) return '';
     if (active === 'details') return product.longDescription;
     if (active === 'materials') return product.materials;
     if (active === 'craftsmanship') return product.craftsmanship;
@@ -93,19 +93,23 @@ export default function ProductDetail() {
 
           <div className="accordion">
             {PANELS.map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                className={`acc-trigger ${active === id ? 'is-open' : ''}`}
-                onClick={() => setActive(id)}
-                aria-expanded={active === id}
-              >
-                {label}
-              </button>
+              <div key={id}>
+                <button
+                  type="button"
+                  className={`acc-trigger ${active === id ? 'is-open' : ''}`}
+                  onClick={() => setActive(active === id ? '' : id)}
+                  aria-expanded={active === id}
+                >
+                  <span>{label}</span>
+                  <em aria-hidden="true">{active === id ? '−' : '+'}</em>
+                </button>
+                {active === id && (
+                  <div className="acc-panel">
+                    <p>{panelCopy}</p>
+                  </div>
+                )}
+              </div>
             ))}
-            <div className="acc-panel">
-              <p>{panelCopy}</p>
-            </div>
           </div>
         </Reveal>
       </section>

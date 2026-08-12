@@ -3,17 +3,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  min-height: 3.15rem;
-  padding: 0.85rem 1.5rem;
+  min-height: 3rem;
+  padding: 0.8rem 1.4rem;
   border: 1px solid transparent;
   border-radius: 2px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.3s var(--ease), background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.25s var(--ease), background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .btn span {
@@ -23,7 +23,7 @@
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .btn:disabled {
@@ -45,22 +45,23 @@
 
 .btn-secondary {
   background: transparent;
-  color: var(--ink);
-  border-color: rgba(23, 22, 20, 0.28);
+  color: var(--brown);
+  border-color: rgba(92, 64, 48, 0.45);
 }
 
 .btn-secondary:hover {
-  border-color: var(--ink);
+  border-color: var(--brown);
+  background: rgba(92, 64, 48, 0.05);
 }
 
 .btn-light {
   background: transparent;
   color: var(--cream);
-  border-color: rgba(251, 248, 242, 0.5);
+  border-color: rgba(251, 248, 242, 0.65);
 }
 
 .btn-light:hover {
-  background: rgba(251, 248, 242, 0.1);
+  background: rgba(251, 248, 242, 0.12);
   border-color: var(--cream);
 }
 
@@ -71,9 +72,9 @@
 }
 
 .btn-gold:hover {
-  background: var(--clay);
-  border-color: var(--clay);
-  color: var(--cream);
+  background: #9a763d;
+  border-color: #9a763d;
+  color: #fff;
 }
 
 .btn-block {

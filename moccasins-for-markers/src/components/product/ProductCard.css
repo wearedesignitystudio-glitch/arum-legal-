@@ -1,7 +1,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
+  gap: 0.85rem;
 }
 
 .product-card-media {
@@ -28,40 +28,43 @@
 
 .product-card-media .hover-img {
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .product-card-media .hover-img.is-visible {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .product-card:hover .product-card-media img:first-child {
-  transform: scale(1.04);
+  transform: scale(1.035);
 }
 
 .product-badges {
   position: absolute;
-  left: 0.8rem;
-  bottom: 0.8rem;
+  left: 0.75rem;
+  top: 0.75rem;
   display: flex;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   z-index: 2;
 }
 
 .product-badges span {
-  background: rgba(251, 248, 242, 0.92);
+  background: rgba(251, 248, 242, 0.88);
   color: var(--ink);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.6rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.35rem 0.5rem;
+  padding: 0.32rem 0.48rem;
+  border: 0;
 }
 
 .product-card-body {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.3rem;
+  padding: 0 0.1rem;
 }
 
 .product-card-top {
@@ -73,55 +76,61 @@
 
 .product-card-top h3 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
 }
 
 .product-card-top a {
   text-decoration: none;
 }
 
+.product-card-top a:hover {
+  color: var(--brown);
+}
+
 .product-card-top .money {
   margin: 0;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 650;
   color: var(--brown);
+  white-space: nowrap;
 }
 
 .product-card-desc {
   margin: 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .product-card-actions {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.55rem;
+  margin-top: 0.45rem;
 }
 
 .quick-view {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--muted);
+  font-weight: 600;
 }
 
 .quick-view:hover {
-  color: var(--ink);
+  color: var(--brown);
 }
 
 .add-btn {
   appearance: none;
-  border: 1px solid var(--ink);
-  background: var(--ink);
+  border: 1px solid var(--brown);
+  background: var(--brown);
   color: var(--cream);
-  min-height: 2.5rem;
-  padding: 0 0.95rem;
-  font-size: 0.72rem;
-  font-weight: 600;
+  min-height: 2.45rem;
+  padding: 0 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 650;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
@@ -129,6 +138,6 @@
 }
 
 .add-btn:hover {
-  background: var(--brown);
-  border-color: var(--brown);
+  background: var(--ink);
+  border-color: var(--ink);
 }

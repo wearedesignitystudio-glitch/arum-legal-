@@ -4,41 +4,48 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  padding-bottom: 1.5rem;
+  padding: 0.35rem 0 1.35rem;
   border-bottom: 1px solid var(--line);
+  margin-bottom: 0.25rem;
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .filters button {
   appearance: none;
-  border: 1px solid var(--line);
+  border: 0;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  min-height: 2.4rem;
-  padding: 0 0.9rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  min-height: 2.35rem;
+  padding: 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
+  color: var(--muted);
 }
 
 .filters button.is-active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--cream);
+  color: var(--ink);
+  border-bottom-color: var(--brown);
+  background: transparent;
+}
+
+.filters button:hover {
+  color: var(--ink);
 }
 
 .shop-meta {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .shop-meta p {
@@ -48,6 +55,7 @@
 .shop-meta select {
   border: 1px solid var(--line);
   background: var(--cream);
-  min-height: 2.4rem;
-  padding: 0 0.75rem;
+  min-height: 2.35rem;
+  padding: 0 0.7rem;
+  color: var(--ink);
 }

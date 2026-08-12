@@ -217,6 +217,7 @@ export default function Home() {
                   <p className="kicker">{post.category}</p>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
+                  <span className="journal-card-read">Read story →</span>
                 </Link>
               </Reveal>
             ))}
@@ -230,7 +231,7 @@ export default function Home() {
             <h2>Walk with us.</h2>
             <p>Beauty, craft, and remembrance — one stitch at a time.</p>
             <div className="home-hero-ctas">
-              <Button to="/shop" variant="gold">
+              <Button to="/shop" variant="primary">
                 Shop the Collection
               </Button>
               <Button to="/donate" variant="secondary">

@@ -45,7 +45,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.65;
   color: var(--ink);
@@ -89,15 +89,18 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-size: clamp(2.6rem, 6.2vw, 5rem);
+  line-height: 1.05;
 }
 
 h2 {
-  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
 }
 
 h3 {
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.15;
 }
 
 p {
@@ -145,10 +148,10 @@ p {
 }
 
 .kicker {
-  margin: 0 0 0.9rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  margin: 0 0 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--clay);
 }
@@ -159,29 +162,31 @@ p {
 
 .page {
   min-height: 100vh;
-  padding-top: var(--header-h);
+  padding-top: var(--header-h-compact);
 }
 
 .page-hero {
-  padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.75rem, 3vw, 2.75rem);
 }
 
 .page-hero h1 {
   max-width: 14ch;
+  margin-bottom: 0.85rem;
 }
 
 .page-hero p {
   max-width: 38rem;
   color: var(--muted);
   font-size: 1.05rem;
+  margin-bottom: 0;
 }
 
 .section {
-  padding: clamp(4rem, 9vw, 7.5rem) 0;
+  padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
 }
 
 .section-tight {
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
 }
 
 .split {

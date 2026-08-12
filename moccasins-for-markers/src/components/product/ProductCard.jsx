@@ -39,7 +39,6 @@ export default function ProductCard({ product }) {
         )}
         <div className="product-badges">
           <span>Handmade</span>
-          <span>Limited</span>
         </div>
       </Link>
       <div className="product-card-body">
