@@ -223,9 +223,10 @@
   /* ---------- Sale banner ---------- */
   function initSale() {
     const img = document.querySelector(".sale-media img");
+    const product = document.querySelector(".sale-product-main");
     if (img && typeof ScrollTrigger !== "undefined" && !reduceMotion) {
       gsap.to(img, {
-        scale: 1.18,
+        scale: 1.14,
         ease: "none",
         scrollTrigger: {
           trigger: ".sale-banner",
@@ -233,6 +234,15 @@
           end: "bottom top",
           scrub: true,
         },
+      });
+    }
+    if (product && typeof ScrollTrigger !== "undefined" && !reduceMotion) {
+      gsap.from(product, {
+        y: 50,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".sale-banner", start: "top 70%", once: true },
       });
     }
 
