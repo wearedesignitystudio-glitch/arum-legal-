@@ -250,10 +250,14 @@
 
   function initHeader() {
     const onScroll = () => {
-      els.header.classList.toggle("is-scrolled", window.scrollY > 24);
+      const hero = document.getElementById("home");
+      const heroBottom = hero ? hero.offsetHeight - 80 : 24;
+      els.header.classList.toggle("is-scrolled", window.scrollY > Math.min(heroBottom, 48) || window.scrollY > 24);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("hashchange", onScroll);
+    window.addEventListener("load", onScroll);
 
     els.menuToggle.addEventListener("click", () => {
       const open = els.nav.classList.toggle("is-open");
@@ -264,6 +268,7 @@
       link.addEventListener("click", () => {
         els.nav.classList.remove("is-open");
         els.menuToggle.setAttribute("aria-expanded", "false");
+        setTimeout(onScroll, 50);
       });
     });
   }

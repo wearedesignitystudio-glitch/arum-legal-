@@ -180,11 +180,25 @@ p { margin: 0 0 1rem; }
   transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
 }
 
+.site-header .brand-word,
+.site-header .nav a,
+.site-header .cart-toggle,
+.site-header .menu-toggle {
+  color: #fff;
+}
+
 .site-header.is-scrolled {
-  background: rgba(236, 234, 230, 0.94);
+  background: rgba(236, 234, 230, 0.96);
   color: var(--ink);
   backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 var(--line);
+}
+
+.site-header.is-scrolled .brand-word,
+.site-header.is-scrolled .nav a,
+.site-header.is-scrolled .cart-toggle,
+.site-header.is-scrolled .menu-toggle {
+  color: var(--ink);
 }
 
 .header-inner {
