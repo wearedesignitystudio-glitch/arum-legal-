@@ -1,388 +1,284 @@
-/* Title page — day */
-.dd-title {
+/* Quiet luxury — sparse, proud, photographic */
+
+.ql-hero {
   min-height: 100svh;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  background: var(--day);
+  grid-template-columns: 0.95fr 1.05fr;
   padding-top: var(--header-h);
+  background: var(--snow);
 }
 
-.dd-title-copy {
+.ql-hero-copy {
   display: grid;
   align-content: center;
-  padding: 3rem clamp(1.5rem, 4vw, 4rem);
+  padding: 3rem clamp(1.75rem, 4vw, 4.5rem) 4rem;
+  max-width: 36rem;
 }
 
-.dd-title h1 {
-  margin-bottom: 1rem;
-  max-width: 8ch;
+.ql-hero h1 {
+  margin-bottom: 1.35rem;
 }
 
-.dd-title h1 em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--forest);
-}
-
-.dd-subtitle {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-style: italic;
-  color: var(--quiet);
+.ql-lede {
+  color: var(--soft);
+  max-width: 28rem;
   margin-bottom: 2rem;
+  font-size: 1.05rem;
 }
 
-.dd-link {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+.ql-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ql-text-link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.2rem;
 }
 
-.dd-title-photo {
-  min-height: 70vh;
+.ql-text-link:hover {
+  border-bottom-color: var(--ink);
+}
+
+.ql-hero-visual {
+  min-height: 80vh;
   overflow: hidden;
-  background: #ebe6dc;
+  background: #ebe7df;
 }
 
-.dd-title-photo img {
+.ql-hero-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Quiet statement */
-.dd-quiet {
-  padding: clamp(5rem, 12vw, 9rem) 0;
-  background: var(--day-soft);
+/* Breath */
+.ql-breath {
+  padding: clamp(5rem, 12vw, 8rem) 0;
+  background: var(--snow-2);
 }
 
-.dd-quiet .container-narrow,
-.dd-quiet {
-  width: min(820px, calc(100% - 3rem));
-  margin-inline: auto;
-}
-
-.dd-quiet h2 {
-  margin: 0;
-  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
-  line-height: 1.25;
-  font-weight: 400;
-}
-
-/* Truths */
-.dd-truths {
-  width: min(var(--max), calc(100% - 3rem));
+.ql-breath p {
+  width: min(640px, calc(100% - 3.5rem));
   margin: 0 auto;
-  padding: 2rem 0 5rem;
-  display: grid;
-  gap: 4rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  line-height: 1.45;
+  font-weight: 500;
+  text-align: center;
 }
 
-.dd-truth {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: center;
-}
-
-.dd-truth-offset {
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.dd-truth-offset img { order: 2; }
-.dd-truth-offset div { order: 1; }
-
-.dd-truth img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #ebe6dc;
-}
-
-.dd-truth h3 {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  margin-bottom: 0.7rem;
-}
-
-.dd-truth p:last-child {
-  margin: 0;
-  color: var(--quiet);
-  max-width: 28rem;
-}
-
-/* Catalogue */
-.dd-catalogue {
+/* Pieces */
+.ql-pieces {
   padding: clamp(4rem, 9vw, 7rem) 0;
-  background: var(--day);
-  border-top: 1px solid var(--line-day);
 }
 
-.dd-cat-head {
-  margin-bottom: 2.5rem;
-  max-width: 14ch;
+.ql-pieces-head {
+  margin-bottom: 2.75rem;
 }
 
-.dd-cat-grid {
+.ql-pieces-head h2 {
+  margin: 0;
+}
+
+.ql-piece-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.5rem;
 }
 
-.dd-item a {
+.ql-piece-grid a {
   text-decoration: none;
   display: grid;
   gap: 0.85rem;
 }
 
-.dd-item img {
+.ql-piece-grid img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  background: #ebe6dc;
-  transition: transform 0.9s var(--ease);
+  background: #ebe7df;
+  transition: transform 1s var(--ease);
 }
 
-.dd-item:hover img { transform: scale(1.03); }
-
-.dd-span-wide {
-  grid-column: 1 / -1;
+.ql-piece-grid article:hover img {
+  transform: scale(1.025);
 }
 
-.dd-span-wide img {
-  aspect-ratio: 16 / 9;
-  max-height: 520px;
-}
-
-.dd-item-meta span {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  color: var(--quiet);
-  margin-bottom: 0.25rem;
-}
-
-.dd-item-meta h3 {
+.ql-piece-grid h3 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
-.dd-item-meta p {
-  margin: 0.2rem 0 0;
-  color: var(--quiet);
+.ql-piece-grid p {
+  margin: 0;
+  color: var(--soft);
   font-size: 0.9rem;
 }
 
-.dd-cat-foot {
+.ql-more {
+  display: inline-block;
   margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line-day);
 }
 
-/* Threshold */
-.dd-threshold {
-  position: relative;
-  min-height: 92vh;
+/* ========== SIGNATURE: headstone | donate ========== */
+.ql-remembrance {
   display: grid;
-  place-items: end start;
-  overflow: hidden;
-  color: var(--moon);
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 100svh;
+  background: var(--snow);
+  border-top: 1px solid var(--line);
 }
 
-.dd-threshold img {
-  position: absolute;
-  inset: 0;
+.ql-stone {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #1a1917;
+}
+
+.ql-stone img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.dd-threshold-veil {
+.ql-stone-caption {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(20, 17, 15, 0.2), rgba(20, 17, 15, 0.72));
-}
-
-.dd-threshold-copy {
-  position: relative;
-  z-index: 1;
-  padding: 4rem max(1.5rem, calc((100% - var(--max)) / 2));
-}
-
-.dd-threshold .label { color: rgba(243, 238, 230, 0.7); }
-.dd-threshold h2 {
+  left: 1.5rem;
+  bottom: 1.5rem;
   margin: 0;
-  color: var(--moon);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(247, 245, 240, 0.9);
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Dusk zone */
-.dusk-zone {
-  background: var(--dusk);
-  color: var(--moon);
-}
-
-.dusk-zone .label { color: rgba(243, 238, 230, 0.55); }
-
-.dd-dusk-purpose {
-  padding: clamp(4.5rem, 10vw, 8rem) 0;
-}
-
-.dd-dusk-grid {
+.ql-donate {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
-  align-items: start;
+  align-content: center;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.25rem);
+  background: var(--snow-2);
+  border-left: 1px solid var(--line);
 }
 
-.dd-dusk-purpose h2 {
-  color: var(--moon);
-  max-width: 12ch;
+.ql-donate h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
 }
 
-.dd-dusk-purpose p {
-  color: rgba(243, 238, 230, 0.7);
-  max-width: 34rem;
+.ql-donate-copy {
+  color: var(--soft);
+  max-width: 28rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.98rem;
 }
 
-.dd-note {
-  font-size: 0.92rem;
-  margin-bottom: 1.6rem !important;
+.ql-choose {
+  margin: 0 0 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
 }
 
-.dd-dusk-steps {
-  display: grid;
-  gap: 0;
-}
-
-.dd-dusk-steps > div {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0.35rem 1rem;
-  padding: 1.15rem 0;
-  border-top: 1px solid var(--line-dusk);
-}
-
-.dd-dusk-steps span {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  color: var(--clay);
-  grid-row: 1 / 3;
-  padding-top: 0.35rem;
-}
-
-.dd-dusk-steps h3 {
-  margin: 0;
-  color: var(--moon);
-  font-size: 1.35rem;
-}
-
-.dd-dusk-steps p {
-  margin: 0;
-  color: rgba(243, 238, 230, 0.55);
-  font-size: 0.92rem;
-}
-
-/* Give */
-.dd-give {
-  padding: clamp(3.5rem, 8vw, 6rem) 0;
-  border-top: 1px solid var(--line-dusk);
-}
-
-.dd-give-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.dd-give h2 {
-  color: var(--moon);
-  max-width: 12ch;
-}
-
-.dd-give-form { display: grid; gap: 0.85rem; }
-
-.dd-give .field span { color: rgba(243, 238, 230, 0.5); }
-.dd-give .field input {
-  color: var(--moon);
-  border-bottom-color: var(--line-dusk);
-}
-
-.dd-amounts {
+.ql-amounts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.4rem;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.dd-amounts button {
+.ql-amounts button {
   appearance: none;
-  min-height: 3.4rem;
-  border: 1px solid var(--line-dusk);
+  min-height: 3.25rem;
+  border: 1px solid var(--line);
   background: transparent;
-  color: var(--moon);
+  color: var(--ink);
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.dd-amounts button.is-on,
-.dd-amounts button:hover {
-  background: var(--moon);
-  color: var(--dusk);
-  border-color: var(--moon);
+.ql-amounts button.is-on,
+.ql-amounts button:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--snow);
+}
+
+.ql-donate form {
+  max-width: 26rem;
 }
 
 /* Close */
-.dd-close {
-  min-height: 70vh;
-  display: grid;
-  place-items: center;
+.ql-close {
+  padding: clamp(5rem, 12vw, 8rem) 1.5rem;
   text-align: center;
-  padding: 4rem 1.5rem;
-  border-top: 1px solid var(--line-dusk);
+  background: var(--snow);
+  border-top: 1px solid var(--line);
 }
 
-.dd-close h2 {
-  color: var(--moon);
+.ql-close h2 {
   margin-bottom: 1.75rem;
 }
 
-.dd-close-links {
+.ql-close-links {
   display: flex;
   justify-content: center;
-  gap: 1.75rem;
   flex-wrap: wrap;
+  gap: 1.75rem;
 }
 
-.dd-close-links a {
+.ql-close-links a {
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(243, 238, 230, 0.55);
+  color: var(--soft);
 }
 
-.dd-close-links a:hover { color: var(--moon); }
+.ql-close-links a:hover { color: var(--ink); }
 
-@media (max-width: 900px) {
-  .dd-title,
-  .dd-truth,
-  .dd-truth-offset,
-  .dd-cat-grid,
-  .dd-dusk-grid,
-  .dd-give-grid {
+@media (max-width: 980px) {
+  .ql-hero,
+  .ql-remembrance,
+  .ql-piece-grid {
     grid-template-columns: 1fr;
   }
 
-  .dd-title { min-height: auto; }
-  .dd-title-photo { min-height: 55vh; }
-  .dd-truth-offset img,
-  .dd-truth-offset div { order: unset; }
-  .dd-span-wide img { max-height: none; }
-  .dd-amounts { grid-template-columns: 1fr 1fr; }
+  .ql-hero {
+    min-height: auto;
+  }
+
+  .ql-hero-visual {
+    min-height: 55vh;
+  }
+
+  .ql-stone {
+    min-height: 70vh;
+  }
+
+  .ql-donate {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .ql-amounts {
+    grid-template-columns: 1fr 1fr;
+  }
 }

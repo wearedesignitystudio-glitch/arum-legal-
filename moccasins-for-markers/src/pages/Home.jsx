@@ -11,7 +11,7 @@ import './Home.css';
 
 export default function Home() {
   const reduce = useReducedMotion();
-  const pieces = PRODUCTS.slice(0, 6);
+  const featured = PRODUCTS.slice(0, 3);
   const { showToast } = useCart();
   const navigate = useNavigate();
   const [amount, setAmount] = useState(85);
@@ -22,8 +22,12 @@ export default function Home() {
 
   const onDonate = (e) => {
     e.preventDefault();
-    if (!selected || selected < 1 || !name.trim() || !email.trim()) {
-      showToast('Please complete amount, name, and email.');
+    if (!selected || selected < 1) {
+      showToast('Please choose an amount.');
+      return;
+    }
+    if (!name.trim() || !email.trim()) {
+      showToast('Please add your name and email.');
       return;
     }
     showToast(`Thank you, ${name.trim()}.`);
@@ -40,199 +44,159 @@ export default function Home() {
         path="/"
       />
 
-      {/* DAY — Title page */}
-      <section className="dd-title">
+      {/* Quiet opening */}
+      <section className="ql-hero">
         <motion.div
-          className="dd-title-copy"
-          initial={reduce ? false : { opacity: 0, y: 30 }}
+          className="ql-hero-copy"
+          initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 1 }}
         >
-          <p className="label">A handmade offering</p>
+          <p className="label">Moccasins for Markers</p>
           <h1>
-            Moccasins
-            <em> for </em>
-            Markers
+            Every stitch
+            <br />
+            honours a name.
           </h1>
-          <p className="dd-subtitle">Handcrafted remembrance with lasting purpose.</p>
-          <Link to="#day-story" className="dd-link">
-            Begin ↓
-          </Link>
+          <p className="ql-lede">
+            Handmade ornamental moccasins — so permanent headstones can honour unmarked graves of former residential
+            school survivors.
+          </p>
+          <div className="ql-hero-actions">
+            <Button to="/shop" variant="primary" arrow>
+              Shop the collection
+            </Button>
+            <a href="#remembrance" className="ql-text-link">
+              Support a marker
+            </a>
+          </div>
         </motion.div>
         <motion.div
-          className="dd-title-photo"
-          initial={reduce ? false : { opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.15 }}
+          className="ql-hero-visual"
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.3, delay: 0.15 }}
         >
-          <img src={asset('moccasin-emerald-heart.jpg')} alt="Emerald Heart ornamental moccasins" />
+          <img src={asset('hero-craft.jpg')} alt="Handmade ornamental moccasins" />
         </motion.div>
       </section>
 
-      {/* DAY — Quiet statement */}
-      <section id="day-story" className="dd-quiet">
+      {/* Breath */}
+      <section className="ql-breath">
         <Reveal>
-          <p className="label">Why</p>
-          <h2>
+          <p>
             We sew and sell handmade ornamental tiny moccasins to buy permanent headstones for unmarked graves of
             former residential school survivors.
-          </h2>
+          </p>
         </Reveal>
       </section>
 
-      {/* DAY — Two truths */}
-      <section className="dd-truths">
-        <Reveal className="dd-truth">
-          <img src={asset('craft-table.jpg')} alt="Leather and beads on a workbench" />
-          <div>
-            <p className="label">Daylight · Craft</p>
-            <h3>Made by hand, one pair at a time.</h3>
-            <p>Ornamental keepsakes — intimate enough to hold, meaningful enough to keep.</p>
-          </div>
-        </Reveal>
-        <Reveal delay={0.08} className="dd-truth dd-truth-offset">
-          <img src={asset('hero-craft.jpg')} alt="Moccasins in golden light" />
-          <div>
-            <p className="label">Daylight · Beauty</p>
-            <h3>Every stitch honours a name.</h3>
-            <p>Each piece is chosen with intention — beauty that carries purpose.</p>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* DAY — Catalogue */}
-      <section className="dd-catalogue">
+      {/* Three pieces only */}
+      <section className="ql-pieces">
         <div className="container">
-          <Reveal className="dd-cat-head">
-            <p className="label">Collection</p>
-            <h2>Choose a piece with purpose.</h2>
+          <Reveal className="ql-pieces-head">
+            <p className="label">The collection</p>
+            <h2>Made by hand.</h2>
           </Reveal>
-          <div className="dd-cat-grid">
-            {pieces.map((p, i) => (
-              <article key={p.id} className={`dd-item dd-span-${i === 2 ? 'wide' : 'std'}`}>
+          <div className="ql-piece-grid">
+            {featured.map((p) => (
+              <article key={p.id}>
                 <Link to={`/shop/${p.slug}`}>
-                  <img src={asset(p.image)} alt={p.name} loading={i > 1 ? 'lazy' : 'eager'} />
-                  <div className="dd-item-meta">
-                    <span>{String(i + 1).padStart(2, '0')}</span>
-                    <h3>{p.name}</h3>
-                    <p>{formatMoney(p.price)}</p>
-                  </div>
+                  <img src={asset(p.image)} alt={p.name} />
+                  <h3>{p.name}</h3>
+                  <p>{formatMoney(p.price)}</p>
                 </Link>
               </article>
             ))}
           </div>
-          <div className="dd-cat-foot">
-            <Button to="/shop" variant="primary" arrow>
-              View all pieces
-            </Button>
-          </div>
+          <Link to="/shop" className="ql-text-link ql-more">
+            View all pieces →
+          </Link>
         </div>
       </section>
 
-      {/* THRESHOLD — dusk gate */}
-      <section id="dusk-gate" className="dd-threshold">
-        <img src={asset('impact-marker.jpg')} alt="A headstone in a quiet field at sunset" />
-        <div className="dd-threshold-veil" />
-        <Reveal className="dd-threshold-copy">
-          <p className="label">Threshold</p>
+      {/* SIGNATURE — real headstone + donate */}
+      <section id="remembrance" className="ql-remembrance">
+        <div className="ql-stone">
+          <img
+            src={asset('impact-marker-blank.jpg')}
+            alt="A real granite headstone in a quiet field at sunset"
+          />
+          <p className="ql-stone-caption">Permanent stone. Lasting dignity.</p>
+        </div>
+
+        <div className="ql-donate">
+          <p className="label">Remembrance</p>
           <h2>
-            From leather
+            Help place a
             <br />
-            to limestone.
+            lasting marker.
           </h2>
-        </Reveal>
+          <p className="ql-donate-copy">
+            Your gift supports permanent headstones for unmarked graves of former residential school survivors — for
+            those who may have no one left to remember them.
+          </p>
+
+          <form onSubmit={onDonate}>
+            <p className="ql-choose">Choose an amount</p>
+            <div className="ql-amounts" role="group" aria-label="Donation amounts">
+              {[25, 50, 85, 150].map((v) => (
+                <button
+                  key={v}
+                  type="button"
+                  className={!custom && amount === v ? 'is-on' : ''}
+                  onClick={() => {
+                    setAmount(v);
+                    setCustom('');
+                  }}
+                >
+                  ${v}
+                </button>
+              ))}
+            </div>
+
+            <label className="field">
+              <span>Custom amount (CAD)</span>
+              <input
+                type="number"
+                min="1"
+                value={custom}
+                onChange={(e) => setCustom(e.target.value)}
+                placeholder="Or enter your own"
+              />
+            </label>
+            <label className="field">
+              <span>Full name</span>
+              <input required value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
+            </label>
+            <label className="field">
+              <span>Email</span>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+              />
+            </label>
+            <Button type="submit" variant="primary" className="btn-block" arrow>
+              Support a marker
+            </Button>
+          </form>
+        </div>
       </section>
 
-      {/* DUSK zone */}
-      <div className="dusk-zone">
-        <section className="dd-dusk-purpose">
-          <div className="container dd-dusk-grid">
-            <Reveal>
-              <p className="label">Purpose</p>
-              <h2>A handmade object can become part of something permanent.</h2>
-              <p>
-                Your purchase or gift helps place permanent headstones for unmarked graves of former residential school
-                survivors — people who may have no one left to remember them.
-              </p>
-              <p className="dd-note">We do not invent statistics. We keep the promise clear.</p>
-              <Button to="/impact" variant="light" arrow>
-                How it works
-              </Button>
-            </Reveal>
-            <Reveal delay={0.1} className="dd-dusk-steps">
-              {[
-                ['Crafted', 'Handmade ornamental pairs.'],
-                ['Chosen', 'Purchased or given with care.'],
-                ['Given', 'Funds directed to markers.'],
-                ['Remembered', 'Dignity restored in stone.'],
-              ].map(([t, c], i) => (
-                <div key={t}>
-                  <span>{String(i + 1).padStart(2, '0')}</span>
-                  <h3>{t}</h3>
-                  <p>{c}</p>
-                </div>
-              ))}
-            </Reveal>
+      {/* Closing hush */}
+      <section className="ql-close">
+        <Reveal>
+          <h2>Carry the story forward.</h2>
+          <div className="ql-close-links">
+            <Link to="/shop">Shop</Link>
+            <Link to="/mission">Our story</Link>
+            <a href="mailto:hello@moccasinsformarkers.ca">hello@moccasinsformarkers.ca</a>
           </div>
-        </section>
-
-        <section className="dd-give">
-          <div className="container dd-give-grid">
-            <Reveal>
-              <p className="label">Support</p>
-              <h2>
-                You don’t need to purchase a pair
-                <br />
-                to help preserve a memory.
-              </h2>
-            </Reveal>
-            <form className="dd-give-form" onSubmit={onDonate}>
-              <div className="dd-amounts">
-                {[25, 50, 85, 150].map((v) => (
-                  <button
-                    key={v}
-                    type="button"
-                    className={!custom && amount === v ? 'is-on' : ''}
-                    onClick={() => {
-                      setAmount(v);
-                      setCustom('');
-                    }}
-                  >
-                    ${v}
-                  </button>
-                ))}
-              </div>
-              <label className="field">
-                <span>Custom CAD</span>
-                <input type="number" min="1" value={custom} onChange={(e) => setCustom(e.target.value)} />
-              </label>
-              <label className="field">
-                <span>Name</span>
-                <input required value={name} onChange={(e) => setName(e.target.value)} />
-              </label>
-              <label className="field">
-                <span>Email</span>
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-              </label>
-              <Button type="submit" variant="primary" arrow>
-                Support the mission
-              </Button>
-            </form>
-          </div>
-        </section>
-
-        <section className="dd-close">
-          <Reveal>
-            <p className="label">Moccasins for Markers</p>
-            <h2>Carry the story forward.</h2>
-            <div className="dd-close-links">
-              <Link to="/shop">Collection</Link>
-              <Link to="/donate">Give</Link>
-              <a href="mailto:hello@moccasinsformarkers.ca">hello@moccasinsformarkers.ca</a>
-            </div>
-          </Reveal>
-        </section>
-      </div>
+        </Reveal>
+      </section>
     </>
   );
 }

@@ -7,9 +7,9 @@
 
 .checkout-form,
 .checkout-summary {
-  border: 1px solid var(--line-day);
+  border: 1px solid var(--line);
   padding: 1.4rem;
-  background: var(--day-soft);
+  background: var(--snow-2);
 }
 
 .checkout-form fieldset {
@@ -22,6 +22,7 @@
   font-family: var(--font-display);
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
+  font-weight: 500;
 }
 
 .field-row {
@@ -32,13 +33,14 @@
 
 .payment-note,
 .purpose {
-  color: var(--quiet);
+  color: var(--soft);
   font-size: 0.9rem;
 }
 
 .checkout-summary h2 {
   margin: 0 0 1rem;
-  font-size: 1.55rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .summary-line {
@@ -56,7 +58,7 @@
 
 .summary-line p {
   margin: 0.2rem 0 0;
-  color: var(--quiet);
+  color: var(--soft);
   font-size: 0.85rem;
 }
 
@@ -64,7 +66,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 0.85rem;
-  border-top: 1px solid var(--line-day);
+  border-top: 1px solid var(--line);
 }
 
 @media (max-width: 900px) {

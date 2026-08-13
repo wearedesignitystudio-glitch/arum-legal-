@@ -9,7 +9,7 @@
 .product-gallery {
   position: sticky;
   top: calc(var(--header-h) + 1rem);
-  background: #ebe6dc;
+  background: #ebe7df;
   aspect-ratio: 3 / 4;
   overflow: hidden;
 }
@@ -20,16 +20,16 @@
   object-fit: cover;
 }
 
-.product-info h1 { margin-bottom: 0.4rem; color: var(--ink); }
-.product-price { color: var(--quiet); margin-bottom: 0.3rem; }
+.product-info h1 { margin-bottom: 0.4rem; font-weight: 500; }
+.product-price { color: var(--soft); margin-bottom: 0.3rem; }
 
 .product-availability {
   margin: 0 0 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--accent);
+  font-weight: 500;
 }
 
 .product-buy {
@@ -42,8 +42,8 @@
 .qty-box {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--line-day);
-  min-height: 2.9rem;
+  border: 1px solid var(--line);
+  min-height: 3rem;
 }
 
 .qty-box button {
@@ -58,35 +58,35 @@
 .purpose-line {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.2rem;
-  color: var(--forest);
+  font-size: 1.15rem;
+  color: var(--accent);
 }
 
-.accordion { margin-top: 1.25rem; border-top: 1px solid var(--line-day); }
+.accordion { margin-top: 1.25rem; border-top: 1px solid var(--line); }
 
 .acc-trigger {
   width: 100%;
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--line-day);
+  border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
   font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--quiet);
+  font-weight: 500;
+  color: var(--soft);
   cursor: pointer;
 }
 
 .acc-trigger.is-open { color: var(--ink); }
 .acc-trigger em { font-style: normal; }
-.acc-panel p { margin: 0; color: var(--quiet); }
+.acc-panel p { margin: 0; color: var(--soft); }
 
 .story-band,
-.purpose-band { background: var(--day-soft); }
+.purpose-band { background: var(--snow-2); }
 
 .purpose-steps {
   display: grid;
@@ -97,33 +97,32 @@
 
 .purpose-steps span {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  color: var(--forest);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
-.purpose-steps p { margin: 0; color: var(--quiet); }
+.purpose-steps p { margin: 0; color: var(--soft); }
 
 .text-link {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  color: var(--ink);
 }
 
 .section-head-simple { margin-bottom: 1.5rem; }
 .section-head-simple h2 { margin: 0; }
 
 .kicker {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--quiet);
+  color: var(--soft);
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
