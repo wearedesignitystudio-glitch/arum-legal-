@@ -1,18 +1,14 @@
 .product-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background: transparent;
-  border: 0;
-  padding: 0;
+  display: grid;
+  gap: 0.95rem;
 }
 
 .product-card-media {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--parchment);
+  background: #e8e2d6;
   text-decoration: none;
 }
 
@@ -25,102 +21,56 @@
   transition: opacity 0.5s ease, transform 1s var(--ease-out);
 }
 
-.product-card-media img.is-dim { opacity: 0; }
-.product-card-media .hover-img { opacity: 0; transform: scale(1.02); }
-.product-card-media .hover-img.is-visible { opacity: 1; transform: scale(1.05); }
-.product-card:hover .product-card-media img:first-child { transform: scale(1.04); }
-
-.product-badges {
-  position: absolute;
-  left: 0.85rem;
-  top: 0.85rem;
-  z-index: 2;
+.product-card-media .hover-img {
+  opacity: 0;
 }
 
-.product-badges span {
-  background: rgba(250, 248, 243, 0.92);
-  color: var(--earth);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.55rem;
-  border-radius: var(--radius);
+.product-card:hover .product-card-media img:first-child {
+  transform: scale(1.04);
 }
 
-.product-card-body {
-  display: grid;
-  gap: 0.3rem;
+.product-card:hover .product-card-media .hover-img {
+  opacity: 1;
+  transform: scale(1.04);
 }
 
-.product-card-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  align-items: baseline;
-}
-
-.product-card-top h3 {
-  margin: 0;
+.product-card-body h3 {
+  margin: 0 0 0.2rem;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.product-card-top a { text-decoration: none; }
-.product-card-top a:hover { color: var(--cedar); }
-
-.product-card-top .money {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--earth);
-  white-space: nowrap;
+.product-card-body h3 a {
+  text-decoration: none;
 }
 
-.product-card-desc {
+.product-card-body h3 a:hover {
+  color: var(--cedar);
+}
+
+.product-card-body .money {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
 }
 
-.product-card-actions {
-  display: grid;
-  grid-template-columns: 1fr auto;
+.view-piece {
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 0.65rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--line);
-}
-
-.quick-view {
+  gap: 0.35rem;
+  margin-top: 0.45rem;
   font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
+  color: var(--ink);
 }
 
-.quick-view:hover { color: var(--charcoal); }
-
-.add-btn {
-  appearance: none;
-  border: 1px solid var(--charcoal);
-  background: var(--charcoal);
-  color: var(--bone);
-  min-height: 2.35rem;
-  padding: 0 0.95rem;
-  border-radius: var(--radius-md);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+.view-piece span {
+  transition: transform 0.35s var(--ease);
 }
 
-.add-btn:hover {
-  background: var(--cedar);
-  border-color: var(--cedar);
+.product-card:hover .view-piece span {
+  transform: translateX(4px);
 }

@@ -2,8 +2,7 @@ import { useMemo, useState } from 'react';
 import Seo from '../components/ui/Seo';
 import Reveal from '../components/ui/Reveal';
 import ProductGrid from '../components/product/ProductGrid';
-import { PRODUCTS, BUNDLES } from '../data/products';
-import { PurposeBanner, BundleBanners } from '../components/ui/PromoBanners';
+import { PRODUCTS } from '../data/products';
 import './Shop.css';
 
 export default function Shop() {
@@ -27,21 +26,21 @@ export default function Shop() {
   return (
     <div className="page">
       <Seo
-        title="Shop the Collection"
-        description="Nine handcrafted ornamental moccasin pairs and bundle offers. Each one made with care and purpose — from $85 CAD."
+        title="Collection"
+        description="Handcrafted ornamental moccasin pairs. Each one made with care and purpose — from $85 CAD."
         path="/shop"
       />
       <section className="page-hero container">
         <Reveal>
-          <p className="kicker">Shop</p>
-          <h1>Shop the Collection</h1>
-          <p>Nine handcrafted pairs. Bundle offers available. Each one made with care and purpose.</p>
+          <p className="label">Handcrafted Collection</p>
+          <h1>
+            Choose a piece
+            <br />
+            with purpose.
+          </h1>
+          <p>Each pair is handmade in limited numbers — craftsmanship connected to remembrance.</p>
         </Reveal>
       </section>
-
-      <PurposeBanner />
-
-      <BundleBanners bundles={BUNDLES} />
 
       <section className="container shop-toolbar">
         <div className="filters" role="group" aria-label="Filter products">
@@ -74,8 +73,11 @@ export default function Shop() {
         </div>
       </section>
 
-      <section className="container section-tight">
+      <section className="container section-tight shop-grid-wrap">
         <ProductGrid products={products} />
+        <p className="shop-footnote">
+          Proceeds support permanent headstones for unmarked graves of former residential school survivors.
+        </p>
       </section>
     </div>
   );

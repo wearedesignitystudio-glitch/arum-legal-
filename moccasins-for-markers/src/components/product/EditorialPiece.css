@@ -1,0 +1,131 @@
+.ed-piece {
+  position: relative;
+  display: grid;
+  gap: 0;
+}
+
+.ed-media {
+  display: block;
+  overflow: hidden;
+  background: #e8e2d6;
+  text-decoration: none;
+}
+
+.ed-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease-out);
+}
+
+.ed-piece:hover .ed-media img {
+  transform: scale(1.045);
+}
+
+.ed-meta {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 0 0;
+  transition: transform 0.45s var(--ease);
+}
+
+.ed-piece:hover .ed-meta {
+  transform: translateY(-4px);
+}
+
+.ed-meta h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.ed-meta h3 a {
+  text-decoration: none;
+}
+
+.ed-meta h3 a:hover {
+  color: var(--cedar);
+}
+
+.ed-meta .money {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.ed-link {
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ed-link span {
+  transition: transform 0.35s var(--ease);
+}
+
+.ed-piece:hover .ed-link span {
+  transform: translateX(4px);
+}
+
+.ed-tall .ed-media { aspect-ratio: 3 / 4; }
+.ed-offset .ed-media { aspect-ratio: 1; }
+.ed-wide .ed-media { aspect-ratio: 16 / 9; }
+.ed-pair .ed-media { aspect-ratio: 4 / 5; }
+.ed-feature .ed-media { aspect-ratio: 4 / 5; max-width: 560px; margin-inline: auto; }
+
+.ed-collection {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem 2rem;
+  align-items: start;
+}
+
+.ed-collection .ed-offset {
+  margin-top: 4.5rem;
+}
+
+.ed-collection .ed-wide {
+  grid-column: 1 / -1;
+  margin: 1rem 0;
+}
+
+.ed-pair-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.ed-collection .ed-feature {
+  grid-column: 1 / -1;
+  justify-items: center;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.ed-collection .ed-feature .ed-meta {
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  .ed-collection {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ed-collection .ed-offset {
+    margin-top: 0;
+  }
+
+  .ed-pair-row {
+    grid-template-columns: 1fr;
+  }
+}

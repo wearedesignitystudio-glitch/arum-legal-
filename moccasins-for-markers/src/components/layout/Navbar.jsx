@@ -6,11 +6,10 @@ import { asset } from '../../data/products';
 import './Navbar.css';
 
 const NAV = [
-  { to: '/mission', label: 'Mission' },
-  { to: '/shop', label: 'Shop' },
-  { to: '/impact', label: 'Our Impact' },
-  { to: '/journal', label: 'Journal' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/mission', label: 'Story' },
+  { to: '/shop', label: 'Collection' },
+  { to: '/impact', label: 'Purpose' },
+  { to: '/donate', label: 'Support' },
 ];
 
 export default function Navbar() {
@@ -22,16 +21,13 @@ export default function Navbar() {
   const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
+  useEffect(() => setMenuOpen(false), [location.pathname]);
   useEffect(() => {
     document.body.classList.toggle('menu-open', menuOpen);
   }, [menuOpen]);
@@ -40,35 +36,28 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`nav ${solid ? 'is-solid' : 'is-overlay'} ${isHome ? 'on-home' : ''}`}>
+      <header className={`nav ${solid ? 'is-solid' : 'is-open'} ${isHome ? 'on-home' : ''}`}>
         <div className="nav-inner">
           <Link to="/" className="nav-brand" aria-label="Moccasins for Markers home">
-            <img src={asset('logo.png')} alt="" width="40" height="40" />
-            <span>
-              Moccasins
-              <em>for Markers</em>
-            </span>
+            <img src={asset('logo.png')} alt="" width="36" height="36" />
+            <span>Moccasins for Markers</span>
           </Link>
 
           <nav className="nav-links" aria-label="Primary">
             {NAV.map((link) => (
-              <NavLink key={link.to + link.label} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+              <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
                 {link.label}
               </NavLink>
             ))}
           </nav>
 
           <div className="nav-actions">
-            <Link to="/donate" className="nav-donate">
-              Donate
-            </Link>
-            <button type="button" className="nav-icon cart-btn" onClick={openCart} aria-label={`Open cart, ${count} items`}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 7h12l-1.1 11a2 2 0 0 1-2 1.8H9.1a2 2 0 0 1-2-1.8L6 7Z" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M9 7V5.8A3 3 0 0 1 12 2.8v0a3 3 0 0 1 3 3V7" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
-              {count > 0 && <span className="cart-badge">{count}</span>}
+            <button type="button" className="nav-cart" onClick={openCart} aria-label={`Open cart, ${count} items`}>
+              Cart{count > 0 ? ` (${count})` : ''}
             </button>
+            <Link to="/donate" className="nav-cta">
+              Support the Mission
+            </Link>
             <button
               type="button"
               className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
@@ -90,34 +79,28 @@ export default function Navbar() {
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.4 }}
           >
-            <motion.nav
-              initial={reduce ? false : { y: 28, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 16, opacity: 0 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              aria-label="Mobile"
-            >
+            <nav aria-label="Mobile">
               {NAV.map((link, i) => (
                 <motion.div
-                  key={link.to + link.label}
-                  initial={reduce ? false : { y: 18, opacity: 0 }}
+                  key={link.to}
+                  initial={reduce ? false : { y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.05 * i, duration: 0.4 }}
+                  transition={{ delay: 0.05 * i, duration: 0.5 }}
                 >
                   <Link to={link.to} onClick={() => setMenuOpen(false)}>
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
-              <Link to="/donate" className="mobile-donate" onClick={() => setMenuOpen(false)}>
-                Donate
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                Contact
               </Link>
-              <Link to="/faq" onClick={() => setMenuOpen(false)}>
-                FAQ
+              <Link to="/donate" className="mobile-cta" onClick={() => setMenuOpen(false)}>
+                Support the Mission
               </Link>
-            </motion.nav>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

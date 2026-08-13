@@ -1,16 +1,16 @@
 .product-layout {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(1.5rem, 4vw, 3.25rem);
-  padding: 1.5rem 0 3.5rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  padding: 1.5rem 0 4rem;
   align-items: start;
 }
 
 .product-gallery {
   position: sticky;
   top: calc(var(--header-h) + 1rem);
-  background: var(--parchment);
-  aspect-ratio: 4 / 5;
+  background: #e8e2d6;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
 }
 
@@ -21,48 +21,47 @@
 }
 
 .product-info h1 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  margin-bottom: 0.45rem;
+  font-weight: 400;
 }
 
 .product-price {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 500;
   margin-bottom: 0.35rem;
-  color: var(--earth);
+  color: var(--muted);
 }
 
 .product-availability {
-  margin: 0 0 1rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  margin: 0 0 1.1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cedar);
+  color: var(--sage);
   font-weight: 600;
 }
 
 .product-buy {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  gap: 0.55rem;
-  margin: 1.25rem 0 1rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  margin: 1.35rem 0 1rem;
 }
 
 .qty-box {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   min-height: 3rem;
-  background: var(--surface);
+  background: var(--cream);
 }
 
 .qty-box button {
-  width: 2.4rem;
+  width: 2.5rem;
   height: 100%;
   border: 0;
   background: transparent;
   cursor: pointer;
-  font-size: 1.05rem;
 }
 
 .qty-box span {
@@ -75,12 +74,12 @@
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--earth);
-  margin-bottom: 0.25rem;
+  color: var(--cedar);
+  margin-bottom: 0.35rem;
 }
 
 .accordion {
-  margin-top: 1.25rem;
+  margin-top: 1.35rem;
   border-top: 1px solid var(--line);
 }
 
@@ -95,8 +94,8 @@
   align-items: center;
   gap: 1rem;
   text-align: left;
-  padding: 0.95rem 0;
-  font-size: 0.74rem;
+  padding: 1rem 0;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -109,13 +108,12 @@
 .acc-trigger em {
   font-style: normal;
   font-size: 1.1rem;
-  color: var(--muted);
 }
 
 .acc-panel { padding: 0.15rem 0 1.1rem; }
 .acc-panel p { margin: 0; color: var(--muted); }
 
-.story-band { background: var(--ivory); }
+.story-band { background: var(--cream); }
 .purpose-band { background: var(--parchment); }
 
 .purpose-steps {
@@ -137,8 +135,8 @@
 
 .text-link {
   text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--cedar);
@@ -146,6 +144,15 @@
 
 .section-head-simple { margin-bottom: 1.75rem; }
 .section-head-simple h2 { margin: 0; }
+
+.kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
 
 @media (max-width: 900px) {
   .product-layout,
