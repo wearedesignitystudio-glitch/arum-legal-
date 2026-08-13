@@ -9,7 +9,7 @@ export default function Footer() {
         <nav>
           <Link to="/mission">Story</Link>
           <Link to="/shop">Shop</Link>
-          <Link to="/donate">Give</Link>
+          <Link to={{ pathname: '/', hash: '#remembrance' }}>Give</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <a href="mailto:hello@moccasinsformarkers.ca">hello@moccasinsformarkers.ca</a>
