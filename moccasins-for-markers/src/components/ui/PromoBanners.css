@@ -1,98 +1,31 @@
-/* Remembrance panel — editorial letter + craft photo */
-.remembrance-panel {
-  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
-  background: var(--bg-elevated);
+.shop-purpose {
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+  background: var(--parchment);
+  text-align: center;
   border-block: 1px solid var(--line);
 }
 
-.remembrance-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
+.shop-purpose h2 {
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  max-width: 20ch;
+  margin: 0 auto 0.85rem;
 }
 
-.remembrance-copy blockquote {
-  margin: 0 0 1.35rem;
-  padding: 0;
-  border: 0;
-}
-
-.remembrance-copy blockquote p {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  color: var(--cream);
-}
-
-.remembrance-copy blockquote span {
-  display: block;
-  margin-top: 0.85rem;
-  font-family: var(--font-body);
-  font-size: 1.02rem;
-  font-weight: 400;
-  line-height: 1.7;
-  letter-spacing: 0;
+.shop-purpose p {
+  margin: 0 auto;
+  max-width: 36rem;
   color: var(--muted);
-  max-width: 34rem;
 }
 
-.remembrance-note {
-  margin: 0 0 1.6rem;
-  color: var(--muted);
-  max-width: 34rem;
-  font-size: 0.95rem;
-  padding-top: 1.15rem;
-  border-top: 1px solid var(--line);
-}
-
-.remembrance-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.remembrance-figure {
-  margin: 0;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.remembrance-figure img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: var(--surface);
-}
-
-.remembrance-figure figcaption {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.remembrance-figure strong {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.remembrance-figure span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* Bundle offers */
 .bundle-section {
-  padding: clamp(3.25rem, 6vw, 4.75rem) 0;
-  border-bottom: 1px solid var(--line);
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
 }
+
+.section-head-shop {
+  margin-bottom: 1.75rem;
+}
+
+.section-head-shop h2 { margin: 0; }
 
 .bundle-grid {
   display: grid;
@@ -105,17 +38,13 @@
 .bundle-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  overflow: hidden;
-  background: var(--surface);
-  border: 0;
-  border-radius: 0;
+  background: var(--ivory);
 }
 
 .bundle-card-media {
   position: relative;
-  min-height: 240px;
-  background: var(--surface-2);
+  min-height: 220px;
+  background: var(--parchment);
 }
 
 .bundle-card-media img {
@@ -128,48 +57,40 @@
   position: absolute;
   left: 1rem;
   top: 1rem;
-  padding: 0.35rem 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--cream);
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--gold);
+  color: var(--bone);
+  border-bottom: 1px solid var(--bone);
+  padding-bottom: 0.2rem;
 }
 
 .bundle-card-body {
-  padding: 1.6rem 1.45rem;
+  padding: 1.5rem;
   display: grid;
   align-content: center;
   gap: 0.4rem;
 }
 
-.bundle-card-body h3 {
-  margin: 0;
-  font-size: 1.55rem;
-}
-
+.bundle-card-body h3 { margin: 0; }
 .bundle-card-body p {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
-  line-height: 1.55;
 }
 
 .bundle-price {
   display: flex;
   align-items: baseline;
   gap: 0.65rem;
-  margin: 0.45rem 0 0.65rem;
+  margin: 0.4rem 0 0.6rem;
 }
 
 .bundle-price strong {
   font-family: var(--font-display);
   font-size: 1.55rem;
   font-weight: 500;
-  color: var(--cream);
 }
 
 .bundle-price span {
@@ -194,25 +115,11 @@
   font-weight: 600;
 }
 
-.bundle-link:hover {
-  color: var(--cream);
-}
+.bundle-link:hover { color: var(--charcoal); }
 
 @media (max-width: 900px) {
-  .remembrance-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .remembrance-figure img {
-    aspect-ratio: 16 / 10;
-  }
-
   .bundle-grid,
   .bundle-card {
     grid-template-columns: 1fr;
-  }
-
-  .bundle-card-media {
-    min-height: 190px;
   }
 }

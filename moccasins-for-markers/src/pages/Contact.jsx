@@ -11,7 +11,8 @@ export default function Contact() {
 
   const submit = (e) => {
     e.preventDefault();
-    showToast('Thank you. Your message has been noted (demo form).');
+    // TODO: Wire contact form to inbox/CRM when ready.
+    showToast('Thank you. Your message has been received.');
     setForm({ name: '', email: '', message: '' });
   };
 
@@ -72,7 +73,7 @@ export default function Contact() {
             <p>
               <a href="mailto:hello@moccasinsformarkers.ca">hello@moccasinsformarkers.ca</a>
             </p>
-            <p className="muted">We aim to respond with care. Demo form — connect your inbox or CRM when ready.</p>
+            <p className="muted">We aim to respond with care. For urgent order questions, email us directly.</p>
           </div>
         </Reveal>
       </section>

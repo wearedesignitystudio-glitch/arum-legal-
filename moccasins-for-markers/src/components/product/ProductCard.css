@@ -1,26 +1,18 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
+  gap: 1rem;
   background: transparent;
   border: 0;
-  border-radius: 0;
   padding: 0;
-  transition: none;
-}
-
-.product-card:hover {
-  transform: none;
-  border-color: transparent;
-  box-shadow: none;
 }
 
 .product-card-media {
   position: relative;
   display: block;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--parchment);
   text-decoration: none;
 }
 
@@ -30,22 +22,35 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.45s ease, transform 0.8s var(--ease);
+  transition: opacity 0.5s ease, transform 1s var(--ease-out);
 }
 
 .product-card-media img.is-dim { opacity: 0; }
 .product-card-media .hover-img { opacity: 0; transform: scale(1.02); }
-.product-card-media .hover-img.is-visible { opacity: 1; transform: scale(1.04); }
-.product-card:hover .product-card-media img:first-child { transform: scale(1.03); }
+.product-card-media .hover-img.is-visible { opacity: 1; transform: scale(1.05); }
+.product-card:hover .product-card-media img:first-child { transform: scale(1.04); }
 
 .product-badges {
-  display: none;
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  z-index: 2;
+}
+
+.product-badges span {
+  background: rgba(250, 248, 243, 0.92);
+  color: var(--earth);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--radius);
 }
 
 .product-card-body {
   display: grid;
-  gap: 0.25rem;
-  padding: 0;
+  gap: 0.3rem;
 }
 
 .product-card-top {
@@ -57,26 +62,25 @@
 
 .product-card-top h3 {
   margin: 0;
-  font-size: 1.28rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
 .product-card-top a { text-decoration: none; }
-.product-card-top a:hover { color: var(--gold); }
+.product-card-top a:hover { color: var(--cedar); }
 
 .product-card-top .money {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--cream-soft);
+  color: var(--earth);
   white-space: nowrap;
-  letter-spacing: 0.02em;
 }
 
 .product-card-desc {
   margin: 0;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.88rem;
 }
 
 .product-card-actions {
@@ -84,8 +88,8 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.55rem;
-  padding-top: 0.7rem;
+  margin-top: 0.65rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--line);
 }
 
@@ -98,26 +102,25 @@
   font-weight: 600;
 }
 
-.quick-view:hover { color: var(--cream); }
+.quick-view:hover { color: var(--charcoal); }
 
 .add-btn {
   appearance: none;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent-hover);
-  min-height: 2.2rem;
-  padding: 0 0.85rem;
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--charcoal);
+  background: var(--charcoal);
+  color: var(--bone);
+  min-height: 2.35rem;
+  padding: 0 0.95rem;
+  border-radius: var(--radius-md);
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .add-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #140f0c;
+  background: var(--cedar);
+  border-color: var(--cedar);
 }

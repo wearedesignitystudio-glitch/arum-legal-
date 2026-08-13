@@ -24,7 +24,7 @@ function enrichItem(item) {
         name: bundle.name,
         price: bundle.price,
         image: bundle.image,
-        tagline: `${bundle.items.length} pairs · bundle`,
+        tagline: `${bundle.productIds.length} pairs · bundle`,
       },
     };
   }

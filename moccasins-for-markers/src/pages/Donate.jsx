@@ -31,7 +31,7 @@ export default function Donate() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <DonationSelector />
+          <DonationSelector light />
           <div className="donate-explain">
             <h2>What your gift supports</h2>
             <p>

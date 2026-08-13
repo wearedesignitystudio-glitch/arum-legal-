@@ -3,15 +3,20 @@
   inset: 0 0 auto;
   z-index: 100;
   height: var(--header-h);
-  background: rgba(18, 16, 14, 0.78);
-  color: var(--cream);
-  backdrop-filter: blur(16px);
+  color: var(--charcoal);
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
   border-bottom: 1px solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav.on-home.is-overlay {
+  color: var(--bone);
+  background: transparent;
 }
 
 .nav.is-solid {
-  background: rgba(18, 16, 14, 0.96);
+  background: rgba(250, 248, 243, 0.92);
+  color: var(--charcoal);
+  backdrop-filter: blur(16px);
   border-bottom-color: var(--line);
 }
 
@@ -34,8 +39,8 @@
 }
 
 .nav-brand img {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -44,44 +49,45 @@
   display: flex;
   flex-direction: column;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.05;
   letter-spacing: -0.01em;
 }
 
 .nav-brand em {
   font-style: italic;
-  font-size: 0.88rem;
-  color: var(--gold);
+  font-size: 0.92rem;
   font-weight: 400;
+  opacity: 0.85;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.55rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   position: relative;
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--cream-soft);
   opacity: 0.78;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover,
-.nav-links a.is-active { opacity: 1; color: var(--cream); }
+.nav-links a.is-active { opacity: 1; }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0; bottom: -0.4rem;
-  width: 100%; height: 1px;
-  background: var(--gold);
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease);
@@ -94,28 +100,34 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.55rem;
 }
 
-.nav-cta {
+.nav-donate {
   display: inline-flex;
   align-items: center;
-  min-height: 2.2rem;
-  padding: 0 0.9rem;
-  margin-right: 0.25rem;
-  border: 1px solid var(--line-strong);
+  min-height: 2.35rem;
+  padding: 0 1rem;
+  background: var(--charcoal);
+  color: var(--bone);
+  text-decoration: none;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-decoration: none;
-  color: var(--cream);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: background 0.25s ease, transform 0.25s var(--ease);
 }
 
-.nav-cta:hover {
-  border-color: rgba(243, 236, 227, 0.35);
-  background: rgba(243, 236, 227, 0.04);
+.nav.on-home.is-overlay .nav-donate {
+  background: var(--bone);
+  color: var(--charcoal);
+}
+
+.nav-donate:hover {
+  background: var(--cedar);
+  color: var(--ivory);
+  transform: translateY(-1px);
 }
 
 .nav-icon,
@@ -124,24 +136,24 @@
   background: transparent;
   border: 0;
   color: inherit;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.4rem;
+  height: 2.4rem;
   display: inline-grid;
   place-items: center;
   cursor: pointer;
   position: relative;
-  text-decoration: none;
 }
 
 .cart-badge {
   position: absolute;
-  top: 2px; right: 2px;
+  top: 2px;
+  right: 2px;
   min-width: 1.05rem;
   height: 1.05rem;
   padding: 0 0.2rem;
   border-radius: 999px;
-  background: var(--accent);
-  color: #1a120c;
+  background: var(--cedar);
+  color: var(--ivory);
   font-size: 0.62rem;
   font-weight: 700;
   display: grid;
@@ -163,7 +175,8 @@
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: var(--bg);
+  background: var(--ivory);
+  color: var(--charcoal);
   display: grid;
   place-items: center;
   padding: 6rem 1.5rem 2rem;
@@ -171,20 +184,29 @@
 
 .mobile-menu nav {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.15rem;
   text-align: center;
 }
 
 .mobile-menu a {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 2.85rem);
+  font-size: clamp(2rem, 8vw, 3rem);
   text-decoration: none;
   font-weight: 500;
 }
 
+.mobile-donate {
+  margin-top: 0.5rem;
+  font-family: var(--font-body) !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  color: var(--cedar);
+}
+
 @media (max-width: 980px) {
   .nav-links { display: none; }
-  .nav-cta { display: none; }
   .menu-toggle { display: inline-grid; }
   .nav-inner { grid-template-columns: 1fr auto; }
 }

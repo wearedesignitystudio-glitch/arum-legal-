@@ -5,12 +5,12 @@ import { useCart } from '../../context/CartContext';
 import { asset } from '../../data/products';
 import './Navbar.css';
 
-const LINKS = [
+const NAV = [
+  { to: '/mission', label: 'Mission' },
   { to: '/shop', label: 'Shop' },
-  { to: '/mission', label: 'Our Story' },
-  { to: '/impact', label: 'Impact' },
+  { to: '/impact', label: 'Our Impact' },
   { to: '/journal', label: 'Journal' },
-  { to: '/donate', label: 'Donate' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
   const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`nav ${solid ? 'is-solid' : 'is-overlay'}`}>
+      <header className={`nav ${solid ? 'is-solid' : 'is-overlay'} ${isHome ? 'on-home' : ''}`}>
         <div className="nav-inner">
           <Link to="/" className="nav-brand" aria-label="Moccasins for Markers home">
             <img src={asset('logo.png')} alt="" width="40" height="40" />
@@ -51,16 +51,16 @@ export default function Navbar() {
           </Link>
 
           <nav className="nav-links" aria-label="Primary">
-            {LINKS.map((link) => (
-              <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+            {NAV.map((link) => (
+              <NavLink key={link.to + link.label} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
                 {link.label}
               </NavLink>
             ))}
           </nav>
 
           <div className="nav-actions">
-            <Link to="/shop" className="nav-cta">
-              Shop
+            <Link to="/donate" className="nav-donate">
+              Donate
             </Link>
             <button type="button" className="nav-icon cart-btn" onClick={openCart} aria-label={`Open cart, ${count} items`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -93,15 +93,15 @@ export default function Navbar() {
             transition={{ duration: 0.35 }}
           >
             <motion.nav
-              initial={reduce ? false : { y: 24, opacity: 0 }}
+              initial={reduce ? false : { y: 28, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 16, opacity: 0 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               aria-label="Mobile"
             >
-              {LINKS.map((link, i) => (
+              {NAV.map((link, i) => (
                 <motion.div
-                  key={link.to}
+                  key={link.to + link.label}
                   initial={reduce ? false : { y: 18, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.05 * i, duration: 0.4 }}
@@ -111,8 +111,8 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                Contact
+              <Link to="/donate" className="mobile-donate" onClick={() => setMenuOpen(false)}>
+                Donate
               </Link>
               <Link to="/faq" onClick={() => setMenuOpen(false)}>
                 FAQ

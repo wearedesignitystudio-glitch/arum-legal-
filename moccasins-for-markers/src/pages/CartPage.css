@@ -54,7 +54,7 @@
 .qty button {
   width: 1.7rem;
   height: 1.7rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   background: var(--surface);
   cursor: pointer;
 }

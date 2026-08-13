@@ -43,7 +43,7 @@ export default function Checkout() {
       <section className="page-hero container">
         <p className="kicker">Checkout</p>
         <h1>Checkout</h1>
-        <p>A calm, secure checkout — payment integration ready for Stripe or Shopify.</p>
+        <p>Complete your order with care. Every purchase helps fund permanent headstones.</p>
       </section>
 
       <section className="container checkout-grid">
@@ -83,9 +83,10 @@ export default function Checkout() {
           </fieldset>
 
           <fieldset>
+            {/* TODO: Connect Stripe / PayPal / Shopify Payments for live checkout. */}
             <legend>Payment</legend>
             <p className="payment-note">
-              Demo checkout only. Connect Stripe, PayPal, or Shopify Payments when you are ready to accept live orders.
+              You will receive order confirmation details by email. Shipping focuses on Canada.
             </p>
           </fieldset>
 

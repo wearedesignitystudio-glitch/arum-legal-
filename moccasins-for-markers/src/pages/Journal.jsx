@@ -59,8 +59,8 @@ export default function Journal() {
         </div>
         <Reveal>
           <p className="placeholder-note">
-            Full article pages can be added here as your journal grows. Categories ready: Craft, Stories, Remembrance,
-            Impact.
+            {/* TODO: Add individual journal article routes when full stories are ready. */}
+            More stories of craft and remembrance will appear here as the journal grows.
           </p>
         </Reveal>
       </section>

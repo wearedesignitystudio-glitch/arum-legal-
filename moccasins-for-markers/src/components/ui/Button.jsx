@@ -10,14 +10,21 @@ export default function Button({
   className = '',
   onClick,
   disabled,
+  arrow = false,
   ...props
 }) {
   const classes = `btn btn-${variant} ${className}`.trim();
+  const content = (
+    <span>
+      {children}
+      {arrow ? <span className="btn-arrow" aria-hidden="true">→</span> : null}
+    </span>
+  );
 
   if (to) {
     return (
       <Link to={to} className={classes} onClick={onClick} {...props}>
-        <span>{children}</span>
+        {content}
       </Link>
     );
   }
@@ -25,14 +32,14 @@ export default function Button({
   if (href) {
     return (
       <a href={href} className={classes} onClick={onClick} {...props}>
-        <span>{children}</span>
+        {content}
       </a>
     );
   }
 
   return (
     <button type={type} className={classes} onClick={onClick} disabled={disabled} {...props}>
-      <span>{children}</span>
+      {content}
     </button>
   );
 }

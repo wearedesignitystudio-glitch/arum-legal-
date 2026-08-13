@@ -23,7 +23,7 @@ export default function OrderSuccess() {
                 state?.total ? `Order total ${formatMoney(state.total)}. ` : ''
               }Every purchase contributes to remembrance.`}
         </p>
-        <p className="note">This is a demo confirmation. Connect live payments when you are ready.</p>
+        <p className="note">Every stitch honours a name. Thank you for walking with us.</p>
         <div className="success-actions">
           <Button to="/shop" variant="primary">
             Continue shopping
