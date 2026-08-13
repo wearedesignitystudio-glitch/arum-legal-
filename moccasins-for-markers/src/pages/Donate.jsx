@@ -29,11 +29,7 @@ export default function Donate() {
 
   return (
     <div className="page">
-      <Seo
-        title="Give"
-        description="Support permanent headstones for unmarked graves of former residential school survivors."
-        path="/donate"
-      />
+      <Seo title="Give" description="Support permanent headstones for unmarked graves." path="/donate" />
       <section className="page-hero container">
         <Reveal>
           <p className="label">Support</p>
@@ -41,49 +37,52 @@ export default function Donate() {
           <p>Direct gifts fund permanent headstones for unmarked graves of former residential school survivors.</p>
         </Reveal>
       </section>
-
-      <section className="ex-give">
-        <div className="ex-give-copy">
-          <p className="label">Give</p>
-          <h2>
-            You don’t need a pair
-            <br />
-            to preserve a memory.
-          </h2>
-        </div>
-        <form className="ex-give-form" onSubmit={onDonate}>
-          <div className="ex-amounts">
-            {[25, 50, 85, 150].map((v) => (
-              <button
-                key={v}
-                type="button"
-                className={!custom && amount === v ? 'is-on' : ''}
-                onClick={() => {
-                  setAmount(v);
-                  setCustom('');
-                }}
-              >
-                ${v}
-              </button>
-            ))}
+      <div className="dusk-zone">
+        <section className="dd-give" style={{ borderTop: 'none' }}>
+          <div className="container dd-give-grid">
+            <Reveal>
+              <p className="label">Give</p>
+              <h2>
+                You don’t need to purchase a pair
+                <br />
+                to help preserve a memory.
+              </h2>
+            </Reveal>
+            <form className="dd-give-form" onSubmit={onDonate}>
+              <div className="dd-amounts">
+                {[25, 50, 85, 150].map((v) => (
+                  <button
+                    key={v}
+                    type="button"
+                    className={!custom && amount === v ? 'is-on' : ''}
+                    onClick={() => {
+                      setAmount(v);
+                      setCustom('');
+                    }}
+                  >
+                    ${v}
+                  </button>
+                ))}
+              </div>
+              <label className="field">
+                <span>Custom CAD</span>
+                <input type="number" min="1" value={custom} onChange={(e) => setCustom(e.target.value)} />
+              </label>
+              <label className="field">
+                <span>Name</span>
+                <input required value={name} onChange={(e) => setName(e.target.value)} />
+              </label>
+              <label className="field">
+                <span>Email</span>
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+              </label>
+              <Button type="submit" variant="primary" arrow>
+                Support the mission
+              </Button>
+            </form>
           </div>
-          <label className="field">
-            <span>Custom CAD</span>
-            <input type="number" min="1" value={custom} onChange={(e) => setCustom(e.target.value)} />
-          </label>
-          <label className="field">
-            <span>Name</span>
-            <input required value={name} onChange={(e) => setName(e.target.value)} />
-          </label>
-          <label className="field">
-            <span>Email</span>
-            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-          </label>
-          <Button type="submit" variant="primary" arrow>
-            Support the mission
-          </Button>
-        </form>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

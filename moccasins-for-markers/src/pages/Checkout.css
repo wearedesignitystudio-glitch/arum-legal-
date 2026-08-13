@@ -7,27 +7,21 @@
 
 .checkout-form,
 .checkout-summary {
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-day);
   padding: 1.4rem;
+  background: var(--day-soft);
 }
 
 .checkout-form fieldset {
   border: 0;
-  margin: 0 0 1.3rem;
+  margin: 0 0 1.25rem;
   padding: 0;
 }
 
 .checkout-form legend {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  margin-bottom: 0.85rem;
-  color: var(--paper);
-}
-
-.checkout-form .field input,
-.checkout-form .field textarea {
-  color: var(--paper);
-  border-bottom-color: var(--line);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .field-row {
@@ -38,14 +32,13 @@
 
 .payment-note,
 .purpose {
-  color: var(--mute);
+  color: var(--quiet);
   font-size: 0.9rem;
 }
 
 .checkout-summary h2 {
   margin: 0 0 1rem;
-  color: var(--paper);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
 }
 
 .summary-line {
@@ -61,15 +54,17 @@
   object-fit: cover;
 }
 
-.summary-line strong { color: var(--paper); }
-.summary-line p { margin: 0.2rem 0 0; color: var(--mute); font-size: 0.85rem; }
+.summary-line p {
+  margin: 0.2rem 0 0;
+  color: var(--quiet);
+  font-size: 0.85rem;
+}
 
 .summary-total {
   display: flex;
   justify-content: space-between;
   padding-top: 0.85rem;
-  border-top: 1px solid var(--line);
-  color: var(--paper);
+  border-top: 1px solid var(--line-day);
 }
 
 @media (max-width: 900px) {

@@ -22,7 +22,7 @@ export default function CartDrawer() {
             exit={{ opacity: 0 }}
           />
           <motion.aside
-            className="cart-drawer light-surface"
+            className="cart-drawer"
             role="dialog"
             aria-modal="true"
             aria-labelledby="cart-title"

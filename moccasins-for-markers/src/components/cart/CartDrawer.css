@@ -3,7 +3,7 @@
   inset: 0;
   z-index: 200;
   border: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(18, 18, 17, 0.4);
   cursor: pointer;
 }
 
@@ -14,26 +14,26 @@
   z-index: 210;
   width: min(420px, 100%);
   height: 100%;
-  background: var(--paper);
-  color: var(--void);
+  background: var(--day);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
 }
 
 .cart-drawer-head,
-.cart-drawer-foot { padding: 1.4rem 1.4rem; }
+.cart-drawer-foot { padding: 1.35rem 1.4rem; }
 
 .cart-drawer-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-day);
 }
 
 .cart-drawer-head h2 {
   margin: 0;
-  font-size: 1.8rem;
-  color: var(--void);
+  font-size: 1.7rem;
+  color: var(--ink);
 }
 
 .cart-close {
@@ -42,13 +42,13 @@
   background: transparent;
   font-size: 1.7rem;
   cursor: pointer;
-  color: var(--mute);
+  color: var(--quiet);
 }
 
 .cart-drawer-body {
   flex: 1;
   overflow: auto;
-  padding: 1.2rem 1.4rem;
+  padding: 1.15rem 1.4rem;
 }
 
 .cart-empty {
@@ -57,45 +57,44 @@
   display: grid;
   gap: 1rem;
   justify-items: center;
-  color: var(--mute);
+  color: var(--quiet);
 }
 
 .cart-line {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 78px 1fr;
   gap: 0.9rem;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-day);
 }
 
 .cart-line img {
-  width: 80px;
-  height: 100px;
+  width: 78px;
+  height: 98px;
   object-fit: cover;
 }
 
 .cart-line h3 {
   margin: 0 0 0.2rem;
   font-size: 1.2rem;
-  color: var(--void);
+  color: var(--ink);
 }
 
-.cart-line p { margin: 0; color: var(--mute); font-size: 0.88rem; }
+.cart-line p { margin: 0; color: var(--quiet); font-size: 0.88rem; }
 
 .qty {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
 }
 
 .qty button {
   width: 1.7rem;
   height: 1.7rem;
-  border: 1px solid var(--line-dark);
+  border: 1px solid var(--line-day);
   background: transparent;
   cursor: pointer;
-  color: var(--void);
 }
 
 .remove,
@@ -103,7 +102,7 @@
   appearance: none;
   border: 0;
   background: transparent;
-  color: var(--mute);
+  color: var(--quiet);
   text-decoration: underline;
   cursor: pointer;
   padding: 0;
@@ -112,7 +111,7 @@
 }
 
 .cart-drawer-foot {
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line-day);
   display: grid;
   gap: 0.7rem;
 }
@@ -122,7 +121,7 @@
   justify-content: space-between;
 }
 
-.cart-note { margin: 0; color: var(--mute); font-size: 0.82rem; }
+.cart-note { margin: 0; color: var(--quiet); font-size: 0.82rem; }
 .continue { justify-self: center; }
 
 @media (max-width: 520px) {
