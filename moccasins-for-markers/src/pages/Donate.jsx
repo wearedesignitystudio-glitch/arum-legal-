@@ -1,34 +1,89 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Seo from '../components/ui/Seo';
 import Reveal from '../components/ui/Reveal';
-import DonationExperience from '../components/donate/DonationExperience';
-import { asset } from '../data/products';
-import './StoryPages.css';
+import Button from '../components/ui/Button';
+import { useCart } from '../context/CartContext';
+import './Home.css';
 
 export default function Donate() {
+  const { showToast } = useCart();
+  const navigate = useNavigate();
+  const [amount, setAmount] = useState(85);
+  const [custom, setCustom] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const selected = custom ? Number(custom) : amount;
+
+  const onDonate = (e) => {
+    e.preventDefault();
+    if (!selected || selected < 1 || !name.trim() || !email.trim()) {
+      showToast('Please complete amount, name, and email.');
+      return;
+    }
+    showToast(`Thank you, ${name.trim()}.`);
+    navigate('/order-success', {
+      state: { type: 'donation', amount: selected, frequency: 'one-time', name: name.trim() },
+    });
+  };
+
   return (
     <div className="page">
       <Seo
-        title="Support the Mission"
-        description="Help place a permanent marker. Donate to support headstones for unmarked graves of former residential school survivors."
+        title="Give"
+        description="Support permanent headstones for unmarked graves of former residential school survivors."
         path="/donate"
       />
-
       <section className="page-hero container">
         <Reveal>
           <p className="label">Support</p>
-          <h1>Help place a lasting marker.</h1>
-          <p>
-            If you prefer to give without purchasing, your contribution still funds permanent headstones with dignity
-            and care.
-          </p>
+          <h1>Preserve a memory.</h1>
+          <p>Direct gifts fund permanent headstones for unmarked graves of former residential school survivors.</p>
         </Reveal>
       </section>
 
-      <section className="donate-visual-band">
-        <img src={asset('impact-marker.jpg')} alt="A headstone in a quiet field" />
+      <section className="ex-give">
+        <div className="ex-give-copy">
+          <p className="label">Give</p>
+          <h2>
+            You don’t need a pair
+            <br />
+            to preserve a memory.
+          </h2>
+        </div>
+        <form className="ex-give-form" onSubmit={onDonate}>
+          <div className="ex-amounts">
+            {[25, 50, 85, 150].map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={!custom && amount === v ? 'is-on' : ''}
+                onClick={() => {
+                  setAmount(v);
+                  setCustom('');
+                }}
+              >
+                ${v}
+              </button>
+            ))}
+          </div>
+          <label className="field">
+            <span>Custom CAD</span>
+            <input type="number" min="1" value={custom} onChange={(e) => setCustom(e.target.value)} />
+          </label>
+          <label className="field">
+            <span>Name</span>
+            <input required value={name} onChange={(e) => setName(e.target.value)} />
+          </label>
+          <label className="field">
+            <span>Email</span>
+            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          </label>
+          <Button type="submit" variant="primary" arrow>
+            Support the mission
+          </Button>
+        </form>
       </section>
-
-      <DonationExperience />
     </div>
   );
 }

@@ -3,243 +3,249 @@ import { motion, useReducedMotion } from 'framer-motion';
 import Seo from '../components/ui/Seo';
 import Reveal from '../components/ui/Reveal';
 import Button from '../components/ui/Button';
-import EditorialPiece from '../components/product/EditorialPiece';
-import ImpactStory from '../components/home/ImpactStory';
-import DonationExperience from '../components/donate/DonationExperience';
-import { PRODUCTS, asset } from '../data/products';
+import { PRODUCTS, asset, formatMoney } from '../data/products';
+import { useCart } from '../context/CartContext';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
+
+const LOOK = PRODUCTS.slice(0, 8);
 
 export default function Home() {
   const reduce = useReducedMotion();
-  const pieces = PRODUCTS.slice(0, 6);
+  const { showToast } = useCart();
+  const navigate = useNavigate();
+  const [amount, setAmount] = useState(85);
+  const [custom, setCustom] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const selected = custom ? Number(custom) : amount;
+
+  const onDonate = (e) => {
+    e.preventDefault();
+    if (!selected || selected < 1 || !name.trim() || !email.trim()) {
+      showToast('Please complete amount, name, and email.');
+      return;
+    }
+    showToast(`Thank you, ${name.trim()}.`);
+    navigate('/order-success', {
+      state: { type: 'donation', amount: selected, frequency: 'one-time', name: name.trim() },
+    });
+  };
 
   return (
     <>
       <Seo
-        title="Moccasins for Markers | Every stitch honours a name"
-        description="Handmade ornamental moccasins created with care and purpose. Every purchase helps fund permanent headstones for unmarked graves of former residential school survivors."
+        title="Moccasins for Markers"
+        description="Handmade ornamental moccasins funding permanent headstones for unmarked graves of former residential school survivors."
         path="/"
       />
 
-      {/* 01 — Cinematic opening */}
-      <section className="cine-hero">
-        <div className="cine-left">
-          <motion.div
-            className="cine-left-inner"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <img className="cine-logo" src={asset('logo.png')} alt="" width="48" height="48" />
-            <h1>
-              Moccasins
-              <br />
-              for Markers
-            </h1>
-            <p className="cine-tag">Handcrafted remembrance with a lasting purpose.</p>
-            <p className="cine-copy">
-              Ornamental pairs made by hand — so permanent headstones can honour unmarked graves of former residential
-              school survivors.
-            </p>
-            <Link to="/mission" className="cine-discover">
-              Discover the Story <span aria-hidden="true">→</span>
-            </Link>
-          </motion.div>
+      {/* FULL-BLEED OPENING — image is the website */}
+      <section className="ex-open">
+        <motion.img
+          src={asset('hero-craft.jpg')}
+          alt="Handmade ornamental moccasins"
+          initial={reduce ? false : { scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2.2, ease: [0.19, 1, 0.22, 1] }}
+        />
+        <div className="ex-open-veil" />
+        <div className="ex-open-meta">
+          <p>Moccasins for Markers</p>
+          <p>Exhibition / Remembrance</p>
         </div>
-        <motion.div
-          className="cine-right"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, delay: 0.15 }}
-        >
-          <img src={asset('hero-craft.jpg')} alt="Handmade ornamental moccasins in golden light" />
-          <p className="cine-caption">
-            Made by hand.
+        <a href="#manifesto" className="ex-scroll">
+          Enter
+        </a>
+      </section>
+
+      {/* MANIFESTO VOID */}
+      <section id="manifesto" className="ex-manifesto">
+        <Reveal>
+          <p className="label">01 — Manifesto</p>
+          <h1>
+            Every stitch
             <br />
-            Created with purpose.
+            honours a
+            <em> name.</em>
+          </h1>
+          <p className="ex-lede">
+            We sew and sell handmade ornamental tiny moccasins to buy permanent headstones for unmarked graves of
+            former residential school survivors.
           </p>
-        </motion.div>
+        </Reveal>
       </section>
 
-      {/* 02 — Giant statement */}
-      <section className="giant-statement">
-        <div className="container-narrow">
-          <Reveal>
-            <p className="label">Why it exists</p>
-            <h2>
-              These are more than handcrafted moccasins — they are a path from leather to limestone.
-            </h2>
-            <p>
-              We sew and sell handmade ornamental tiny moccasins to buy permanent headstones for unmarked graves of
-              former residential school survivors. Every stitch honours a name.
-            </p>
-          </Reveal>
+      {/* CHAPTER PLATES */}
+      <section className="ex-plate">
+        <div className="ex-plate-img">
+          <img src={asset('moccasin-emerald-heart.jpg')} alt="Emerald Heart pair" />
         </div>
-      </section>
-
-      {/* 03 — Photo story frames */}
-      <section className="story-frames">
-        <div className="frame frame-01">
-          <Reveal className="frame-media">
-            <img src={asset('moccasin-emerald-heart.jpg')} alt="Emerald Heart ornamental moccasins" />
-          </Reveal>
-          <Reveal delay={0.1} className="frame-copy">
-            <p className="label">01 / The Craft</p>
-            <h3>Made slowly, by hand.</h3>
-            <p>
-              Each ornamental pair is cut, stitched, and beaded with care — intimate enough to hold, meaningful enough
-              to keep.
-            </p>
-          </Reveal>
-        </div>
-
-        <div className="frame frame-02">
-          <Reveal className="frame-copy frame-copy-overlap">
-            <p className="label">02 / The Purpose</p>
-            <h3>Beauty that funds dignity.</h3>
-            <p>
-              Sales and gifts are directed toward permanent markers — lasting stone where unmarked graves still wait to
-              be remembered.
-            </p>
-          </Reveal>
-          <Reveal delay={0.08} className="frame-media frame-media-wide">
-            <img src={asset('impact-marker.jpg')} alt="A permanent headstone in a quiet field" />
-          </Reveal>
-        </div>
-
-        <div className="frame frame-03">
-          <Reveal className="frame-media frame-media-bleed">
-            <img src={asset('craft-table.jpg')} alt="Leather, beads, and thread on a workbench" />
-          </Reveal>
-          <p className="frame-caption">Materials at the table — stitch by stitch.</p>
+        <div className="ex-plate-copy">
+          <p className="label">Plate 02</p>
+          <h2>Craft as remembrance.</h2>
+          <p>
+            Ornamental pairs — not footwear — made slowly by hand. Intimate enough to hold. Meaningful enough to keep.
+          </p>
         </div>
       </section>
 
-      {/* 04 — Editorial collection */}
-      <section className="collection-band" id="collection">
-        <div className="container">
-          <Reveal className="collection-head">
-            <p className="label">Handcrafted Collection</p>
-            <h2>
-              Choose a piece
-              <br />
-              with purpose.
-            </h2>
-          </Reveal>
-
-          <div className="ed-collection">
-            <EditorialPiece product={pieces[0]} layout="tall" index={0} />
-            <EditorialPiece product={pieces[1]} layout="offset" index={1} />
-            <EditorialPiece product={pieces[2]} layout="wide" index={2} />
-            <div className="ed-pair-row">
-              <EditorialPiece product={pieces[3]} layout="pair" index={3} />
-              <EditorialPiece product={pieces[4]} layout="pair" index={4} />
-            </div>
-            <EditorialPiece product={pieces[5]} layout="feature" index={5} />
-          </div>
-
-          <div className="collection-foot">
-            <Button to="/shop" variant="primary" arrow>
-              View the full collection
-            </Button>
-            <p>Proceeds support permanent headstones for unmarked graves of former residential school survivors.</p>
-          </div>
+      <section className="ex-plate ex-plate-flip">
+        <div className="ex-plate-copy">
+          <p className="label">Plate 03</p>
+          <h2>From leather to limestone.</h2>
+          <p>
+            A purchase or gift becomes permanent stone — dignity restored where unmarked graves still wait.
+          </p>
+          <Link to="/impact" className="ex-text-link">
+            The purpose →
+          </Link>
+        </div>
+        <div className="ex-plate-img">
+          <img src={asset('impact-marker.jpg')} alt="A headstone at sunset" />
         </div>
       </section>
 
-      {/* 05 — Full screen visual break */}
-      <section className="visual-break">
-        <img src={asset('moccasin-night-star.jpg')} alt="" />
-        <div className="visual-break-veil" />
-        <Reveal className="visual-break-copy">
+      {/* HORIZONTAL LOOKBOOK */}
+      <section className="ex-lookbook">
+        <div className="ex-lookbook-head">
+          <p className="label">04 — Collection</p>
+          <h2>Pieces with purpose.</h2>
+          <p>Scroll sideways. Choose with intention.</p>
+        </div>
+        <div className="ex-rail" tabIndex={0} aria-label="Product lookbook">
+          {LOOK.map((p, i) => (
+            <article key={p.id} className="ex-rail-card">
+              <Link to={`/shop/${p.slug}`}>
+                <img src={asset(p.image)} alt={p.name} loading={i > 1 ? 'lazy' : 'eager'} />
+                <div>
+                  <span>{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{p.name}</h3>
+                  <p>{formatMoney(p.price)}</p>
+                </div>
+              </Link>
+            </article>
+          ))}
+          <Link to="/shop" className="ex-rail-more">
+            All pieces →
+          </Link>
+        </div>
+      </section>
+
+      {/* TYPE ONLY BREAK */}
+      <section className="ex-typebreak">
+        <Reveal>
           <p>
             Made slowly.
+            <br />
+            Given purposefully.
             <br />
             Remembered forever.
           </p>
         </Reveal>
       </section>
 
-      {/* 06 — Signature sticky journey */}
-      <ImpactStory />
+      {/* JOURNEY STRIP */}
+      <section className="ex-journey">
+        {[
+          ['Crafted', 'moccasin-bear-medicine.jpg', 'Handmade, one pair at a time.'],
+          ['Chosen', 'moccasin-turquoise-bloom.jpg', 'A piece selected with care.'],
+          ['Given', 'craft-table.jpg', 'Proceeds directed to markers.'],
+          ['Remembered', 'impact-marker.jpg', 'Permanent stone. Lasting dignity.'],
+        ].map(([title, img, copy], i) => (
+          <Reveal key={title} delay={i * 0.05} className="ex-journey-row">
+            <span>{String(i + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+            <img src={asset(img)} alt="" loading="lazy" />
+          </Reveal>
+        ))}
+      </section>
 
-      {/* 07 — Purpose dark */}
-      <section className="purpose-dark">
-        <div className="purpose-dark-grid">
-          <Reveal className="purpose-dark-copy">
-            <p className="label">The Purpose</p>
-            <h2>A handmade object can become part of something permanent.</h2>
+      {/* PAPER INTERRUPT */}
+      <section className="ex-paper">
+        <div className="container-narrow">
+          <Reveal>
+            <p className="label">05 — Why it matters</p>
+            <h2>Your purchase is not just helping — it is helping those who don’t have anyone.</h2>
             <p>
-              Your purchase or gift helps place permanent headstones for unmarked graves of former residential school
-              survivors — people who may have no one left to remember them.
+              Permanent headstones for unmarked graves of former residential school survivors. We do not invent
+              statistics. We keep the promise clear.
             </p>
-            <p className="purpose-note">
-              We do not invent statistics. We keep the promise simple and accountable.
-            </p>
-            <Button to="/impact" variant="light" arrow>
-              Learn how it works
+            <Button to="/mission" variant="primary" arrow>
+              Read the story
             </Button>
           </Reveal>
-          <Reveal delay={0.1} className="purpose-dark-photo">
-            <img src={asset('hero.jpg')} alt="Ornamental moccasins in soft light" loading="lazy" />
-          </Reveal>
         </div>
       </section>
 
-      {/* 08 — Craft gallery */}
-      <section className="craft-gallery">
-        <div className="container">
-          <Reveal className="craft-gallery-head">
-            <p className="label">The making</p>
-            <h2>
-              Made by hand,
-              <br />
-              one pair at a time.
-            </h2>
-          </Reveal>
-          <div className="craft-mosaic">
-            <figure className="mosaic-a">
-              <img src={asset('craft-table.jpg')} alt="Craft materials on a workbench" loading="lazy" />
-              <figcaption>Materials</figcaption>
-            </figure>
-            <figure className="mosaic-b">
-              <img src={asset('moccasin-turquoise-bloom.jpg')} alt="Turquoise Bloom beadwork detail" loading="lazy" />
-              <figcaption>Details</figcaption>
-            </figure>
-            <figure className="mosaic-c">
-              <img src={asset('moccasin-coral-path.jpg')} alt="Coral Path finished pair" loading="lazy" />
-              <figcaption>Finishing</figcaption>
-            </figure>
+      {/* MOSAIC */}
+      <section className="ex-mosaic">
+        <img className="m1" src={asset('craft-table.jpg')} alt="" loading="lazy" />
+        <img className="m2" src={asset('moccasin-night-star.jpg')} alt="" loading="lazy" />
+        <img className="m3" src={asset('moccasin-coral-path.jpg')} alt="" loading="lazy" />
+        <div className="ex-mosaic-caption">
+          <p className="label">06 — At the table</p>
+          <h2>Made by hand.</h2>
+        </div>
+      </section>
+
+      {/* GIVE */}
+      <section className="ex-give" id="give">
+        <div className="ex-give-copy">
+          <p className="label">07 — Support</p>
+          <h2>
+            You don’t need a pair
+            <br />
+            to preserve a memory.
+          </h2>
+        </div>
+        <form className="ex-give-form" onSubmit={onDonate}>
+          <div className="ex-amounts">
+            {[25, 50, 85, 150].map((v) => (
+              <button
+                key={v}
+                type="button"
+                className={!custom && amount === v ? 'is-on' : ''}
+                onClick={() => {
+                  setAmount(v);
+                  setCustom('');
+                }}
+              >
+                ${v}
+              </button>
+            ))}
           </div>
-        </div>
+          <label className="field">
+            <span>Custom CAD</span>
+            <input type="number" min="1" value={custom} onChange={(e) => setCustom(e.target.value)} />
+          </label>
+          <label className="field">
+            <span>Name</span>
+            <input required value={name} onChange={(e) => setName(e.target.value)} />
+          </label>
+          <label className="field">
+            <span>Email</span>
+            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          </label>
+          <Button type="submit" variant="primary" arrow>
+            Support the mission
+          </Button>
+        </form>
       </section>
 
-      {/* 09 — Donation campaign */}
-      <DonationExperience />
-
-      {/* 11 — Closing statement */}
-      <section className="closing">
-        <div className="closing-media" aria-hidden="true">
-          <img src={asset('moccasin-sage-leaf.jpg')} alt="" />
-          <div className="closing-veil" />
-        </div>
-        <div className="container closing-inner">
-          <Reveal>
-            <p className="label">Moccasins for Markers</p>
-            <h2>Carry the story forward.</h2>
-            <div className="closing-ctas">
-              <Button to="/shop" variant="light" arrow>
-                Shop the Collection
-              </Button>
-              <Button to="/donate" variant="secondary" className="closing-secondary">
-                Support the Mission
-              </Button>
-            </div>
-            <a className="closing-mail" href="mailto:hello@moccasinsformarkers.ca">
-              hello@moccasinsformarkers.ca
-            </a>
-          </Reveal>
-        </div>
+      {/* EMPTY CLOSING */}
+      <section className="ex-end">
+        <Reveal>
+          <p className="label">Moccasins for Markers</p>
+          <h2>Carry it forward.</h2>
+          <div className="ex-end-links">
+            <Link to="/shop">Shop</Link>
+            <Link to="/donate">Give</Link>
+            <a href="mailto:hello@moccasinsformarkers.ca">Write</a>
+          </div>
+        </Reveal>
       </section>
     </>
   );

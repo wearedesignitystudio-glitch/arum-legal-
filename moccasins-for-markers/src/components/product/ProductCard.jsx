@@ -7,17 +7,14 @@ export default function ProductCard({ product }) {
     <article className="product-card">
       <Link to={`/shop/${product.slug}`} className="product-card-media">
         <img src={asset(product.image)} alt={product.name} />
-        {product.hoverImage && (
-          <img src={asset(product.hoverImage)} alt="" className="hover-img" aria-hidden="true" />
-        )}
       </Link>
       <div className="product-card-body">
         <h3>
           <Link to={`/shop/${product.slug}`}>{product.name}</Link>
         </h3>
-        <p className="money">{formatMoney(product.price)} CAD</p>
+        <p className="money">{formatMoney(product.price)}</p>
         <Link to={`/shop/${product.slug}`} className="view-piece">
-          View Piece <span aria-hidden="true">→</span>
+          View →
         </Link>
       </div>
     </article>

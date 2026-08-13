@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
-import { asset } from '../../data/products';
 import './Navbar.css';
 
 const NAV = [
   { to: '/mission', label: 'Story' },
-  { to: '/shop', label: 'Collection' },
+  { to: '/shop', label: 'Pieces' },
   { to: '/impact', label: 'Purpose' },
-  { to: '/donate', label: 'Support' },
+  { to: '/donate', label: 'Give' },
 ];
 
 export default function Navbar() {
@@ -18,10 +17,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const reduce = useReducedMotion();
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -32,36 +30,28 @@ export default function Navbar() {
     document.body.classList.toggle('menu-open', menuOpen);
   }, [menuOpen]);
 
-  const solid = scrolled || !isHome || menuOpen;
-
   return (
     <>
-      <header className={`nav ${solid ? 'is-solid' : 'is-open'} ${isHome ? 'on-home' : ''}`}>
+      <header className={`nav ${scrolled || menuOpen ? 'is-solid' : ''}`}>
         <div className="nav-inner">
-          <Link to="/" className="nav-brand" aria-label="Moccasins for Markers home">
-            <img src={asset('logo.png')} alt="" width="36" height="36" />
-            <span>Moccasins for Markers</span>
+          <Link to="/" className="nav-brand">
+            MFM
           </Link>
-
           <nav className="nav-links" aria-label="Primary">
-            {NAV.map((link) => (
-              <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
-                {link.label}
+            {NAV.map((l) => (
+              <NavLink key={l.to} to={l.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+                {l.label}
               </NavLink>
             ))}
           </nav>
-
           <div className="nav-actions">
-            <button type="button" className="nav-cart" onClick={openCart} aria-label={`Open cart, ${count} items`}>
-              Cart{count > 0 ? ` (${count})` : ''}
+            <button type="button" className="nav-cart" onClick={openCart} aria-label={`Cart, ${count} items`}>
+              Bag{count > 0 ? ` ${count}` : ''}
             </button>
-            <Link to="/donate" className="nav-cta">
-              Support the Mission
-            </Link>
             <button
               type="button"
               className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? 'Close' : 'Menu'}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((v) => !v)}
             >
@@ -79,26 +69,22 @@ export default function Navbar() {
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
           >
-            <nav aria-label="Mobile">
-              {NAV.map((link, i) => (
+            <nav>
+              {NAV.map((l, i) => (
                 <motion.div
-                  key={link.to}
-                  initial={reduce ? false : { y: 20, opacity: 0 }}
+                  key={l.to}
+                  initial={reduce ? false : { y: 24, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.05 * i, duration: 0.5 }}
+                  transition={{ delay: i * 0.06 }}
                 >
-                  <Link to={link.to} onClick={() => setMenuOpen(false)}>
-                    {link.label}
+                  <Link to={l.to} onClick={() => setMenuOpen(false)}>
+                    {l.label}
                   </Link>
                 </motion.div>
               ))}
               <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
-              </Link>
-              <Link to="/donate" className="mobile-cta" onClick={() => setMenuOpen(false)}>
-                Support the Mission
               </Link>
             </nav>
           </motion.div>

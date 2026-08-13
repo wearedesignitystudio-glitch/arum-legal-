@@ -1,28 +1,33 @@
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
+  gap: 1.75rem;
   padding-bottom: 5rem;
-  align-items: start;
 }
 
 .checkout-form,
 .checkout-summary {
-  background: var(--cream);
   border: 1px solid var(--line);
-  padding: 1.5rem;
+  padding: 1.4rem;
 }
 
 .checkout-form fieldset {
   border: 0;
-  margin: 0 0 1.4rem;
+  margin: 0 0 1.3rem;
   padding: 0;
 }
 
 .checkout-form legend {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  margin-bottom: 0.9rem;
+  font-size: 1.45rem;
+  margin-bottom: 0.85rem;
+  color: var(--paper);
+}
+
+.checkout-form .field input,
+.checkout-form .field textarea {
+  color: var(--paper);
+  border-bottom-color: var(--line);
 }
 
 .field-row {
@@ -33,46 +38,41 @@
 
 .payment-note,
 .purpose {
-  color: var(--muted);
+  color: var(--mute);
   font-size: 0.9rem;
 }
 
 .checkout-summary h2 {
   margin: 0 0 1rem;
-  font-size: 1.7rem;
-  font-weight: 400;
+  color: var(--paper);
+  font-size: 1.6rem;
 }
 
 .summary-line {
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 0.75rem;
-  margin-bottom: 0.9rem;
+  grid-template-columns: 60px 1fr;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
 }
 
 .summary-line img {
-  width: 64px;
-  height: 80px;
+  width: 60px;
+  height: 75px;
   object-fit: cover;
 }
 
-.summary-line p {
-  margin: 0.2rem 0 0;
-  color: var(--muted);
-  font-size: 0.86rem;
-}
+.summary-line strong { color: var(--paper); }
+.summary-line p { margin: 0.2rem 0 0; color: var(--mute); font-size: 0.85rem; }
 
 .summary-total {
   display: flex;
   justify-content: space-between;
-  padding-top: 0.9rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--line);
-  margin-bottom: 0.8rem;
+  color: var(--paper);
 }
 
 @media (max-width: 900px) {
   .checkout-grid,
-  .field-row {
-    grid-template-columns: 1fr;
-  }
+  .field-row { grid-template-columns: 1fr; }
 }

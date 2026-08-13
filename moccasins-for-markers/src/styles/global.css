@@ -1,73 +1,67 @@
 :root {
-  --parchment: #f4f0e8;
-  --cream: #fbf9f4;
-  --ink: #171715;
-  --espresso: #241d18;
-  --cedar: #9a563d;
-  --sage: #697366;
-  --line: rgba(23, 23, 21, 0.12);
-  --line-soft: rgba(23, 23, 21, 0.08);
-  --muted: #6b6560;
-  --ivory: #f7f3ec;
-  --bone-on-dark: #f4f0e8;
-  --stone: #c4b8a8;
+  --void: #0c0b0a;
+  --void-soft: #161412;
+  --paper: #ede6da;
+  --paper-soft: #f5f0e7;
+  --ink: #0c0b0a;
+  --mute: #8a8378;
+  --copper: #b8734a;
+  --line: rgba(237, 230, 218, 0.14);
+  --line-dark: rgba(12, 11, 10, 0.12);
 
-  --bg: var(--parchment);
-  --bg-elevated: var(--cream);
-  --surface: var(--cream);
-  --text: var(--ink);
-  --accent: var(--cedar);
+  --bg: var(--void);
+  --text: var(--paper);
+  --cream: var(--paper);
+  --parchment: var(--paper-soft);
+  --espresso: var(--void);
+  --cedar: var(--copper);
+  --sage: var(--mute);
+  --muted: var(--mute);
+  --ink: #0c0b0a;
+  --bone-on-dark: var(--paper);
 
-  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
-  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --max: 1320px;
-  --header-h: 5rem;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --radius: 2px;
-  --radius-md: 6px;
-  --shadow-drawer: -30px 0 80px rgba(23, 23, 21, 0.14);
-  --section-y: clamp(5.5rem, 12vw, 10rem);
+  --max: 1400px;
+  --header-h: 4.25rem;
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --radius: 0;
+  --radius-md: 0;
 }
 
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 1.02rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: var(--ink);
-  background: var(--parchment);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--paper);
+  background: var(--void);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 body.menu-open,
 body.cart-open { overflow: hidden; }
 
 img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a { color: inherit; text-underline-offset: 0.2em; }
 button, input, textarea, select { font: inherit; color: inherit; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  margin: 0 0 0.85rem;
-  color: var(--ink);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0 0 1rem;
 }
 
-h1 { font-size: clamp(3rem, 7vw, 5.5rem); }
-h2 { font-size: clamp(2.2rem, 4.5vw, 3.75rem); }
-h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); }
+h1 { font-size: clamp(3.5rem, 9vw, 7.5rem); }
+h2 { font-size: clamp(2.4rem, 5.5vw, 4.8rem); }
+h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 p { margin: 0 0 1rem; }
 
 .sr-only {
@@ -76,12 +70,12 @@ p { margin: 0 0 1rem; }
 }
 
 .skip-link {
-  position: absolute; left: 1rem; top: -100px; z-index: 2000;
-  background: var(--ink); color: var(--cream); padding: 0.65rem 1rem;
+  position: absolute; left: 1rem; top: -120px; z-index: 3000;
+  background: var(--paper); color: var(--void); padding: 0.7rem 1rem;
 }
 .skip-link:focus { top: 1rem; }
 
-:focus-visible { outline: 2px solid var(--cedar); outline-offset: 3px; }
+:focus-visible { outline: 1px solid var(--copper); outline-offset: 3px; }
 
 .container {
   width: min(var(--max), calc(100% - 3rem));
@@ -89,81 +83,71 @@ p { margin: 0 0 1rem; }
 }
 
 .container-narrow {
-  width: min(900px, calc(100% - 3rem));
+  width: min(820px, calc(100% - 3rem));
   margin-inline: auto;
 }
 
-.label {
-  margin: 0 0 1.1rem;
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--sage);
-}
-
+.label,
 .kicker {
-  margin: 0 0 0.9rem;
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--mute);
 }
 
-.muted { color: var(--muted); }
+.muted { color: var(--mute); }
 
 .page {
   min-height: 100vh;
   padding-top: var(--header-h);
-  background: var(--parchment);
+  background: var(--void);
+  color: var(--paper);
 }
 
 .page-hero {
-  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
 }
 
 .page-hero p {
-  max-width: 36rem;
-  color: var(--muted);
-  margin-bottom: 0;
+  max-width: 34rem;
+  color: var(--mute);
+  margin: 0;
 }
 
-.section { padding: var(--section-y) 0; }
+.section { padding: clamp(5rem, 12vw, 9rem) 0; }
 
 .field {
   display: grid;
   gap: 0.4rem;
-  margin-bottom: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 .field span {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--mute);
 }
 
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--line);
-  background: var(--cream);
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius);
+  border: 0;
+  border-bottom: 1px solid var(--line-dark);
+  background: transparent;
+  padding: 0.85rem 0;
+  border-radius: 0;
   color: var(--ink);
-  transition: border-color 0.25s ease;
 }
 
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--cedar);
+  border-bottom-color: var(--copper);
 }
 
 .toast {
@@ -172,13 +156,12 @@ p { margin: 0 0 1rem; }
   bottom: 1.5rem;
   transform: translateX(-50%) translateY(140%);
   z-index: 1200;
-  background: var(--espresso);
-  color: var(--bone-on-dark);
-  padding: 0.95rem 1.4rem;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
+  background: var(--paper);
+  color: var(--void);
+  padding: 0.9rem 1.3rem;
+  font-size: 0.88rem;
   transition: transform 0.4s var(--ease);
-  max-width: min(90vw, 420px);
+  max-width: min(90vw, 400px);
   text-align: center;
 }
 .toast.is-visible { transform: translateX(-50%) translateY(0); }
@@ -186,9 +169,8 @@ p { margin: 0 0 1rem; }
 .money { font-variant-numeric: tabular-nums; }
 
 @media (max-width: 700px) {
-  .container,
-  .container-narrow {
-    width: min(var(--max), calc(100% - 2.5rem));
+  .container, .container-narrow {
+    width: min(var(--max), calc(100% - 2.25rem));
   }
 }
 

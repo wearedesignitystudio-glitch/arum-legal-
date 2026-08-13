@@ -5,16 +5,15 @@
 
 .success h1 {
   max-width: 12ch;
+  color: var(--paper);
 }
 
 .success p {
-  color: var(--muted);
-  max-width: 38rem;
+  color: var(--mute);
+  max-width: 36rem;
 }
 
-.note {
-  font-size: 0.88rem;
-}
+.note { font-size: 0.88rem; }
 
 .success-actions {
   display: flex;
@@ -24,6 +23,6 @@
 }
 
 .home-link {
-  color: var(--muted);
+  color: var(--mute);
   font-size: 0.9rem;
 }
