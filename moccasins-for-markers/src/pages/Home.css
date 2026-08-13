@@ -1,0 +1,193 @@
+/* Quiet Japanese luxury — sparse, proud, photographic */
+
+.ql-hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  padding-top: var(--header-h);
+  background: var(--snow);
+}
+
+.ql-hero-copy {
+  display: grid;
+  align-content: center;
+  padding: 3rem clamp(1.75rem, 4.5vw, 5rem) 4rem;
+  max-width: 34rem;
+}
+
+.ql-brand {
+  margin: 0 0 1.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.ql-hero h1 {
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.ql-lede {
+  color: var(--soft);
+  max-width: 27rem;
+  margin-bottom: 2.15rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.ql-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.ql-text-link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.3s ease;
+}
+
+.ql-text-link:hover {
+  border-bottom-color: var(--ink);
+}
+
+.ql-hero-visual {
+  min-height: 80vh;
+  overflow: hidden;
+  background: #ebe7df;
+}
+
+.ql-hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ql-breath {
+  padding: clamp(5.5rem, 13vw, 9rem) 0;
+  background: var(--snow-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ql-breath p {
+  width: min(620px, calc(100% - 3.5rem));
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.7vw, 1.95rem);
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.ql-pieces {
+  padding: clamp(4.5rem, 10vw, 7.5rem) 0;
+}
+
+.ql-pieces-head {
+  margin-bottom: 2.75rem;
+}
+
+.ql-pieces-head h2 {
+  margin: 0;
+}
+
+.ql-piece-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem 1.6rem;
+}
+
+.ql-piece-grid a {
+  text-decoration: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ql-piece-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #ebe7df;
+  transition: transform 1.1s var(--ease);
+}
+
+.ql-piece-grid article:hover img {
+  transform: scale(1.03);
+}
+
+.ql-piece-grid h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.ql-piece-grid p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.9rem;
+}
+
+.ql-more {
+  display: inline-block;
+  margin-top: 2.75rem;
+}
+
+.ql-close {
+  padding: clamp(5.5rem, 13vw, 9rem) 1.5rem;
+  text-align: center;
+  background: var(--snow);
+  border-top: 1px solid var(--line);
+}
+
+.ql-close h2 {
+  margin-bottom: 1.85rem;
+}
+
+.ql-close-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.85rem;
+}
+
+.ql-close-links a {
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+  transition: color 0.3s ease;
+}
+
+.ql-close-links a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 980px) {
+  .ql-hero,
+  .ql-piece-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ql-hero {
+    min-height: auto;
+  }
+
+  .ql-hero-visual {
+    min-height: 55vh;
+  }
+}

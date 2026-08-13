@@ -1,0 +1,129 @@
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  border: 0;
+  background: rgba(26, 25, 23, 0.35);
+  cursor: pointer;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 210;
+  width: min(400px, 100%);
+  height: 100%;
+  background: var(--snow);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer-head,
+.cart-drawer-foot { padding: 1.4rem; }
+
+.cart-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-drawer-head h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.cart-close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--soft);
+}
+
+.cart-drawer-body {
+  flex: 1;
+  overflow: auto;
+  padding: 1.2rem 1.4rem;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 3rem 0.5rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  color: var(--soft);
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-line img {
+  width: 72px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.cart-line h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.cart-line p { margin: 0; color: var(--soft); font-size: 0.88rem; }
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.qty button {
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+.remove,
+.continue {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--soft);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.cart-drawer-foot {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-note { margin: 0; color: var(--soft); font-size: 0.82rem; }
+.continue { justify-self: center; }
+
+@media (max-width: 520px) {
+  .cart-drawer { width: 100%; }
+}

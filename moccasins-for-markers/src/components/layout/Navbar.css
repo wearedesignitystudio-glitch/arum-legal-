@@ -1,0 +1,118 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: var(--header-h);
+  color: var(--ink);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav.is-solid {
+  background: rgba(247, 245, 240, 0.9);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--line);
+}
+
+.nav-inner {
+  width: min(var(--max), calc(100% - 3rem));
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.nav-brand {
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active { color: var(--ink); }
+
+.nav-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-cart {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.nav-cart:hover { color: var(--ink); }
+
+.menu-toggle {
+  display: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 1.05rem;
+  height: 1px;
+  background: var(--ink);
+}
+
+.menu-toggle.is-open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.menu-toggle.is-open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--snow);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.mobile-menu nav { display: grid; gap: 1.4rem; }
+
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: inline-grid; }
+  .nav-inner { grid-template-columns: 1fr auto; }
+  .nav-brand { font-size: 0.95rem; }
+}

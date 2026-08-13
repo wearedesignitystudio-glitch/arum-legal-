@@ -1,0 +1,20 @@
+.success {
+  max-width: 680px;
+  padding: 4rem 0 6rem;
+}
+
+.success h1 { max-width: 12ch; font-weight: 500; }
+.success p { color: var(--soft); max-width: 34rem; }
+.note { font-size: 0.88rem; }
+
+.success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.home-link {
+  color: var(--soft);
+  font-size: 0.9rem;
+}

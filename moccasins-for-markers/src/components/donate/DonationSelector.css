@@ -1,0 +1,112 @@
+.donate-selector {
+  display: grid;
+  gap: 1rem;
+}
+
+.freq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(243, 239, 231, 0.18);
+  background: rgba(25, 26, 24, 0.25);
+}
+
+.freq button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--stone);
+  min-height: 2.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.freq button.is-active {
+  background: var(--bone);
+  color: var(--charcoal);
+}
+
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+}
+
+.amounts button {
+  appearance: none;
+  min-height: 2.85rem;
+  border: 1px solid rgba(243, 239, 231, 0.22);
+  background: transparent;
+  color: var(--bone);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.amounts button.is-active,
+.amounts button:hover {
+  background: var(--cedar);
+  border-color: var(--cedar);
+  color: var(--ivory);
+}
+
+.donate-selector .field span { color: var(--stone); }
+
+.donate-selector .field input {
+  background: rgba(25, 26, 24, 0.35);
+  border-color: rgba(243, 239, 231, 0.2);
+  color: var(--bone);
+}
+
+.donate-selector .field input::placeholder { color: rgba(243, 239, 231, 0.4); }
+
+.donate-selector .note {
+  margin: 0;
+  color: var(--stone);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* Light context (standalone donate page uses light panel) */
+.donate-light .freq {
+  background: var(--parchment);
+  border-color: var(--line);
+}
+
+.donate-light .freq button { color: var(--muted); }
+.donate-light .freq button.is-active {
+  background: var(--charcoal);
+  color: var(--bone);
+}
+
+.donate-light .amounts button {
+  border-color: var(--line-strong);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.donate-light .amounts button.is-active,
+.donate-light .amounts button:hover {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--bone);
+}
+
+.donate-light .field span { color: var(--muted); }
+.donate-light .field input {
+  background: var(--surface);
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.donate-light .note { color: var(--muted); }
+
+@media (max-width: 520px) {
+  .amounts { grid-template-columns: 1fr 1fr; }
+}
